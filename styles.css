@@ -38,6 +38,7 @@ body::before {
 .app-shell {
   position: relative;
   z-index: 1;
+  width: min(100%, 1440px);
   max-width: 1440px;
   margin: 0 auto;
   padding: 28px;
@@ -52,6 +53,7 @@ body::before {
 
 .hero-copy,
 .panel {
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: 28px;
   background: var(--panel);
@@ -139,14 +141,18 @@ select {
 }
 
 .segmented {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
 .segment {
+  flex: 1 1 0;
+  min-width: 0;
   font-weight: 700;
   cursor: pointer;
+  padding: 0 14px;
+  text-align: center;
 }
 
 .segment.is-active {
@@ -185,12 +191,24 @@ select {
   gap: 18px;
 }
 
+.content-grid > *,
+.metrics-grid > * {
+  min-width: 0;
+}
+
 .metric-card,
 .progress-panel,
 .chart-panel,
 .ranking-panel,
 .history-panel {
   padding: 24px;
+}
+
+.metric-card,
+.mini-metric {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .metric-label {
@@ -525,6 +543,14 @@ select {
     min-height: 50px;
   }
 
+  .segmented {
+    flex-direction: column;
+  }
+
+  .segment {
+    width: 100%;
+  }
+
   .viewer-note {
     margin-top: 16px;
     padding: 14px 16px;
@@ -664,6 +690,7 @@ select {
   }
 
   .segment {
+    width: 100%;
     font-size: 0.95rem;
   }
 
