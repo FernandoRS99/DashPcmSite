@@ -211,6 +211,11 @@ select {
   justify-content: space-between;
 }
 
+.history-panel {
+  display: flex;
+  flex-direction: column;
+}
+
 .metric-label {
   display: block;
   margin-bottom: 14px;
@@ -386,7 +391,11 @@ select {
 }
 
 .table-wrap {
+  width: 100%;
+  max-width: 100%;
   overflow: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   border-radius: 20px;
   border: 1px solid rgba(49, 64, 56, 0.12);
   background: rgba(255, 255, 255, 0.72);
@@ -647,7 +656,10 @@ select {
   }
 
   .table-wrap {
-    margin-inline: -4px;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+    border-radius: 18px;
   }
 
   .history-table {
