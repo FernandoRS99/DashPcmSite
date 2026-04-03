@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>PCM Viewer Demo</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Viewer Estático</p>
+        <h1>Leitura executiva do PCM</h1>
+        <p class="hero-text">
+          Versão estática inspirada no perfil <strong>viewer</strong>, pronta para GitHub Pages e voltada para apresentação.
+        </p>
+        <div class="hero-badges">
+          <span class="hero-badge">Somente leitura</span>
+          <span class="hero-badge">Sem backend</span>
+          <span class="hero-badge">Dados de demonstração</span>
+        </div>
+      </div>
+
+      <aside class="hero-controls panel">
+        <div class="hero-panel-heading">
+          <p class="eyebrow">Painel de navegação</p>
+          <strong id="selected-month-label">abril de 2026</strong>
+        </div>
+
+        <label class="field">
+          <span>Competência</span>
+          <select id="month-select"></select>
+        </label>
+
+        <label class="field">
+          <span>Modo de análise</span>
+          <div class="segmented" role="tablist" aria-label="Modo de análise">
+            <button type="button" class="segment is-active" data-mode="general">Visão Geral</button>
+            <button type="button" class="segment" data-mode="technician">Por Técnico</button>
+          </div>
+        </label>
+
+        <label class="field" id="technician-filter-field" hidden>
+          <span>Técnico em foco</span>
+          <select id="technician-select"></select>
+        </label>
+
+        <div class="viewer-note">
+          <strong>Modo demonstração</strong>
+          <p>
+            Esta página pública mostra apenas navegação, KPIs e histórico. Não existem ações de edição, cadastro ou lançamento.
+          </p>
+        </div>
+      </aside>
+    </header>
+
+    <main class="content-grid">
+      <section class="metrics-grid">
+        <article class="panel metric-card">
+          <span class="metric-label" id="target-label">Meta consolidada</span>
+          <strong class="metric-value" id="metric-target">0,0 h</strong>
+          <p class="metric-helper" id="metric-target-helper"></p>
+        </article>
+        <article class="panel metric-card">
+          <span class="metric-label">Horas executadas</span>
+          <strong class="metric-value" id="metric-executed">0,0 h</strong>
+          <p class="metric-helper">Calculadas automaticamente a partir do histórico de OS demonstrativas.</p>
+        </article>
+        <article class="panel metric-card">
+          <span class="metric-label">Aderência</span>
+          <strong class="metric-value" id="metric-adherence">0,0%</strong>
+          <p class="metric-helper" id="metric-adherence-helper"></p>
+        </article>
+        <article class="panel metric-card">
+          <span class="metric-label">Saldo</span>
+          <strong class="metric-value" id="metric-balance">0,0 h</strong>
+          <p class="metric-helper" id="metric-balance-helper"></p>
+        </article>
+      </section>
+
+      <section class="panel progress-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Painel operacional</p>
+            <h2 id="progress-title">Meta consolidada, realizado e saldo</h2>
+          </div>
+          <strong class="ticket-pill" id="ticket-average">0,0 h ticket médio</strong>
+        </div>
+
+        <div class="progress-stack">
+          <div class="progress-row">
+            <div class="progress-copy">
+              <span id="progress-target-label">Meta monitorada</span>
+              <strong id="progress-target-value">0,0 h</strong>
+            </div>
+            <div class="progress-track is-target"><span id="bar-target"></span></div>
+          </div>
+
+          <div class="progress-row">
+            <div class="progress-copy">
+              <span>Executado</span>
+              <strong id="progress-executed-value">0,0 h</strong>
+            </div>
+            <div class="progress-track is-executed"><span id="bar-executed"></span></div>
+          </div>
+
+          <div class="progress-row">
+            <div class="progress-copy">
+              <span>Saldo da meta</span>
+              <strong id="progress-balance-value">0,0 h</strong>
+            </div>
+            <div class="progress-track is-balance"><span id="bar-balance"></span></div>
+          </div>
+        </div>
+
+        <div class="mini-metrics">
+          <article class="mini-metric">
+            <span>Ordens</span>
+            <strong id="mini-orders">0</strong>
+          </article>
+          <article class="mini-metric">
+            <span>Técnicos ativos</span>
+            <strong id="mini-techs">0</strong>
+          </article>
+          <article class="mini-metric">
+            <span>Preventiva</span>
+            <strong id="mini-preventive">0,0 h</strong>
+          </article>
+          <article class="mini-metric">
+            <span>Corretiva</span>
+            <strong id="mini-corrective">0,0 h</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Cadência operacional</p>
+            <h2>Horas executadas por dia</h2>
+          </div>
+        </div>
+        <div class="daily-chart" id="daily-chart"></div>
+      </section>
+
+      <section class="panel ranking-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Ranking do período</p>
+            <h2>Horas por técnico</h2>
+          </div>
+        </div>
+        <div class="ranking-list" id="ranking-list"></div>
+      </section>
+
+      <section class="panel history-panel">
+        <div class="panel-heading history-heading">
+          <div>
+            <p class="eyebrow">Histórico</p>
+            <h2 id="history-title">Leitura histórica da competência</h2>
+          </div>
+          <p class="history-helper" id="history-helper">
+            Consulte relatórios e movimentações em modo somente leitura.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>OS</th>
+                <th>Tipo</th>
+                <th>Setor</th>
+                <th>Equipamento</th>
+                <th>TAG</th>
+                <th>Técnico</th>
+                <th>Atividade</th>
+                <th>Início</th>
+                <th>Fim</th>
+                <th>Executado</th>
+                <th>Relatório</th>
+              </tr>
+            </thead>
+            <tbody id="history-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
