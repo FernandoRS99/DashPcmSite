@@ -449,9 +449,242 @@ select {
 }
 
 @media (max-width: 760px) {
-  .app-shell { padding: 18px; }
+  body::before {
+    opacity: 0.3;
+    background-size: 30px 30px;
+  }
+
+  .app-shell {
+    padding: 14px;
+  }
+
+  .hero {
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .hero-controls {
+    order: -1;
+    padding: 20px;
+    border-radius: 24px;
+  }
+
   .hero-copy,
   .panel,
-  .metric-card { border-radius: 22px; }
-  .ranking-item { grid-template-columns: 1fr; }
+  .metric-card {
+    border-radius: 24px;
+  }
+
+  .hero-copy,
+  .metric-card,
+  .progress-panel,
+  .chart-panel,
+  .ranking-panel,
+  .history-panel {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 13vw, 3.3rem);
+    line-height: 0.98;
+    max-width: 10ch;
+  }
+
+  .hero-text {
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  .hero-badges {
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .hero-badge,
+  .ticket-pill,
+  .type-badge {
+    padding: 8px 12px;
+    font-size: 0.76rem;
+  }
+
+  .hero-panel-heading strong {
+    font-size: 2.3rem;
+    line-height: 0.95;
+  }
+
+  .field {
+    margin-top: 14px;
+  }
+
+  .field span {
+    font-size: 0.96rem;
+  }
+
+  select,
+  .segment {
+    min-height: 50px;
+  }
+
+  .viewer-note {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 20px;
+  }
+
+  .viewer-note p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .content-grid {
+    gap: 18px;
+  }
+
+  .metrics-grid,
+  .mini-metrics {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .metric-value {
+    font-size: 1.9rem;
+  }
+
+  .metric-helper {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .panel-heading,
+  .progress-copy,
+  .history-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .panel-heading {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .panel-heading h2 {
+    font-size: 1.35rem;
+    line-height: 1.15;
+  }
+
+  .progress-copy {
+    margin-bottom: 10px;
+  }
+
+  .daily-chart {
+    gap: 10px;
+    margin-inline: -4px;
+    padding-inline: 4px;
+  }
+
+  .daily-bar {
+    min-width: 58px;
+    gap: 8px;
+  }
+
+  .daily-bar strong {
+    font-size: 0.84rem;
+  }
+
+  .daily-bar-rail {
+    width: 46px;
+    height: 144px;
+    padding: 6px;
+  }
+
+  .ranking-list {
+    gap: 12px;
+  }
+
+  .ranking-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(49, 64, 56, 0.1);
+  }
+
+  .ranking-value {
+    font-size: 0.95rem;
+  }
+
+  .history-helper {
+    max-width: none;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .table-wrap {
+    margin-inline: -4px;
+  }
+
+  .history-table {
+    min-width: 880px;
+  }
+
+  .history-table th,
+  .history-table td {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 430px) {
+  .app-shell {
+    padding: 12px;
+  }
+
+  .hero-copy,
+  .hero-controls,
+  .metric-card,
+  .progress-panel,
+  .chart-panel,
+  .ranking-panel,
+  .history-panel {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.18em;
+    font-size: 11px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 12vw, 2.9rem);
+  }
+
+  .segmented {
+    gap: 8px;
+  }
+
+  .segment {
+    font-size: 0.95rem;
+  }
+
+  .hero-panel-heading strong {
+    font-size: 2.05rem;
+  }
+
+  .metric-value {
+    font-size: 1.75rem;
+  }
+
+  .mini-metric strong {
+    font-size: 1.3rem;
+  }
+
+  .daily-bar {
+    min-width: 54px;
+  }
+
+  .daily-bar-rail {
+    width: 42px;
+    height: 132px;
+  }
 }
