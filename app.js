@@ -243,7 +243,9 @@
   }
 
   function render() {
-    technicianField.hidden = mode !== 'technician'
+    const showTechnicianField = mode === 'technician'
+    technicianField.hidden = !showTechnicianField
+    technicianField.style.display = showTechnicianField ? 'grid' : 'none'
 
     modeButtons.forEach((button) => {
       button.classList.toggle('is-active', button.dataset.mode === mode)

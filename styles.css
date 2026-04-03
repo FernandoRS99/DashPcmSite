@@ -116,6 +116,10 @@ body::before {
   margin-top: 18px;
 }
 
+.field[hidden] {
+  display: none !important;
+}
+
 .field span { font-weight: 600; }
 
 select,
