@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-03T20:33:28.678Z",
+  "generatedAt": "2026-04-03T21:21:05.541Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -351,6 +351,36 @@ window.VIEWER_DEMO_DATA = {
           "equipment": "MOTOBOMBA VERDE CIS. 1 E 2",
           "tag": "MOB01805",
           "technicianId": "UTLME005",
+          "date": "2026-04-02",
+          "startTime": "18:00",
+          "endTime": "04:30",
+          "executedHours": 10.5,
+          "activity": "Reparo de tubulação com vazamento",
+          "observation": "Realizado troca parcial da tubulação que estava com a rosca da união gasta"
+        },
+        {
+          "id": 44,
+          "orderNumber": "10648803",
+          "orderType": "Corretiva",
+          "sector": "UTILIDADES 1",
+          "equipment": "MOTOBOMBA VERDE CIS. 1 E 2",
+          "tag": "MOB01805",
+          "technicianId": "UTLME008",
+          "date": "2026-04-02",
+          "startTime": "18:00",
+          "endTime": "04:30",
+          "executedHours": 10.5,
+          "activity": "Reparo de tubulação com vazamento",
+          "observation": "Realizado troca parcial da tubulação que estava com a rosca da união gasta"
+        },
+        {
+          "id": 45,
+          "orderNumber": "10648803",
+          "orderType": "Corretiva",
+          "sector": "UTILIDADES 1",
+          "equipment": "MOTOBOMBA VERDE CIS. 1 E 2",
+          "tag": "MOB01805",
+          "technicianId": "UTLRE007",
           "date": "2026-04-02",
           "startTime": "18:00",
           "endTime": "04:30",
