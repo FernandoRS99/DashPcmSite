@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-04T07:03:02.690Z",
+  "generatedAt": "2026-04-04T07:13:02.624Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -565,8 +565,8 @@ window.VIEWER_DEMO_DATA = {
           "startTime": "18:00",
           "endTime": "00:00",
           "executedHours": 6,
-          "activity": "Bloqueio de energia para manuten??o preventiva",
-          "observation": "Feito bloqueio el?trico para mec?nico fazer preventivas nos sopradores 3 e 4."
+          "activity": "Bloqueio de energia para manutenção preventiva",
+          "observation": "Feito bloqueio elétrico para mecânico fazer preventivas nos sopradores 3 e 4."
         },
         {
           "id": 48,
