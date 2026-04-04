@@ -6,6 +6,7 @@
   const technicianField = document.getElementById('technician-filter-field')
   const heroCopy = document.querySelector('.hero-copy')
   const heroControls = document.querySelector('.hero-controls')
+  const appShell = document.querySelector('.app-shell')
 
   const monthFormatter = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' })
   const shortDateFormatter = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit' })
@@ -82,6 +83,19 @@
   }
 
   function ensurePublicChrome() {
+    if (appShell && !document.getElementById('print-report-header')) {
+      appShell.insertAdjacentHTML(
+        'afterbegin',
+        `
+          <section class="print-report-header" id="print-report-header" aria-hidden="true">
+            <p class="eyebrow">Relatorio executivo</p>
+            <h1 id="print-report-title">INDICADORES MANUTENCAO MES ATUAL / ANO ATUAL</h1>
+            <p id="print-report-subtitle">Leitura consolidada de indicadores e graficos do periodo selecionado.</p>
+          </section>
+        `,
+      )
+    }
+
     if (heroCopy && !heroCopy.querySelector('.hero-summary')) {
       heroCopy.insertAdjacentHTML(
         'beforeend',
@@ -127,6 +141,87 @@
         window.print()
       })
     }
+
+    if (appShell && !document.getElementById('report-modal')) {
+      appShell.insertAdjacentHTML(
+        'beforeend',
+        `
+          <div class="report-modal-backdrop" id="report-modal" hidden>
+            <div class="report-modal" role="dialog" aria-modal="true" aria-labelledby="report-modal-title">
+              <div class="report-modal-header">
+                <div>
+                  <p class="eyebrow">Relatorio da OS</p>
+                  <h2 id="report-modal-title">Leitura complementar</h2>
+                </div>
+                <button type="button" class="report-modal-close" id="report-modal-close" aria-label="Fechar">Fechar</button>
+              </div>
+              <div class="report-modal-body">
+                <div class="report-meta" id="report-modal-meta"></div>
+                <p id="report-modal-text"></p>
+              </div>
+            </div>
+          </div>
+        `,
+      )
+    }
+
+    const reportModal = document.getElementById('report-modal')
+    const reportClose = document.getElementById('report-modal-close')
+
+    if (reportModal && !reportModal.dataset.bound) {
+      reportModal.dataset.bound = 'true'
+      reportModal.addEventListener('click', (event) => {
+        if (event.target === reportModal) {
+          reportModal.hidden = true
+          document.body.classList.remove('modal-open')
+        }
+      })
+    }
+
+    if (reportClose && !reportClose.dataset.bound) {
+      reportClose.dataset.bound = 'true'
+      reportClose.addEventListener('click', () => {
+        const modal = document.getElementById('report-modal')
+        if (modal) {
+          modal.hidden = true
+        }
+        document.body.classList.remove('modal-open')
+      })
+    }
+
+    if (!document.body.dataset.reportEscapeBound) {
+      document.body.dataset.reportEscapeBound = 'true'
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          const modal = document.getElementById('report-modal')
+          if (modal && !modal.hidden) {
+            modal.hidden = true
+            document.body.classList.remove('modal-open')
+          }
+        }
+      })
+    }
+  }
+
+  function openReportModal(order, technicianName) {
+    const modal = document.getElementById('report-modal')
+    const meta = document.getElementById('report-modal-meta')
+    const text = document.getElementById('report-modal-text')
+    const title = document.getElementById('report-modal-title')
+    if (!modal || !meta || !text || !title) {
+      return
+    }
+
+    title.textContent = `OS ${order.orderNumber}`
+    meta.innerHTML = `
+      <span>${order.orderType}</span>
+      <span>${order.tag}</span>
+      <span>${technicianName}</span>
+      <span>${formatDateTime(order.date, order.startTime)} - ${order.endTime}</span>
+    `
+    text.textContent = order.observation || 'Sem relatorio complementar.'
+    modal.hidden = false
+    document.body.classList.add('modal-open')
   }
 
   function renderSelects() {
@@ -227,6 +322,21 @@
         mode === 'general'
           ? `${activeTechnicians} tecnicos ativos`
           : `${selectedTechnician?.id || 'sem tecnico'}`
+    }
+
+    const printTitle = document.getElementById('print-report-title')
+    const printSubtitle = document.getElementById('print-report-subtitle')
+
+    if (printTitle) {
+      const monthLabel = monthFormatter.format(new Date(`${selectedMonth}-01T00:00:00`)).toUpperCase('pt-BR')
+      printTitle.textContent = `INDICADORES MANUTENCAO ${monthLabel}`
+    }
+
+    if (printSubtitle) {
+      printSubtitle.textContent =
+        mode === 'general'
+          ? `Visao geral da equipe com ${visibleOrders.length} ordens e ${formatHours(executedHours)} executadas.`
+          : `Leitura de ${selectedTechnician?.name || 'tecnico selecionado'} com ${visibleOrders.length} ordens e ${formatHours(executedHours)} executadas.`
     }
 
     const maxBar = Math.max(targetHours, executedHours, balance, 1)
