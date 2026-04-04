@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-04T07:53:02.683Z",
+  "generatedAt": "2026-04-04T08:03:02.657Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -612,6 +612,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1.08,
           "activity": "PREVENTIVA",
           "observation": "OBS:BEX01640"
+        },
+        {
+          "id": 63,
+          "orderNumber": "10660854",
+          "orderType": "Corretiva",
+          "sector": "UTILIDADES 2",
+          "equipment": "CALDEIRA TENGE",
+          "tag": "CAL01602",
+          "technicianId": "UTLME008",
+          "date": "2026-04-04",
+          "startTime": "01:00",
+          "endTime": "04:00",
+          "executedHours": 3,
+          "activity": "Troca de valvula do cavalete.",
+          "observation": "Efetuada troca de valvula, a mesma estava danificada devido ao fuso estar espanado."
         }
       ]
     }
