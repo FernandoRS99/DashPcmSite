@@ -1124,6 +1124,7 @@ select {
   .metric-card,
   .progress-panel,
   .chart-panel,
+  .mix-panel,
   .ranking-panel,
   .history-panel {
     padding: 14px;
@@ -1159,6 +1160,14 @@ select {
     gap: 10px;
   }
 
+  .progress-panel,
+  .chart-panel,
+  .mix-panel,
+  .ranking-panel {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
   .metric-value {
     font-size: 1.55rem;
     margin-bottom: 8px;
@@ -1180,6 +1189,42 @@ select {
 
   .ranking-item {
     gap: 10px;
+  }
+
+  .mix-panel {
+    padding: 10px 12px;
+  }
+
+  .mix-grid {
+    gap: 8px;
+  }
+
+  .mix-card {
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  .mix-card strong {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+
+  .mix-card small {
+    font-size: 0.8rem;
+  }
+
+  .mix-bars {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .mix-bar-copy {
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+  }
+
+  .mix-bar-track {
+    height: 12px;
   }
 
   .table-wrap,
