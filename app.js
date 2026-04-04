@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   const data = window.VIEWER_DEMO_DATA
   const monthSelect = document.getElementById('month-select')
   const technicianSelect = document.getElementById('technician-select')
@@ -78,8 +78,36 @@
     if (mode === 'technician' && selectedTechnicianId) {
       return orders.filter((order) => order.technicianId === selectedTechnicianId)
     }
-
     return orders
+  }
+
+  function closeReportModal() {
+    const modal = document.getElementById('report-modal')
+    if (modal) {
+      modal.hidden = true
+    }
+    document.body.classList.remove('modal-open')
+  }
+
+  function openReportModal(order, technicianName) {
+    const modal = document.getElementById('report-modal')
+    const meta = document.getElementById('report-modal-meta')
+    const text = document.getElementById('report-modal-text')
+    const title = document.getElementById('report-modal-title')
+    if (!modal || !meta || !text || !title) {
+      return
+    }
+
+    title.textContent = `OS ${order.orderNumber}`
+    meta.innerHTML = `
+      <span>${order.orderType}</span>
+      <span>${order.tag}</span>
+      <span>${technicianName}</span>
+      <span>${formatDateTime(order.date, order.startTime)} - ${order.endTime}</span>
+    `
+    text.textContent = order.observation || 'Sem relatorio complementar.'
+    modal.hidden = false
+    document.body.classList.add('modal-open')
   }
 
   function ensurePublicChrome() {
@@ -128,18 +156,10 @@
         `
           <div class="hero-actions">
             <button type="button" class="print-button" id="print-pdf-button">Imprimir PDF</button>
-            <span class="print-helper">Exporta os indicadores e o historico atual sem acoes de edicao.</span>
+            <span class="print-helper">Exporta apenas indicadores e graficos do painel atual.</span>
           </div>
         `,
       )
-    }
-
-    const printButton = document.getElementById('print-pdf-button')
-    if (printButton && !printButton.dataset.bound) {
-      printButton.dataset.bound = 'true'
-      printButton.addEventListener('click', () => {
-        window.print()
-      })
     }
 
     if (appShell && !document.getElementById('report-modal')) {
@@ -165,27 +185,29 @@
       )
     }
 
-    const reportModal = document.getElementById('report-modal')
-    const reportClose = document.getElementById('report-modal-close')
+    const printButton = document.getElementById('print-pdf-button')
+    if (printButton && !printButton.dataset.bound) {
+      printButton.dataset.bound = 'true'
+      printButton.addEventListener('click', () => {
+        window.print()
+      })
+    }
 
+    const reportModal = document.getElementById('report-modal')
     if (reportModal && !reportModal.dataset.bound) {
       reportModal.dataset.bound = 'true'
       reportModal.addEventListener('click', (event) => {
         if (event.target === reportModal) {
-          reportModal.hidden = true
-          document.body.classList.remove('modal-open')
+          closeReportModal()
         }
       })
     }
 
+    const reportClose = document.getElementById('report-modal-close')
     if (reportClose && !reportClose.dataset.bound) {
       reportClose.dataset.bound = 'true'
       reportClose.addEventListener('click', () => {
-        const modal = document.getElementById('report-modal')
-        if (modal) {
-          modal.hidden = true
-        }
-        document.body.classList.remove('modal-open')
+        closeReportModal()
       })
     }
 
@@ -193,35 +215,10 @@
       document.body.dataset.reportEscapeBound = 'true'
       document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
-          const modal = document.getElementById('report-modal')
-          if (modal && !modal.hidden) {
-            modal.hidden = true
-            document.body.classList.remove('modal-open')
-          }
+          closeReportModal()
         }
       })
     }
-  }
-
-  function openReportModal(order, technicianName) {
-    const modal = document.getElementById('report-modal')
-    const meta = document.getElementById('report-modal-meta')
-    const text = document.getElementById('report-modal-text')
-    const title = document.getElementById('report-modal-title')
-    if (!modal || !meta || !text || !title) {
-      return
-    }
-
-    title.textContent = `OS ${order.orderNumber}`
-    meta.innerHTML = `
-      <span>${order.orderType}</span>
-      <span>${order.tag}</span>
-      <span>${technicianName}</span>
-      <span>${formatDateTime(order.date, order.startTime)} - ${order.endTime}</span>
-    `
-    text.textContent = order.observation || 'Sem relatorio complementar.'
-    modal.hidden = false
-    document.body.classList.add('modal-open')
   }
 
   function renderSelects() {
@@ -250,10 +247,7 @@
     const correctiveHours = sum(visibleOrders.filter((order) => order.orderType !== 'Preventiva'), 'executedHours')
     const activeTechnicians = ranking.filter((technician) => technician.executedHours > 0).length
     const selectedTechnician = getTechnicianById(selectedTechnicianId)
-    const visibleTechnicians =
-      mode === 'general'
-        ? data.technicians.length
-        : (selectedTechnician ? 1 : 0)
+    const visibleTechnicians = mode === 'general' ? data.technicians.length : (selectedTechnician ? 1 : 0)
 
     document.getElementById('selected-month-label').textContent = monthFormatter.format(
       new Date(`${selectedMonth}-01T00:00:00`),
@@ -264,21 +258,21 @@
     document.getElementById('metric-target').textContent = formatHours(targetHours)
     document.getElementById('metric-target-helper').textContent =
       mode === 'general'
-        ? `Base demonstrativa: ${formatHours(monthData.monthlyTarget)} por técnico em ${data.technicians.length} técnicos.`
-        : `Base demonstrativa de ${formatHours(monthData.monthlyTarget)} para ${selectedTechnician?.name || 'o técnico selecionado'}.`
+        ? `Base publicada: ${formatHours(monthData.monthlyTarget)} por tecnico em ${data.technicians.length} tecnicos.`
+        : `Base publicada de ${formatHours(monthData.monthlyTarget)} para ${selectedTechnician?.name || 'o tecnico selecionado'}.`
     document.getElementById('metric-executed').textContent = formatHours(executedHours)
     document.getElementById('metric-adherence').textContent = formatPercent(adherence)
     document.getElementById('metric-adherence-helper').textContent =
-      adherence >= 100 ? 'Meta alcançada no cenário demonstrativo.' : 'A leitura compara executado versus meta do período.'
+      adherence >= 100 ? 'Meta alcancada no painel publicado.' : 'A leitura compara executado versus meta do periodo.'
     document.getElementById('metric-balance').textContent = formatHours(balance)
     document.getElementById('metric-balance-helper').textContent =
-      balance > 0 ? 'Horas restantes para o fechamento da meta.' : 'Competência coberta pela produção registrada.'
+      balance > 0 ? 'Horas restantes para o fechamento da meta.' : 'Competencia coberta pela producao registrada.'
 
     document.getElementById('progress-title').textContent =
       mode === 'general' ? 'Meta consolidada, realizado e saldo' : 'Meta individual, realizado e saldo'
-    document.getElementById('ticket-average').textContent = `${formatHours(ticketAverage)} ticket médio`
+    document.getElementById('ticket-average').textContent = `${formatHours(ticketAverage)} ticket medio`
     document.getElementById('progress-target-label').textContent =
-      mode === 'general' ? 'Meta consolidada' : 'Meta do técnico'
+      mode === 'general' ? 'Meta consolidada' : 'Meta do tecnico'
     document.getElementById('progress-target-value').textContent = formatHours(targetHours)
     document.getElementById('progress-executed-value').textContent = formatHours(executedHours)
     document.getElementById('progress-balance-value').textContent = formatHours(balance)
@@ -297,26 +291,21 @@
     if (heroSummaryMonth) {
       heroSummaryMonth.textContent = monthFormatter.format(new Date(`${selectedMonth}-01T00:00:00`))
     }
-
     if (heroSummaryMode) {
       heroSummaryMode.textContent =
         mode === 'general'
           ? 'Visao consolidada da equipe'
           : `Recorte de ${selectedTechnician?.name || 'tecnico selecionado'}`
     }
-
     if (heroSummaryOrders) {
       heroSummaryOrders.textContent = String(visibleOrders.length)
     }
-
     if (heroSummaryHours) {
       heroSummaryHours.textContent = `${formatHours(executedHours)} executadas`
     }
-
     if (heroSummaryTechs) {
       heroSummaryTechs.textContent = String(visibleTechnicians)
     }
-
     if (heroSummaryActive) {
       heroSummaryActive.textContent =
         mode === 'general'
@@ -326,12 +315,10 @@
 
     const printTitle = document.getElementById('print-report-title')
     const printSubtitle = document.getElementById('print-report-subtitle')
-
     if (printTitle) {
       const monthLabel = monthFormatter.format(new Date(`${selectedMonth}-01T00:00:00`)).toUpperCase('pt-BR')
       printTitle.textContent = `INDICADORES MANUTENCAO ${monthLabel}`
     }
-
     if (printSubtitle) {
       printSubtitle.textContent =
         mode === 'general'
@@ -350,7 +337,7 @@
     const series = buildSeries(buildVisibleOrders())
 
     if (!series.length) {
-      chart.innerHTML = '<div class="empty-state">Sem apontamentos para esta combinação de filtros.</div>'
+      chart.innerHTML = '<div class="empty-state">Sem apontamentos para esta combinacao de filtros.</div>'
       return
     }
 
@@ -399,13 +386,13 @@
 
     document.getElementById('history-title').textContent =
       mode === 'general'
-        ? 'Leitura histórica da competência'
-        : `Histórico de ${selectedTechnician?.name || 'técnico selecionado'}`
+        ? 'Leitura historica da competencia'
+        : `Historico de ${selectedTechnician?.name || 'tecnico selecionado'}`
 
     document.getElementById('history-helper').textContent =
       mode === 'general'
-        ? 'Consulte relatórios e movimentações em modo somente leitura, com visão consolidada da equipe.'
-        : 'Consulte o histórico do técnico filtrado, sem qualquer permissão de edição.'
+        ? 'Consulte relatorios e movimentacoes em modo somente leitura, com visao consolidada da equipe.'
+        : 'Consulte o historico do tecnico filtrado, sem qualquer permissao de edicao.'
 
     if (!visibleOrders.length) {
       tbody.innerHTML = `
@@ -436,11 +423,34 @@
             <td class="mono">${formatDateTime(order.date, order.startTime)}</td>
             <td class="mono">${formatDateTime(order.date, order.endTime)}</td>
             <td class="mono">${formatHours(order.executedHours)}</td>
-            <td>${order.observation || 'Sem relatório complementar.'}</td>
+            <td>
+              <button
+                type="button"
+                class="report-trigger"
+                data-order-id="${order.orderNumber}"
+                aria-label="Abrir relatorio da OS ${order.orderNumber}"
+              >
+                +
+              </button>
+            </td>
           </tr>
         `
       })
       .join('')
+
+    Array.from(tbody.querySelectorAll('.report-trigger')).forEach((button) => {
+      if (button.dataset.bound) {
+        return
+      }
+      button.dataset.bound = 'true'
+      button.addEventListener('click', () => {
+        const order = visibleOrders.find((item) => item.orderNumber === button.dataset.orderId)
+        const technician = getTechnicianById(order?.technicianId)
+        if (order) {
+          openReportModal(order, technician?.name || order.technicianId)
+        }
+      })
+    })
   }
 
   function render() {
