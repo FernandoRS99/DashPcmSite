@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-04T02:13:03.016Z",
+  "generatedAt": "2026-04-04T02:23:03.050Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -416,6 +416,36 @@ window.VIEWER_DEMO_DATA = {
           "endTime": "05:30",
           "executedHours": 1,
           "activity": "Realizado alinhamento da cortina de luz do elevador",
+          "observation": ""
+        },
+        {
+          "id": 47,
+          "orderNumber": "10658731",
+          "orderType": "Corretiva",
+          "sector": "MAKE",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
+          "tag": "BEX01600",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-03",
+          "startTime": "18:00",
+          "endTime": "19:36",
+          "executedHours": 1.6,
+          "activity": "PREVENTIVA",
+          "observation": ""
+        },
+        {
+          "id": 48,
+          "orderNumber": "10658732",
+          "orderType": "Preventiva",
+          "sector": "MAKE",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
+          "tag": "BEX01600",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-03",
+          "startTime": "19:36",
+          "endTime": "21:12",
+          "executedHours": 1.6,
+          "activity": "PREVENTIVA",
           "observation": ""
         }
       ]
