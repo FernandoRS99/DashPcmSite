@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-04T06:23:02.632Z",
+  "generatedAt": "2026-04-04T06:33:02.606Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -552,6 +552,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1.6,
           "activity": "PREVENTIVA",
           "observation": "OBS:BEX01637"
+        },
+        {
+          "id": 60,
+          "orderNumber": "10660853",
+          "orderType": "Preventiva",
+          "sector": "ETE",
+          "equipment": "COMPRESSOR SOPRADOR 3",
+          "tag": "COM01607",
+          "technicianId": "UTLME008",
+          "date": "2026-04-03",
+          "startTime": "18:00",
+          "endTime": "00:00",
+          "executedHours": 6,
+          "activity": "Bloqueio de energia para manutencao preventiva",
+          "observation": "Feito bloqueio eletrico para mecanico fazer preventivas nos sopradores 3 e 4."
         },
         {
           "id": 48,
