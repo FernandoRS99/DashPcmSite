@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-04T11:13:01.826Z",
+  "generatedAt": "2026-04-04T14:33:02.532Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
