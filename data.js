@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-04T08:43:02.675Z",
+  "generatedAt": "2026-04-04T08:53:02.678Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -223,8 +223,8 @@ window.VIEWER_DEMO_DATA = {
           "orderNumber": "24033101",
           "orderType": "Corretiva",
           "sector": "HIDRO",
-          "equipment": "Elevador Separacao",
-          "tag": "ELE1010",
+          "equipment": "ELEVADOR SEPARACAO",
+          "tag": "ELE01010",
           "technicianId": "UTLME008",
           "date": "2026-03-24",
           "startTime": "07:30",
@@ -537,6 +537,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1,
           "activity": "Realizado alinhamento da cortina de luz do elevador",
           "observation": ""
+        },
+        {
+          "id": 68,
+          "orderNumber": "10660814",
+          "orderType": "Corretiva",
+          "sector": "HIDRO",
+          "equipment": "ELEVADOR DO HIDRO",
+          "tag": "ELE01012",
+          "technicianId": "UTLME008",
+          "date": "2026-04-03",
+          "startTime": "04:30",
+          "endTime": "05:30",
+          "executedHours": 1,
+          "activity": "Elevador de carga travado",
+          "observation": "Realizado destravamento do elevador de carga e liberado para operacao."
         },
         {
           "id": 47,
