@@ -334,7 +334,7 @@ select {
 
 .progress-panel { grid-column: span 7; }
 .chart-panel { grid-column: span 5; }
-.mix-panel { grid-column: span 7; }
+.mix-panel { grid-column: 1 / -1; }
 .ranking-panel { grid-column: 1 / -1; }
 .history-panel { grid-column: 1 / -1; }
 
