@@ -444,7 +444,7 @@
       }
       button.dataset.bound = 'true'
       button.addEventListener('click', () => {
-        const order = visibleOrders.find((item) => item.orderNumber === button.dataset.orderId)
+        const order = visibleOrders.find((item) => String(item.orderNumber) === button.dataset.orderId)
         const technician = getTechnicianById(order?.technicianId)
         if (order) {
           openReportModal(order, technician?.name || order.technicianId)
