@@ -300,6 +300,10 @@ select {
   padding: 24px;
 }
 
+.mix-panel {
+  padding: 18px 14px 16px;
+}
+
 .metric-card,
 .mini-metric {
   display: flex;
