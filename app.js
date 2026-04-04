@@ -7,6 +7,7 @@
   const heroCopy = document.querySelector('.hero-copy')
   const heroControls = document.querySelector('.hero-controls')
   const appShell = document.querySelector('.app-shell')
+  const contentGrid = document.querySelector('.content-grid')
 
   const monthFormatter = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' })
   const shortDateFormatter = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit' })
@@ -125,6 +126,24 @@
     }
 
     if (heroCopy && !heroCopy.querySelector('.hero-summary')) {
+      const eyebrow = heroCopy.querySelector('.eyebrow')
+      const heroText = heroCopy.querySelector('.hero-text')
+      const heroBadges = heroCopy.querySelector('.hero-badges')
+      const viewerNote = document.querySelector('.viewer-note')
+
+      if (eyebrow) {
+        eyebrow.textContent = 'Painel executivo'
+      }
+      if (heroText) {
+        heroText.textContent = 'Indicadores consolidados do periodo atual para leitura rapida de manutencao.'
+      }
+      if (heroBadges) {
+        heroBadges.hidden = true
+      }
+      if (viewerNote) {
+        viewerNote.hidden = true
+      }
+
       heroCopy.insertAdjacentHTML(
         'beforeend',
         `
@@ -145,6 +164,70 @@
               <small id="hero-summary-active">0 tecnicos ativos</small>
             </article>
           </div>
+        `,
+      )
+    }
+
+    if (contentGrid && !document.getElementById('mix-panel')) {
+      const chartPanel = document.querySelector('.chart-panel')
+      chartPanel?.insertAdjacentHTML(
+        'afterend',
+        `
+          <section class="panel mix-panel" id="mix-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Mix PCM</p>
+                <h2>Preventiva x Corretiva</h2>
+              </div>
+            </div>
+
+            <div class="mix-grid">
+              <article class="mix-card mix-card-green">
+                <span>Horas preventivas</span>
+                <strong id="mix-preventive-hours">0,0 h</strong>
+                <small id="mix-preventive-hours-share">0,0% da carga</small>
+              </article>
+              <article class="mix-card mix-card-gold">
+                <span>Horas corretivas</span>
+                <strong id="mix-corrective-hours">0,0 h</strong>
+                <small id="mix-corrective-hours-share">0,0% da carga</small>
+              </article>
+              <article class="mix-card mix-card-green">
+                <span>OS preventivas</span>
+                <strong id="mix-preventive-count">0</strong>
+                <small id="mix-preventive-count-share">0,0% das ordens</small>
+              </article>
+              <article class="mix-card mix-card-gold">
+                <span>OS corretivas</span>
+                <strong id="mix-corrective-count">0</strong>
+                <small id="mix-corrective-count-share">0,0% das ordens</small>
+              </article>
+            </div>
+
+            <div class="mix-bars">
+              <div class="mix-bar-row">
+                <div class="mix-bar-copy">
+                  <span>Carga executada</span>
+                  <strong id="mix-hours-share-label">0,0% / 0,0%</strong>
+                </div>
+                <div class="mix-bar-track">
+                  <div class="mix-bar-fill mix-bar-fill-green" id="mix-hours-green"></div>
+                  <div class="mix-bar-fill mix-bar-fill-gold" id="mix-hours-gold"></div>
+                </div>
+              </div>
+
+              <div class="mix-bar-row">
+                <div class="mix-bar-copy">
+                  <span>Quantidade de OS</span>
+                  <strong id="mix-orders-share-label">0,0% / 0,0%</strong>
+                </div>
+                <div class="mix-bar-track">
+                  <div class="mix-bar-fill mix-bar-fill-green" id="mix-orders-green"></div>
+                  <div class="mix-bar-fill mix-bar-fill-gold" id="mix-orders-gold"></div>
+                </div>
+              </div>
+            </div>
+          </section>
         `,
       )
     }
@@ -245,6 +328,8 @@
     const ticketAverage = visibleOrders.length ? executedHours / visibleOrders.length : 0
     const preventiveHours = sum(visibleOrders.filter((order) => order.orderType === 'Preventiva'), 'executedHours')
     const correctiveHours = sum(visibleOrders.filter((order) => order.orderType !== 'Preventiva'), 'executedHours')
+    const preventiveCount = visibleOrders.filter((order) => order.orderType === 'Preventiva').length
+    const correctiveCount = visibleOrders.filter((order) => order.orderType !== 'Preventiva').length
     const activeTechnicians = ranking.filter((technician) => technician.executedHours > 0).length
     const selectedTechnician = getTechnicianById(selectedTechnicianId)
     const visibleTechnicians = mode === 'general' ? data.technicians.length : (selectedTechnician ? 1 : 0)
@@ -325,6 +410,41 @@
           ? `Visao geral da equipe com ${visibleOrders.length} ordens e ${formatHours(executedHours)} executadas.`
           : `Leitura de ${selectedTechnician?.name || 'tecnico selecionado'} com ${visibleOrders.length} ordens e ${formatHours(executedHours)} executadas.`
     }
+
+    const mixHoursTotal = preventiveHours + correctiveHours
+    const mixOrderTotal = preventiveCount + correctiveCount
+    const preventiveHoursShare = mixHoursTotal > 0 ? (preventiveHours / mixHoursTotal) * 100 : 0
+    const correctiveHoursShare = mixHoursTotal > 0 ? (correctiveHours / mixHoursTotal) * 100 : 0
+    const preventiveOrderShare = mixOrderTotal > 0 ? (preventiveCount / mixOrderTotal) * 100 : 0
+    const correctiveOrderShare = mixOrderTotal > 0 ? (correctiveCount / mixOrderTotal) * 100 : 0
+
+    const setText = (id, value) => {
+      const element = document.getElementById(id)
+      if (element) {
+        element.textContent = value
+      }
+    }
+    const setWidth = (id, value) => {
+      const element = document.getElementById(id)
+      if (element) {
+        element.style.width = `${value}%`
+      }
+    }
+
+    setText('mix-preventive-hours', formatHours(preventiveHours))
+    setText('mix-corrective-hours', formatHours(correctiveHours))
+    setText('mix-preventive-hours-share', `${formatPercent(preventiveHoursShare)} da carga`)
+    setText('mix-corrective-hours-share', `${formatPercent(correctiveHoursShare)} da carga`)
+    setText('mix-preventive-count', String(preventiveCount))
+    setText('mix-corrective-count', String(correctiveCount))
+    setText('mix-preventive-count-share', `${formatPercent(preventiveOrderShare)} das ordens`)
+    setText('mix-corrective-count-share', `${formatPercent(correctiveOrderShare)} das ordens`)
+    setText('mix-hours-share-label', `${formatPercent(preventiveHoursShare)} / ${formatPercent(correctiveHoursShare)}`)
+    setText('mix-orders-share-label', `${formatPercent(preventiveOrderShare)} / ${formatPercent(correctiveOrderShare)}`)
+    setWidth('mix-hours-green', preventiveHoursShare)
+    setWidth('mix-hours-gold', correctiveHoursShare)
+    setWidth('mix-orders-green', preventiveOrderShare)
+    setWidth('mix-orders-gold', correctiveOrderShare)
 
     const maxBar = Math.max(targetHours, executedHours, balance, 1)
     document.getElementById('bar-target').style.width = `${(targetHours / maxBar) * 100}%`
