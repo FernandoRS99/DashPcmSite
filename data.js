@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-04T02:33:03.065Z",
+  "generatedAt": "2026-04-04T02:43:03.144Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -402,6 +402,66 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 0.72,
           "activity": "PREVENTIVA",
           "observation": ""
+        },
+        {
+          "id": 58,
+          "orderNumber": "10658701",
+          "orderType": "Preventiva",
+          "sector": "MAKE",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
+          "tag": "BEX01600",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-02",
+          "startTime": "01:00",
+          "endTime": "02:32",
+          "executedHours": 1.53,
+          "activity": "PREVENTIVA",
+          "observation": "OBS:01604                             2223EE2"
+        },
+        {
+          "id": 55,
+          "orderNumber": "10658730",
+          "orderType": "Preventiva",
+          "sector": "MAKE",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
+          "tag": "BEX01600",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-02",
+          "startTime": "02:32",
+          "endTime": "04:04",
+          "executedHours": 1.53,
+          "activity": "PREVENTIVA",
+          "observation": "OBS:BEX01636"
+        },
+        {
+          "id": 56,
+          "orderNumber": "10658729",
+          "orderType": "Preventiva",
+          "sector": "MAKE",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
+          "tag": "BEX01600",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-02",
+          "startTime": "04:05",
+          "endTime": "05:13",
+          "executedHours": 1.13,
+          "activity": "PREVENTIVA",
+          "observation": "OBS:BEX01635"
+        },
+        {
+          "id": 57,
+          "orderNumber": "10658728",
+          "orderType": "Preventiva",
+          "sector": "MAKE",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
+          "tag": "BEX01600",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-02",
+          "startTime": "05:13",
+          "endTime": "05:51",
+          "executedHours": 0.63,
+          "activity": "PREVENTIVA",
+          "observation": "OBS:BEX01634"
         },
         {
           "id": 42,
