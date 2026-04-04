@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-04T08:03:02.657Z",
+  "generatedAt": "2026-04-04T08:13:02.692Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -625,8 +625,8 @@ window.VIEWER_DEMO_DATA = {
           "startTime": "01:00",
           "endTime": "04:00",
           "executedHours": 3,
-          "activity": "Troca de valvula do cavalete.",
-          "observation": "Efetuada troca de valvula, a mesma estava danificada devido ao fuso estar espanado."
+          "activity": "Troca de válvula do cavalete.",
+          "observation": "Efetuada troca de válvula, a mesma estava danificada devido ao fuso estar espanado, ok."
         }
       ]
     }
