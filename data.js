@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-04T02:43:03.144Z",
+  "generatedAt": "2026-04-04T02:53:03.084Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -296,7 +296,7 @@ window.VIEWER_DEMO_DATA = {
           "endTime": "19:34",
           "executedHours": 1.57,
           "activity": "PREVENTIVA",
-          "observation": ""
+          "observation": "OBS:BEX01600"
         },
         {
           "id": 39,
@@ -341,7 +341,7 @@ window.VIEWER_DEMO_DATA = {
           "endTime": "21:08",
           "executedHours": 1.57,
           "activity": "PREVENTIVA",
-          "observation": ""
+          "observation": "OBS:BEX01601"
         },
         {
           "id": 38,
@@ -386,7 +386,7 @@ window.VIEWER_DEMO_DATA = {
           "endTime": "23:10",
           "executedHours": 1.6,
           "activity": "PREVENTIVA",
-          "observation": ""
+          "observation": "OBS:BEX01602"
         },
         {
           "id": 54,
@@ -401,7 +401,7 @@ window.VIEWER_DEMO_DATA = {
           "endTime": "23:53",
           "executedHours": 0.72,
           "activity": "PREVENTIVA",
-          "observation": ""
+          "observation": "OBS:BEX01603"
         },
         {
           "id": 58,
@@ -416,7 +416,7 @@ window.VIEWER_DEMO_DATA = {
           "endTime": "02:32",
           "executedHours": 1.53,
           "activity": "PREVENTIVA",
-          "observation": "OBS:01604                             2223EE2"
+          "observation": "OBS:BEX01604"
         },
         {
           "id": 55,
@@ -551,7 +551,7 @@ window.VIEWER_DEMO_DATA = {
           "endTime": "19:36",
           "executedHours": 1.6,
           "activity": "PREVENTIVA",
-          "observation": ""
+          "observation": "OBS:BEX01637"
         },
         {
           "id": 48,
@@ -566,7 +566,7 @@ window.VIEWER_DEMO_DATA = {
           "endTime": "21:12",
           "executedHours": 1.6,
           "activity": "PREVENTIVA",
-          "observation": ""
+          "observation": "OBS:BEX01638"
         },
         {
           "id": 49,
@@ -581,7 +581,7 @@ window.VIEWER_DEMO_DATA = {
           "endTime": "22:14",
           "executedHours": 1.03,
           "activity": "PREVENTIVA",
-          "observation": ""
+          "observation": "OBS:BEX01639"
         },
         {
           "id": 50,
@@ -596,7 +596,7 @@ window.VIEWER_DEMO_DATA = {
           "endTime": "23:19",
           "executedHours": 1.08,
           "activity": "PREVENTIVA",
-          "observation": ""
+          "observation": "OBS:BEX01640"
         }
       ]
     }
