@@ -4,6 +4,8 @@
   const technicianSelect = document.getElementById('technician-select')
   const modeButtons = Array.from(document.querySelectorAll('.segment'))
   const technicianField = document.getElementById('technician-filter-field')
+  const heroCopy = document.querySelector('.hero-copy')
+  const heroControls = document.querySelector('.hero-controls')
 
   const monthFormatter = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' })
   const shortDateFormatter = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit' })
@@ -79,6 +81,54 @@
     return orders
   }
 
+  function ensurePublicChrome() {
+    if (heroCopy && !heroCopy.querySelector('.hero-summary')) {
+      heroCopy.insertAdjacentHTML(
+        'beforeend',
+        `
+          <div class="hero-summary">
+            <article class="hero-summary-card">
+              <span>Competencia</span>
+              <strong id="hero-summary-month">-</strong>
+              <small id="hero-summary-mode">Visao consolidada da equipe</small>
+            </article>
+            <article class="hero-summary-card">
+              <span>Ordens visiveis</span>
+              <strong id="hero-summary-orders">0</strong>
+              <small id="hero-summary-hours">0,0 h executadas</small>
+            </article>
+            <article class="hero-summary-card">
+              <span>Tecnicos no painel</span>
+              <strong id="hero-summary-techs">0</strong>
+              <small id="hero-summary-active">0 tecnicos ativos</small>
+            </article>
+          </div>
+        `,
+      )
+    }
+
+    if (heroControls && !document.getElementById('print-pdf-button')) {
+      const heading = heroControls.querySelector('.hero-panel-heading')
+      heading?.insertAdjacentHTML(
+        'afterend',
+        `
+          <div class="hero-actions">
+            <button type="button" class="print-button" id="print-pdf-button">Imprimir PDF</button>
+            <span class="print-helper">Exporta os indicadores e o historico atual sem acoes de edicao.</span>
+          </div>
+        `,
+      )
+    }
+
+    const printButton = document.getElementById('print-pdf-button')
+    if (printButton && !printButton.dataset.bound) {
+      printButton.dataset.bound = 'true'
+      printButton.addEventListener('click', () => {
+        window.print()
+      })
+    }
+  }
+
   function renderSelects() {
     monthSelect.innerHTML = monthKeys
       .map((monthKey) => `<option value="${monthKey}">${monthFormatter.format(new Date(`${monthKey}-01T00:00:00`))}</option>`)
@@ -105,6 +155,10 @@
     const correctiveHours = sum(visibleOrders.filter((order) => order.orderType !== 'Preventiva'), 'executedHours')
     const activeTechnicians = ranking.filter((technician) => technician.executedHours > 0).length
     const selectedTechnician = getTechnicianById(selectedTechnicianId)
+    const visibleTechnicians =
+      mode === 'general'
+        ? data.technicians.length
+        : (selectedTechnician ? 1 : 0)
 
     document.getElementById('selected-month-label').textContent = monthFormatter.format(
       new Date(`${selectedMonth}-01T00:00:00`),
@@ -137,6 +191,43 @@
     document.getElementById('mini-techs').textContent = String(mode === 'general' ? activeTechnicians : 1)
     document.getElementById('mini-preventive').textContent = formatHours(preventiveHours)
     document.getElementById('mini-corrective').textContent = formatHours(correctiveHours)
+
+    const heroSummaryMonth = document.getElementById('hero-summary-month')
+    const heroSummaryMode = document.getElementById('hero-summary-mode')
+    const heroSummaryOrders = document.getElementById('hero-summary-orders')
+    const heroSummaryHours = document.getElementById('hero-summary-hours')
+    const heroSummaryTechs = document.getElementById('hero-summary-techs')
+    const heroSummaryActive = document.getElementById('hero-summary-active')
+
+    if (heroSummaryMonth) {
+      heroSummaryMonth.textContent = monthFormatter.format(new Date(`${selectedMonth}-01T00:00:00`))
+    }
+
+    if (heroSummaryMode) {
+      heroSummaryMode.textContent =
+        mode === 'general'
+          ? 'Visao consolidada da equipe'
+          : `Recorte de ${selectedTechnician?.name || 'tecnico selecionado'}`
+    }
+
+    if (heroSummaryOrders) {
+      heroSummaryOrders.textContent = String(visibleOrders.length)
+    }
+
+    if (heroSummaryHours) {
+      heroSummaryHours.textContent = `${formatHours(executedHours)} executadas`
+    }
+
+    if (heroSummaryTechs) {
+      heroSummaryTechs.textContent = String(visibleTechnicians)
+    }
+
+    if (heroSummaryActive) {
+      heroSummaryActive.textContent =
+        mode === 'general'
+          ? `${activeTechnicians} tecnicos ativos`
+          : `${selectedTechnician?.id || 'sem tecnico'}`
+    }
 
     const maxBar = Math.max(targetHours, executedHours, balance, 1)
     document.getElementById('bar-target').style.width = `${(targetHours / maxBar) * 100}%`
@@ -274,6 +365,7 @@
     })
   })
 
+  ensurePublicChrome()
   renderSelects()
   render()
 })()
