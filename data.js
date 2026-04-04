@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-04T02:23:03.050Z",
+  "generatedAt": "2026-04-04T02:33:03.065Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -284,6 +284,21 @@ window.VIEWER_DEMO_DATA = {
       "monthlyTarget": 142.5,
       "orders": [
         {
+          "id": 52,
+          "orderNumber": "10658697",
+          "orderType": "Preventiva",
+          "sector": "MAKE",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
+          "tag": "BEX01600",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-01",
+          "startTime": "18:00",
+          "endTime": "19:34",
+          "executedHours": 1.57,
+          "activity": "PREVENTIVA",
+          "observation": ""
+        },
+        {
           "id": 39,
           "orderNumber": "10660482",
           "orderType": "Corretiva",
@@ -314,6 +329,21 @@ window.VIEWER_DEMO_DATA = {
           "observation": "Auxílio na correção do equipamento que não está funcionando."
         },
         {
+          "id": 51,
+          "orderNumber": "10658698",
+          "orderType": "Preventiva",
+          "sector": "MAKE",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
+          "tag": "BEX01600",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-01",
+          "startTime": "19:34",
+          "endTime": "21:08",
+          "executedHours": 1.57,
+          "activity": "PREVENTIVA",
+          "observation": ""
+        },
+        {
           "id": 38,
           "orderNumber": "10660505",
           "orderType": "Corretiva",
@@ -342,6 +372,36 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 9,
           "activity": "Preventiva de bombas nas cisternas scorpion,1,2,3,4 e 5",
           "observation": "Realizado verificação do equipamento e notificação de anormalidades"
+        },
+        {
+          "id": 53,
+          "orderNumber": "10658699",
+          "orderType": "Preventiva",
+          "sector": "MAKE",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
+          "tag": "BEX01600",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-01",
+          "startTime": "21:34",
+          "endTime": "23:10",
+          "executedHours": 1.6,
+          "activity": "PREVENTIVA",
+          "observation": ""
+        },
+        {
+          "id": 54,
+          "orderNumber": "10658700",
+          "orderType": "Preventiva",
+          "sector": "MAKE",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
+          "tag": "BEX01600",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-01",
+          "startTime": "23:10",
+          "endTime": "23:53",
+          "executedHours": 0.72,
+          "activity": "PREVENTIVA",
+          "observation": ""
         },
         {
           "id": 42,
@@ -421,7 +481,7 @@ window.VIEWER_DEMO_DATA = {
         {
           "id": 47,
           "orderNumber": "10658731",
-          "orderType": "Corretiva",
+          "orderType": "Preventiva",
           "sector": "MAKE",
           "equipment": "BRACO EXTRATOR NEDERMAN",
           "tag": "BEX01600",
@@ -445,6 +505,36 @@ window.VIEWER_DEMO_DATA = {
           "startTime": "19:36",
           "endTime": "21:12",
           "executedHours": 1.6,
+          "activity": "PREVENTIVA",
+          "observation": ""
+        },
+        {
+          "id": 49,
+          "orderNumber": "10658733",
+          "orderType": "Preventiva",
+          "sector": "MAKE",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
+          "tag": "BEX01600",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-03",
+          "startTime": "21:12",
+          "endTime": "22:14",
+          "executedHours": 1.03,
+          "activity": "PREVENTIVA",
+          "observation": ""
+        },
+        {
+          "id": 50,
+          "orderNumber": "10658734",
+          "orderType": "Preventiva",
+          "sector": "MAKE",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
+          "tag": "BEX01600",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-03",
+          "startTime": "22:14",
+          "endTime": "23:19",
+          "executedHours": 1.08,
           "activity": "PREVENTIVA",
           "observation": ""
         }
