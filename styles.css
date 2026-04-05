@@ -1071,6 +1071,12 @@ select {
     margin: 10mm;
   }
 
+  html,
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
   body {
     min-height: auto;
     background: #fff;
@@ -1114,9 +1120,25 @@ select {
   .panel,
   .metric-card,
   .mini-metric {
-    background: #fff;
+    background: #f7f2e9;
     box-shadow: none;
     backdrop-filter: none;
+    border: 1px solid rgba(75, 64, 44, 0.18);
+  }
+
+  .metric-card {
+    background: linear-gradient(180deg, #fff8ec 0%, #f3ead9 100%);
+  }
+
+  .mini-metric {
+    background: linear-gradient(180deg, #fffaf1 0%, #efe5d3 100%);
+  }
+
+  .progress-panel,
+  .chart-panel,
+  .mix-panel,
+  .ranking-panel {
+    background: linear-gradient(180deg, #fff9ee 0%, #f2e8d7 100%);
   }
 
   .hero-copy,
@@ -1173,6 +1195,13 @@ select {
     margin-bottom: 8px;
   }
 
+  .panel-heading h2,
+  .metric-value,
+  .mix-card strong,
+  .mini-metric strong {
+    color: #1b2a22;
+  }
+
   .mini-metrics {
     gap: 8px;
     margin-top: 14px;
@@ -1202,6 +1231,8 @@ select {
   .mix-card {
     padding: 10px 12px;
     border-radius: 12px;
+    background: linear-gradient(180deg, #fffdf7 0%, #f0e8d9 100%);
+    border: 1px solid rgba(75, 64, 44, 0.16);
   }
 
   .mix-card strong {
@@ -1225,6 +1256,23 @@ select {
 
   .mix-bar-track {
     height: 12px;
+    background: rgba(97, 85, 56, 0.16);
+    border: 1px solid rgba(75, 64, 44, 0.08);
+  }
+
+  .daily-bar-rail,
+  .ranking-track,
+  .progress-track {
+    background: rgba(97, 85, 56, 0.16);
+    border: 1px solid rgba(75, 64, 44, 0.08);
+  }
+
+  .mix-card-green {
+    background: linear-gradient(180deg, #f4fbf6 0%, #e3f0e6 100%);
+  }
+
+  .mix-card-gold {
+    background: linear-gradient(180deg, #fff9ee 0%, #f6ebc9 100%);
   }
 
   .table-wrap,
