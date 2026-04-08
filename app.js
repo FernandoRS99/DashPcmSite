@@ -217,6 +217,10 @@
             </div>
 
             <div class="mix-bars">
+              <div class="mix-legend" aria-label="Legenda do mix de manutencao">
+                <span class="mix-legend-item mix-legend-item-green">Preventiva</span>
+                <span class="mix-legend-item mix-legend-item-blue">Corretiva</span>
+              </div>
               <div class="mix-bar-row">
                 <div class="mix-bar-copy">
                   <span>Carga executada</span>
