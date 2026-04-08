@@ -176,6 +176,49 @@ body::before {
   line-height: 1.35;
 }
 
+.theme-switcher {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.theme-switcher-label {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.theme-segmented {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.theme-segment {
+  min-height: 48px;
+  border-radius: 16px;
+  border: 1px solid rgba(49, 64, 56, 0.18);
+  background: var(--panel-strong);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.theme-segment:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(28, 58, 44, 0.08);
+}
+
+.theme-segment.is-active {
+  background: linear-gradient(135deg, #ffd364 0%, #dfa11a 100%);
+  border-color: rgba(151, 104, 0, 0.24);
+  color: #2a2413;
+}
+
 .hero-actions {
   display: grid;
   gap: 8px;
@@ -730,6 +773,149 @@ select {
   color: var(--muted);
 }
 
+body[data-theme='matrix'] {
+  color: #d9f7df;
+  background:
+    radial-gradient(circle at top left, rgba(59, 255, 126, 0.12), transparent 28%),
+    linear-gradient(180deg, #06140d 0%, #0b1f16 100%);
+}
+
+body[data-theme='matrix']::before {
+  background-image:
+    linear-gradient(rgba(74, 255, 151, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 255, 151, 0.08) 1px, transparent 1px);
+  opacity: 0.32;
+}
+
+body[data-theme='matrix'] .hero-copy,
+body[data-theme='matrix'] .panel {
+  border-color: rgba(85, 255, 150, 0.14);
+  background: rgba(9, 23, 17, 0.88);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+body[data-theme='matrix'] .eyebrow,
+body[data-theme='matrix'] .metric-label,
+body[data-theme='matrix'] .theme-switcher-label,
+body[data-theme='matrix'] .history-helper,
+body[data-theme='matrix'] .hero-summary-card span,
+body[data-theme='matrix'] .hero-summary-card small,
+body[data-theme='matrix'] .metric-helper,
+body[data-theme='matrix'] .mini-metric span,
+body[data-theme='matrix'] .mix-card span,
+body[data-theme='matrix'] .mix-card small,
+body[data-theme='matrix'] .daily-bar span,
+body[data-theme='matrix'] .ranking-label span,
+body[data-theme='matrix'] .print-helper,
+body[data-theme='matrix'] .viewer-note p {
+  color: #8ccfa0;
+}
+
+body[data-theme='matrix'] .hero h1,
+body[data-theme='matrix'] .panel-heading h2,
+body[data-theme='matrix'] .metric-value,
+body[data-theme='matrix'] .progress-copy,
+body[data-theme='matrix'] .mini-metric strong,
+body[data-theme='matrix'] .mix-card strong,
+body[data-theme='matrix'] .ranking-label strong,
+body[data-theme='matrix'] .ranking-value,
+body[data-theme='matrix'] .hero-panel-heading strong,
+body[data-theme='matrix'] .hero-summary-card strong,
+body[data-theme='matrix'] .history-table td,
+body[data-theme='matrix'] .report-modal-body p,
+body[data-theme='matrix'] .report-modal-header h2,
+body[data-theme='matrix'] .report-meta span {
+  color: #dfffe5;
+}
+
+body[data-theme='matrix'] .hero-text,
+body[data-theme='matrix'] .report-modal-close,
+body[data-theme='matrix'] .report-trigger,
+body[data-theme='matrix'] .field span {
+  color: #bdecc8;
+}
+
+body[data-theme='matrix'] .hero-badge,
+body[data-theme='matrix'] .ticket-pill,
+body[data-theme='matrix'] .type-badge,
+body[data-theme='matrix'] .hero-summary-card,
+body[data-theme='matrix'] .mini-metric,
+body[data-theme='matrix'] .mix-card,
+body[data-theme='matrix'] .table-wrap,
+body[data-theme='matrix'] .report-trigger,
+body[data-theme='matrix'] .report-modal-close,
+body[data-theme='matrix'] .report-meta span {
+  border-color: rgba(85, 255, 150, 0.12);
+  background: rgba(15, 32, 22, 0.92);
+}
+
+body[data-theme='matrix'] select,
+body[data-theme='matrix'] .segment,
+body[data-theme='matrix'] .theme-segment {
+  border-color: rgba(85, 255, 150, 0.16);
+  background: rgba(13, 28, 20, 0.94);
+  color: #dcffe4;
+}
+
+body[data-theme='matrix'] .segment.is-active,
+body[data-theme='matrix'] .theme-segment.is-active {
+  background: linear-gradient(135deg, #1c8c54 0%, #55f58a 100%);
+  border-color: rgba(98, 255, 149, 0.28);
+  color: #04110a;
+}
+
+body[data-theme='matrix'] .print-button {
+  border-color: rgba(92, 255, 146, 0.16);
+  background: linear-gradient(135deg, #0d2b1a 0%, #164729 100%);
+  color: #dbffe5;
+  box-shadow: 0 14px 28px rgba(5, 16, 10, 0.28);
+}
+
+body[data-theme='matrix'] .progress-track,
+body[data-theme='matrix'] .ranking-track,
+body[data-theme='matrix'] .mix-bar-track,
+body[data-theme='matrix'] .daily-bar-rail {
+  background: rgba(221, 255, 228, 0.08);
+}
+
+body[data-theme='matrix'] .daily-bar-fill {
+  background: linear-gradient(180deg, #55f58a 0%, #0f3a22 100%);
+  box-shadow: 0 12px 20px rgba(15, 58, 34, 0.28);
+}
+
+body[data-theme='matrix'] .ranking-track span {
+  background: linear-gradient(90deg, #35d06f 0%, #a4ff6f 100%);
+}
+
+body[data-theme='matrix'] .mix-bar-fill-green {
+  background: linear-gradient(90deg, #34c56a 0%, #8ff7a6 100%);
+}
+
+body[data-theme='matrix'] .mix-bar-fill-gold {
+  background: linear-gradient(90deg, #9cd84c 0%, #dcff7d 100%);
+}
+
+body[data-theme='matrix'] .viewer-note {
+  background: linear-gradient(180deg, rgba(15, 47, 27, 0.96), rgba(8, 28, 16, 0.96));
+  border: 1px solid rgba(92, 255, 146, 0.12);
+}
+
+body[data-theme='matrix'] .history-table th {
+  background: rgba(12, 25, 18, 0.98);
+  color: #9be3ad;
+  border-bottom-color: rgba(85, 255, 150, 0.14);
+}
+
+body[data-theme='matrix'] .history-table td {
+  border-bottom-color: rgba(85, 255, 150, 0.08);
+}
+
+body[data-theme='matrix'] .report-modal {
+  border-color: rgba(85, 255, 150, 0.16);
+  background: rgba(7, 19, 13, 0.98);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+}
+
 @media (max-width: 1180px) {
   .hero,
   .metrics-grid,
@@ -862,6 +1048,10 @@ select {
 
   .hero-actions {
     margin-top: 16px;
+  }
+
+  .theme-segmented {
+    grid-template-columns: 1fr;
   }
 
   .print-button {
@@ -1166,6 +1356,7 @@ select {
   }
 
   .hero-actions,
+  .theme-switcher,
   .print-button,
   .print-helper {
     display: none !important;
@@ -1284,5 +1475,70 @@ select {
   .history-table th,
   .history-table td {
     display: none !important;
+  }
+
+  body[data-theme='matrix'] {
+    background: #07110b;
+    color: #dfffe5;
+  }
+
+  body[data-theme='matrix'] .print-report-header p,
+  body[data-theme='matrix'] .hero-text,
+  body[data-theme='matrix'] .metric-helper,
+  body[data-theme='matrix'] .history-helper,
+  body[data-theme='matrix'] .print-helper {
+    color: #a8d8b3;
+  }
+
+  body[data-theme='matrix'] .hero-copy,
+  body[data-theme='matrix'] .panel,
+  body[data-theme='matrix'] .metric-card,
+  body[data-theme='matrix'] .mini-metric {
+    background: #0d1e14;
+    border-color: rgba(99, 201, 131, 0.24);
+    color: #dcffe4;
+  }
+
+  body[data-theme='matrix'] .metric-card {
+    background: linear-gradient(180deg, #0d2316 0%, #122d1e 100%);
+  }
+
+  body[data-theme='matrix'] .mini-metric {
+    background: linear-gradient(180deg, #112619 0%, #153422 100%);
+  }
+
+  body[data-theme='matrix'] .progress-panel,
+  body[data-theme='matrix'] .chart-panel,
+  body[data-theme='matrix'] .mix-panel,
+  body[data-theme='matrix'] .ranking-panel {
+    background: linear-gradient(180deg, #0e2116 0%, #153624 100%);
+  }
+
+  body[data-theme='matrix'] .panel-heading h2,
+  body[data-theme='matrix'] .metric-value,
+  body[data-theme='matrix'] .mix-card strong,
+  body[data-theme='matrix'] .mini-metric strong {
+    color: #e1ffe8;
+  }
+
+  body[data-theme='matrix'] .mix-card {
+    background: linear-gradient(180deg, #102819 0%, #173823 100%);
+    border-color: rgba(99, 201, 131, 0.18);
+  }
+
+  body[data-theme='matrix'] .mix-card-green {
+    background: linear-gradient(180deg, #0d2717 0%, #12361f 100%);
+  }
+
+  body[data-theme='matrix'] .mix-card-gold {
+    background: linear-gradient(180deg, #182d15 0%, #27431f 100%);
+  }
+
+  body[data-theme='matrix'] .mix-bar-track,
+  body[data-theme='matrix'] .daily-bar-rail,
+  body[data-theme='matrix'] .ranking-track,
+  body[data-theme='matrix'] .progress-track {
+    background: rgba(217, 255, 226, 0.08);
+    border-color: rgba(99, 201, 131, 0.14);
   }
 }
