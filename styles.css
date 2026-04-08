@@ -879,20 +879,32 @@ body[data-theme='matrix'] .daily-bar-rail {
 }
 
 body[data-theme='matrix'] .daily-bar-fill {
-  background: linear-gradient(180deg, #55f58a 0%, #0f3a22 100%);
-  box-shadow: 0 12px 20px rgba(15, 58, 34, 0.28);
+  background: linear-gradient(180deg, #7dffd5 0%, #1a8b62 100%);
+  box-shadow: 0 12px 20px rgba(18, 92, 66, 0.32);
 }
 
 body[data-theme='matrix'] .ranking-track span {
-  background: linear-gradient(90deg, #35d06f 0%, #a4ff6f 100%);
+  background: linear-gradient(90deg, #43e38b 0%, #63d8ff 100%);
 }
 
 body[data-theme='matrix'] .mix-bar-fill-green {
-  background: linear-gradient(90deg, #34c56a 0%, #8ff7a6 100%);
+  background: linear-gradient(90deg, #39d97a 0%, #9dffbd 100%);
 }
 
 body[data-theme='matrix'] .mix-bar-fill-gold {
-  background: linear-gradient(90deg, #9cd84c 0%, #dcff7d 100%);
+  background: linear-gradient(90deg, #41cfff 0%, #7dfff4 100%);
+}
+
+body[data-theme='matrix'] .progress-track.is-target span {
+  background: linear-gradient(90deg, #43e38b 0%, #8dffbd 100%);
+}
+
+body[data-theme='matrix'] .progress-track.is-executed span {
+  background: linear-gradient(90deg, #4ce1ff 0%, #34c98b 100%);
+}
+
+body[data-theme='matrix'] .progress-track.is-balance span {
+  background: linear-gradient(90deg, #65b8ff 0%, #4ef0d1 100%);
 }
 
 body[data-theme='matrix'] .viewer-note {
@@ -1540,5 +1552,34 @@ body[data-theme='matrix'] .report-modal {
   body[data-theme='matrix'] .progress-track {
     background: rgba(217, 255, 226, 0.08);
     border-color: rgba(99, 201, 131, 0.14);
+  }
+
+  body[data-theme='matrix'] .daily-bar-fill {
+    background: linear-gradient(180deg, #8dffe0 0%, #196b48 100%);
+    box-shadow: 0 12px 20px rgba(16, 71, 49, 0.3);
+  }
+
+  body[data-theme='matrix'] .ranking-track span {
+    background: linear-gradient(90deg, #49de8e 0%, #76d6ff 100%);
+  }
+
+  body[data-theme='matrix'] .mix-bar-fill-green {
+    background: linear-gradient(90deg, #45d982 0%, #a0ffc0 100%);
+  }
+
+  body[data-theme='matrix'] .mix-bar-fill-gold {
+    background: linear-gradient(90deg, #57d0ff 0%, #86fff4 100%);
+  }
+
+  body[data-theme='matrix'] .progress-track.is-target span {
+    background: linear-gradient(90deg, #49de8e 0%, #97ffbf 100%);
+  }
+
+  body[data-theme='matrix'] .progress-track.is-executed span {
+    background: linear-gradient(90deg, #5be4ff 0%, #39ca91 100%);
+  }
+
+  body[data-theme='matrix'] .progress-track.is-balance span {
+    background: linear-gradient(90deg, #6cc3ff 0%, #58f3d5 100%);
   }
 }
