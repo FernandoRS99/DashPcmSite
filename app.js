@@ -8,6 +8,7 @@
   const heroControls = document.querySelector('.hero-controls')
   const appShell = document.querySelector('.app-shell')
   const contentGrid = document.querySelector('.content-grid')
+  const THEME_STORAGE_KEY = 'pcm_viewer_theme'
 
   const monthFormatter = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' })
   const shortDateFormatter = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit' })
@@ -20,6 +21,7 @@
   let selectedMonth = monthKeys[0]
   let selectedTechnicianId = data.technicians[0]?.id || ''
   let mode = 'general'
+  let theme = window.localStorage.getItem(THEME_STORAGE_KEY) === 'matrix' ? 'matrix' : 'industrial'
 
   function formatHours(value) {
     return `${numberFormatter.format(value || 0)} h`
@@ -88,6 +90,16 @@
       modal.hidden = true
     }
     document.body.classList.remove('modal-open')
+  }
+
+  function applyTheme(nextTheme) {
+    theme = nextTheme === 'matrix' ? 'matrix' : 'industrial'
+    document.body.dataset.theme = theme
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme)
+
+    Array.from(document.querySelectorAll('.theme-segment')).forEach((button) => {
+      button.classList.toggle('is-active', button.dataset.theme === theme)
+    })
   }
 
   function openReportModal(order, technicianName) {
@@ -237,6 +249,13 @@
       heading?.insertAdjacentHTML(
         'afterend',
         `
+          <div class="theme-switcher">
+            <span class="theme-switcher-label">Tema</span>
+            <div class="theme-segmented" role="tablist" aria-label="Tema do painel publico">
+              <button type="button" class="theme-segment is-active" data-theme="industrial">Industrial</button>
+              <button type="button" class="theme-segment" data-theme="matrix">Matrix</button>
+            </div>
+          </div>
           <div class="hero-actions">
             <button type="button" class="print-button" id="print-pdf-button">Imprimir PDF</button>
             <span class="print-helper">Exporta apenas indicadores e graficos do painel atual.</span>
@@ -275,6 +294,17 @@
         window.print()
       })
     }
+
+    Array.from(document.querySelectorAll('.theme-segment')).forEach((button) => {
+      if (button.dataset.bound) {
+        return
+      }
+
+      button.dataset.bound = 'true'
+      button.addEventListener('click', () => {
+        applyTheme(button.dataset.theme)
+      })
+    })
 
     const reportModal = document.getElementById('report-modal')
     if (reportModal && !reportModal.dataset.bound) {
@@ -606,6 +636,7 @@
   })
 
   ensurePublicChrome()
+  applyTheme(theme)
   renderSelects()
   render()
 })()
