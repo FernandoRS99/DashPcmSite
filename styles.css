@@ -910,6 +910,18 @@ body[data-theme='matrix'] .report-meta span {
   background: rgba(15, 32, 22, 0.92);
 }
 
+body[data-theme='matrix'] .type-badge.is-preventive {
+  background: rgba(20, 201, 92, 0.14);
+  border-color: rgba(91, 255, 158, 0.24);
+  color: #a8ffbf;
+}
+
+body[data-theme='matrix'] .type-badge.is-corrective {
+  background: rgba(10, 86, 255, 0.18);
+  border-color: rgba(84, 163, 255, 0.24);
+  color: #9ec9ff;
+}
+
 body[data-theme='matrix'] select,
 body[data-theme='matrix'] .segment,
 body[data-theme='matrix'] .theme-segment {
