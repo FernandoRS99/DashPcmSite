@@ -238,8 +238,27 @@
         'afterend',
         `
           <div class="hero-actions">
-            <button type="button" class="print-button" id="print-pdf-button">Imprimir PDF</button>
+            <div class="hero-actions-row">
+              <button type="button" class="print-button" id="print-pdf-button">Imprimir PDF</button>
+              <a
+                class="print-button secondary"
+                id="open-gamma-button"
+                href="https://gamma.app/docs/Indicadores-de-Manutencao-Abril-2026-6meyselg917cu7e?mode=present#card-2fwoowucwcsazm7"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Abrir apresentação
+              </a>
+            </div>
             <span class="print-helper">Exporta apenas indicadores e graficos do painel atual.</span>
+            <div class="presentation-embed">
+              <iframe
+                src="https://gamma.app/embed/6meyselg917cu7e"
+                allow="fullscreen"
+                title="Indicadores de Manutenção — Abril 2026"
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         `,
       )
