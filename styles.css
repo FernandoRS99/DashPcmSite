@@ -427,9 +427,9 @@ select {
   border-radius: inherit;
 }
 
-.progress-track.is-target span { background: linear-gradient(90deg, #ffd364, var(--target)); }
-.progress-track.is-executed span { background: linear-gradient(90deg, #78cf95, var(--executed)); }
-.progress-track.is-balance span { background: linear-gradient(90deg, #75aee0, var(--balance)); }
+.progress-track.is-target span { background: linear-gradient(90deg, #d6a63d, #f0cf7b); }
+.progress-track.is-executed span { background: linear-gradient(90deg, #2f8f97, #79d8d8); }
+.progress-track.is-balance span { background: linear-gradient(90deg, #7b5ac8, #b79cff); }
 
 .mini-metrics {
   display: grid;
@@ -969,15 +969,15 @@ body[data-theme='matrix'] .mix-bar-fill-gold {
 }
 
 body[data-theme='matrix'] .progress-track.is-target span {
-  background: linear-gradient(90deg, #0a56ff 0%, #54a3ff 100%);
+  background: linear-gradient(90deg, #d69c24 0%, #ffd773 100%);
 }
 
 body[data-theme='matrix'] .progress-track.is-executed span {
-  background: linear-gradient(90deg, #14c95c 0%, #5bff9e 100%);
+  background: linear-gradient(90deg, #00b8c7 0%, #7ef5f7 100%);
 }
 
 body[data-theme='matrix'] .progress-track.is-balance span {
-  background: linear-gradient(90deg, #146bff 0%, #63b4ff 100%);
+  background: linear-gradient(90deg, #7b57ff 0%, #b79cff 100%);
 }
 
 body[data-theme='matrix'] .viewer-note {
@@ -1677,14 +1677,14 @@ body[data-theme='matrix'] .mix-legend-item-blue::before {
 }
 
   body[data-theme='matrix'] .progress-track.is-target span {
-    background: linear-gradient(90deg, #0a56ff 0%, #54a3ff 100%);
+    background: linear-gradient(90deg, #d69c24 0%, #ffd773 100%);
   }
 
   body[data-theme='matrix'] .progress-track.is-executed span {
-    background: linear-gradient(90deg, #14c95c 0%, #5bff9e 100%);
+    background: linear-gradient(90deg, #00b8c7 0%, #7ef5f7 100%);
   }
 
   body[data-theme='matrix'] .progress-track.is-balance span {
-    background: linear-gradient(90deg, #146bff 0%, #63b4ff 100%);
+    background: linear-gradient(90deg, #7b57ff 0%, #b79cff 100%);
   }
 }
