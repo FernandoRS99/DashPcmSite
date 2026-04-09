@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-05T18:57:02.674Z",
+  "generatedAt": "2026-04-09T05:47:02.379Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -642,6 +642,51 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 3,
           "activity": "Troca de válvula do cavalete.",
           "observation": "Efetuada troca de válvula, a mesma estava danificada devido ao fuso estar espanado, ok."
+        },
+        {
+          "id": 69,
+          "orderNumber": "10650777",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "BEX01663",
+          "technicianId": "UTLME008",
+          "date": "2026-04-07",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "executedHours": 3,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: ok"
+        },
+        {
+          "id": 70,
+          "orderNumber": "10661891",
+          "orderType": "Corretiva",
+          "sector": "CREMES",
+          "equipment": "ELEVADOR 2P 02",
+          "tag": "ELE01614",
+          "technicianId": "UTLME008",
+          "date": "2026-04-07",
+          "startTime": "21:00",
+          "endTime": "00:00",
+          "executedHours": 3,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK"
+        },
+        {
+          "id": 71,
+          "orderNumber": "10661892",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "COM01606",
+          "technicianId": "UTLME008",
+          "date": "2026-04-08",
+          "startTime": "01:00",
+          "endTime": "04:00",
+          "executedHours": 3,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK"
         }
       ]
     }
