@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-10T07:07:01.920Z",
+  "generatedAt": "2026-04-10T08:17:01.921Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -884,6 +884,21 @@ window.VIEWER_DEMO_DATA = {
           "observation": "Confirmação SAP: OK"
         },
         {
+          "id": 96,
+          "orderNumber": "10661881",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "MOB01622",
+          "technicianId": "UTLME008",
+          "date": "2026-04-08",
+          "startTime": "18:00",
+          "endTime": "23:00",
+          "executedHours": 5,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: auxilio no bloq de energias"
+        },
+        {
           "id": 87,
           "orderNumber": "10658719",
           "orderType": "Preventiva",
@@ -989,6 +1004,21 @@ window.VIEWER_DEMO_DATA = {
           "observation": "Confirmação SAP: REALIZADO A INSTALAÇÃO DO SUPORTE"
         },
         {
+          "id": 97,
+          "orderNumber": "10662607",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "CIS01601",
+          "technicianId": "UTLME008",
+          "date": "2026-04-09",
+          "startTime": "01:30",
+          "endTime": "05:30",
+          "executedHours": 4,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO INSTALAÇÃO DA LUMINARIA E INFR"
+        },
+        {
           "id": 92,
           "orderNumber": "10658716",
           "orderType": "Preventiva",
@@ -1047,6 +1077,36 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1.05,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: OK"
+        },
+        {
+          "id": 98,
+          "orderNumber": "10536395",
+          "orderType": "Preventiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "PMD01632",
+          "technicianId": "UTLME008",
+          "date": "2026-04-09",
+          "startTime": "18:00",
+          "endTime": "19:00",
+          "executedHours": 1,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK"
+        },
+        {
+          "id": 99,
+          "orderNumber": "10663002",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "MOB01841",
+          "technicianId": "UTLME008",
+          "date": "2026-04-09",
+          "startTime": "21:30",
+          "endTime": "00:30",
+          "executedHours": 3,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO ATENDIMENTO DE \"BARULHO\" ANORM"
         }
       ]
     }
