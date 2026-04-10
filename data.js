@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-10T00:37:02.563Z",
+  "generatedAt": "2026-04-10T01:57:02.673Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -732,6 +732,51 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 3,
           "activity": "REESTABELECIMENTO DE EQUIPAMENTOS POS QUEDA DE ENERGIA",
           "observation": "Reestabelecimento dos equipamentos após queda de energia realizado, com normalização dos sistemas e retorno seguro da operação."
+        },
+        {
+          "id": 75,
+          "orderNumber": "10661881",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "MOB01622",
+          "technicianId": "UTLME005",
+          "date": "2026-04-08",
+          "startTime": "18:00",
+          "endTime": "23:00",
+          "executedHours": 5,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: realizado reparo valvula diafragma"
+        },
+        {
+          "id": 76,
+          "orderNumber": "10662650",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "MOB01649",
+          "technicianId": "UTLME005",
+          "date": "2026-04-08",
+          "startTime": "23:00",
+          "endTime": "00:30",
+          "executedHours": 1.5,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO A DESMONTAGEM DA TUBULAÇÃO"
+        },
+        {
+          "id": 77,
+          "orderNumber": "10662607",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "CIS01601",
+          "technicianId": "UTLME005",
+          "date": "2026-04-09",
+          "startTime": "01:30",
+          "endTime": "05:30",
+          "executedHours": 4,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO A INSTALAÇÃO DO SUPORTE"
         }
       ]
     }
