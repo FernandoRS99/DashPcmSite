@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-10T00:07:02.639Z",
+  "generatedAt": "2026-04-10T00:17:02.625Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -655,8 +655,8 @@ window.VIEWER_DEMO_DATA = {
           "startTime": "18:00",
           "endTime": "21:00",
           "executedHours": 3,
-          "activity": "IMPORTACAO SAP - PREENCHER",
-          "observation": "Confirmação SAP: ok"
+          "activity": "TROCAR BOCAL DO BRACO",
+          "observation": "Substituição do bocal do braço realizada, garantindo ajuste correto, vedação adequada e funcionamento seguro do equipamento."
         },
         {
           "id": 70,
@@ -670,8 +670,8 @@ window.VIEWER_DEMO_DATA = {
           "startTime": "21:00",
           "endTime": "00:00",
           "executedHours": 3,
-          "activity": "IMPORTACAO SAP - PREENCHER",
-          "observation": "Confirmação SAP: OK"
+          "activity": "ALINHAMENTO BARREIRA DE SEGURANCA",
+          "observation": "Alinhamento da barreira de segurança e reset do sistema realizados, eliminando falha operacional e restabelecendo o funcionamento do elevador."
         },
         {
           "id": 71,
@@ -685,8 +685,8 @@ window.VIEWER_DEMO_DATA = {
           "startTime": "01:00",
           "endTime": "04:00",
           "executedHours": 3,
-          "activity": "IMPORTACAO SAP - PREENCHER",
-          "observation": "Confirmação SAP: OK"
+          "activity": "REESTABELECIMENTO DE EQUIPAMENTOS POS QUEDA DE ENERGIA",
+          "observation": "Reestabelecimento dos equipamentos após queda de energia realizado, com normalização dos sistemas e retorno seguro da operação."
         }
       ]
     }
