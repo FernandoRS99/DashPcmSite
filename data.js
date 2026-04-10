@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-10T00:17:02.625Z",
+  "generatedAt": "2026-04-10T00:27:02.628Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -678,8 +678,8 @@ window.VIEWER_DEMO_DATA = {
           "orderNumber": "10661892",
           "orderType": "Corretiva",
           "sector": "ETE",
-          "equipment": "SOPRADOR 2",
-          "tag": "COM01606",
+          "equipment": "COMPRESSOR SOPRADOR 2",
+          "tag": "COM01607",
           "technicianId": "UTLME008",
           "date": "2026-04-08",
           "startTime": "01:00",
