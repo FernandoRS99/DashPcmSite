@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-10T08:27:01.916Z",
+  "generatedAt": "2026-04-10T08:37:01.939Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -1169,6 +1169,21 @@ window.VIEWER_DEMO_DATA = {
           "observation": "Confirmação SAP: REALIZADO ATENDIMENTO DE \"BARULHO\" ANORM"
         },
         {
+          "id": 109,
+          "orderNumber": "10663002",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "MOB01841",
+          "technicianId": "UTLME005",
+          "date": "2026-04-09",
+          "startTime": "21:30",
+          "endTime": "00:30",
+          "executedHours": 3,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO ATENDIMENTO DE \"BARULHO\" ANORM"
+        },
+        {
           "id": 104,
           "orderNumber": "10658712",
           "orderType": "Preventiva",
@@ -1242,6 +1257,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1.05,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: OK"
+        },
+        {
+          "id": 110,
+          "orderNumber": "10662583",
+          "orderType": "Corretiva",
+          "sector": "UTILIDADES 2",
+          "equipment": "CALDEIRA TENGE",
+          "tag": "CAL01602",
+          "technicianId": "UTLME005",
+          "date": "2026-04-10",
+          "startTime": "03:30",
+          "endTime": "05:00",
+          "executedHours": 1.5,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO TROCA DE VALVULA DO CAVALETE"
         }
       ]
     }
