@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-09T05:47:02.379Z",
+  "generatedAt": "2026-04-10T00:07:02.639Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -647,8 +647,8 @@ window.VIEWER_DEMO_DATA = {
           "id": 69,
           "orderNumber": "10650777",
           "orderType": "Corretiva",
-          "sector": "PENDENTE SAP",
-          "equipment": "PENDENTE SAP",
+          "sector": "CREMES",
+          "equipment": "BRACO EXTRATOR NEDERMAN",
           "tag": "BEX01663",
           "technicianId": "UTLME008",
           "date": "2026-04-07",
@@ -677,8 +677,8 @@ window.VIEWER_DEMO_DATA = {
           "id": 71,
           "orderNumber": "10661892",
           "orderType": "Corretiva",
-          "sector": "PENDENTE SAP",
-          "equipment": "PENDENTE SAP",
+          "sector": "ETE",
+          "equipment": "SOPRADOR 2",
           "tag": "COM01606",
           "technicianId": "UTLME008",
           "date": "2026-04-08",
