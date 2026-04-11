@@ -62,7 +62,7 @@ O sistema foi pensado com base em práticas de:
 Fernando Roque  
 Técnico Eletromecânico | PCM | Desenvolvimento de soluções para manutenção
 
-🔗 Portfólio: https://fernandoroque.netlify.app/
+🔗 Portfólio: https://fernandoroque.netlify.app/portfolios
 
 ---
 
