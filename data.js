@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-10T08:37:01.939Z",
+  "generatedAt": "2026-04-14T08:37:02.513Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -1272,6 +1272,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1.5,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: REALIZADO TROCA DE VALVULA DO CAVALETE"
+        },
+        {
+          "id": 112,
+          "orderNumber": "10663701",
+          "orderType": "Corretiva",
+          "sector": "UTILIDADES 1",
+          "equipment": "PAINEL COMANDO CIS 1 E 2 ALIM PW",
+          "tag": "PCM01615",
+          "technicianId": "UTLME008",
+          "date": "2026-04-13",
+          "startTime": "18:00",
+          "endTime": "05:00",
+          "executedHours": 11,
+          "activity": "INSTALACAO DE PRESSOSTATO",
+          "observation": "Realizada instalação de pressostato para controle automático da bomba de água, garantindo operação dentro dos parâmetros de pressão. Executada montagem mecânica na linha e interligação elétrica em 24Vcc, substituindo sensor anterior por pressostato mecânico. Efetuados ajustes de liga/desliga conforme processo e realizados testes com simulação de pressão, confirmando acionamento e desligamento corretos. Sistema monitorado após intervenção, operando estável e sem falhas."
         }
       ]
     }
