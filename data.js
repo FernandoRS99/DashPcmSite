@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-14T08:47:02.551Z",
+  "generatedAt": "2026-04-15T08:17:02.158Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -1317,6 +1317,36 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 11,
           "activity": "INSTALACAO DE PRESSOSTATO",
           "observation": "Realizada instalação de pressostato para controle automático da bomba de água, garantindo operação dentro dos parâmetros de pressão. Executada montagem mecânica na linha e interligação elétrica em 24Vcc, substituindo sensor anterior por pressostato mecânico. Efetuados ajustes de liga/desliga conforme processo e realizados testes com simulação de pressão, confirmando acionamento e desligamento corretos. Sistema monitorado após intervenção, operando estável e sem falhas."
+        },
+        {
+          "id": 115,
+          "orderNumber": "10663791",
+          "orderType": "Corretiva",
+          "sector": "ETE",
+          "equipment": "ESTUFA",
+          "tag": "ESF01637",
+          "technicianId": "UTLME008",
+          "date": "2026-04-14",
+          "startTime": "21:00",
+          "endTime": "22:30",
+          "executedHours": 1.5,
+          "activity": "AJUSTE ALIMENTACAO DISJUNTOR",
+          "observation": "Identificado desarme frequente no disjuntor do circuito da\nmufla da ETE durante operação conjunta. Carga total estimada\nem 5300 W (220 V), com corrente próxima de 24 A, acima da\nproteção existente de 16 A. Realizada transferência da\nalimentação para disjuntor de 25 A curva C no painel. Após\najuste, circuito testado e operando normalmente, sem novos\ndesarmes."
+        },
+        {
+          "id": 116,
+          "orderNumber": "10663792",
+          "orderType": "Corretiva",
+          "sector": "CREMES",
+          "equipment": "ELEVADOR CCME",
+          "tag": "ELE01009",
+          "technicianId": "UTLME008",
+          "date": "2026-04-15",
+          "startTime": "00:30",
+          "endTime": "05:00",
+          "executedHours": 4.5,
+          "activity": "MESA DE ELEVACAO TRAVADA",
+          "observation": "Realizado atendimento no equipamento, identificado travamento com rolos stretch no elevador, ocasionando parada do sistema.\nDurante a intervenção, foram removidos dois rolos para liberação do conjunto e restabelecimento do funcionamento do equipamento.\nApós a correção, o sistema foi testado e voltou a operar normalmente, sem anomalias no momento da liberação."
         }
       ]
     }
