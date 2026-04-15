@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-15T08:17:02.158Z",
+  "generatedAt": "2026-04-15T08:27:04.711Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -1319,6 +1319,36 @@ window.VIEWER_DEMO_DATA = {
           "observation": "Realizada instalação de pressostato para controle automático da bomba de água, garantindo operação dentro dos parâmetros de pressão. Executada montagem mecânica na linha e interligação elétrica em 24Vcc, substituindo sensor anterior por pressostato mecânico. Efetuados ajustes de liga/desliga conforme processo e realizados testes com simulação de pressão, confirmando acionamento e desligamento corretos. Sistema monitorado após intervenção, operando estável e sem falhas."
         },
         {
+          "id": 117,
+          "orderNumber": "10661451",
+          "orderType": "Preventiva",
+          "sector": "ETE",
+          "equipment": "COMPRESSOR SOPRADOR 2",
+          "tag": "COM01607",
+          "technicianId": "UTLME005",
+          "date": "2026-04-14",
+          "startTime": "18:00",
+          "endTime": "20:00",
+          "executedHours": 2,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: VERIFICADO E TROCADO OLEO"
+        },
+        {
+          "id": 118,
+          "orderNumber": "10663790",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "BOM01775",
+          "technicianId": "UTLME005",
+          "date": "2026-04-14",
+          "startTime": "20:00",
+          "endTime": "22:00",
+          "executedHours": 2,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: RETIRADO VAZAMENTO DE AR COMPRIMIDO"
+        },
+        {
           "id": 115,
           "orderNumber": "10663791",
           "orderType": "Corretiva",
@@ -1332,6 +1362,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1.5,
           "activity": "AJUSTE ALIMENTACAO DISJUNTOR",
           "observation": "Identificado desarme frequente no disjuntor do circuito da\nmufla da ETE durante operação conjunta. Carga total estimada\nem 5300 W (220 V), com corrente próxima de 24 A, acima da\nproteção existente de 16 A. Realizada transferência da\nalimentação para disjuntor de 25 A curva C no painel. Após\najuste, circuito testado e operando normalmente, sem novos\ndesarmes."
+        },
+        {
+          "id": 119,
+          "orderNumber": "10660872",
+          "orderType": "Preventiva",
+          "sector": "ETE",
+          "equipment": "COMPRESSOR SOPRADOR 2",
+          "tag": "COM01607",
+          "technicianId": "UTLME005",
+          "date": "2026-04-14",
+          "startTime": "22:00",
+          "endTime": "04:00",
+          "executedHours": 6,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK | REAIZADO CARGA NA MOLA DA VALVULA | REALIZADO TROCA DO OLEO"
         },
         {
           "id": 116,
