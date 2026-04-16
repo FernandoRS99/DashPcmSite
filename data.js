@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-15T17:47:03.887Z",
+  "generatedAt": "2026-04-16T00:17:03.728Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -1334,6 +1334,51 @@ window.VIEWER_DEMO_DATA = {
           "observation": "Confirmação SAP: VERIFICADO E TROCADO OLEO"
         },
         {
+          "id": 122,
+          "orderNumber": "10660859",
+          "orderType": "Preventiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "EXA01601",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-14",
+          "startTime": "18:00",
+          "endTime": "19:00",
+          "executedHours": 1,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK | AGUARDANDO FILTROS PARA TROCA"
+        },
+        {
+          "id": 123,
+          "orderNumber": "10661200",
+          "orderType": "Preventiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "EXA01602",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-14",
+          "startTime": "19:00",
+          "endTime": "19:50",
+          "executedHours": 0.83,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK | AGUARDANDO FILTRO PARA TROCA"
+        },
+        {
+          "id": 124,
+          "orderNumber": "10661201",
+          "orderType": "Preventiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "EXA01603",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-14",
+          "startTime": "19:50",
+          "endTime": "20:57",
+          "executedHours": 1.12,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK"
+        },
+        {
           "id": 118,
           "orderNumber": "10663790",
           "orderType": "Corretiva",
@@ -1392,6 +1437,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 6,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: OK | REAIZADO CARGA NA MOLA DA VALVULA | REALIZADO TROCA DO OLEO"
+        },
+        {
+          "id": 125,
+          "orderNumber": "10661968",
+          "orderType": "Preventiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "FAN01613",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-14",
+          "startTime": "22:30",
+          "endTime": "00:27",
+          "executedHours": 1.95,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK"
         },
         {
           "id": 116,
