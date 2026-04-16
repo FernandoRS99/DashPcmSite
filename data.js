@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-16T08:17:03.259Z",
+  "generatedAt": "2026-04-16T08:27:03.584Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -1514,6 +1514,21 @@ window.VIEWER_DEMO_DATA = {
           "observation": "Confirmação SAP: AUXILIO NA DRENAGEM DE CONDENSDO NA LINH"
         },
         {
+          "id": 134,
+          "orderNumber": "10664685",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "REA01412",
+          "technicianId": "UTLME005",
+          "date": "2026-04-15",
+          "startTime": "18:00",
+          "endTime": "20:00",
+          "executedHours": 2,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: AUXILIO NA DRENAGEM DE CONDENSDO NA LINH"
+        },
+        {
           "id": 128,
           "orderNumber": "10654510",
           "orderType": "Preventiva",
@@ -1527,6 +1542,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1.25,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: OK | temperatura ok | 389 V - 397A disjuntor geral | troca de filtros ok"
+        },
+        {
+          "id": 136,
+          "orderNumber": "10664686",
+          "orderType": "Corretiva",
+          "sector": "ETE",
+          "equipment": "COMPRESSOR SOPRADOR 2",
+          "tag": "COM01607",
+          "technicianId": "UTLME005",
+          "date": "2026-04-15",
+          "startTime": "20:00",
+          "endTime": "22:00",
+          "executedHours": 2,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO INSTALAÇÃO E REGULAGEM DA VALV"
         },
         {
           "id": 129,
@@ -1559,6 +1589,21 @@ window.VIEWER_DEMO_DATA = {
           "observation": "Confirmação SAP: OK | temperatura ok | 389 V - 397A disjuntor geral | troca de filtros ok"
         },
         {
+          "id": 137,
+          "orderNumber": "10661452",
+          "orderType": "Preventiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "COM01608",
+          "technicianId": "UTLME005",
+          "date": "2026-04-15",
+          "startTime": "22:00",
+          "endTime": "23:30",
+          "executedHours": 1.5,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO VERIFICAÇÃO E TEMPERATURA"
+        },
+        {
           "id": 131,
           "orderNumber": "10664492",
           "orderType": "Corretiva",
@@ -1572,6 +1617,36 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 2.5,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: Realizado reposicionamento e alinhamento"
+        },
+        {
+          "id": 135,
+          "orderNumber": "10664492",
+          "orderType": "Corretiva",
+          "sector": "ESCALONAMENTO",
+          "equipment": "ELEVADOR 1",
+          "tag": "ELE01616",
+          "technicianId": "UTLRE007",
+          "date": "2026-04-15",
+          "startTime": "23:00",
+          "endTime": "01:30",
+          "executedHours": 2.5,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: Realizado reposicionamento e alinhamento"
+        },
+        {
+          "id": 138,
+          "orderNumber": "10660873",
+          "orderType": "Preventiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "COM01608",
+          "technicianId": "UTLME005",
+          "date": "2026-04-16",
+          "startTime": "00:00",
+          "endTime": "04:00",
+          "executedHours": 4,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK | VALVULA RETIRADA PARA AJUSTE NA USINAGEM | RPM TRAVADO EM 2000 CORRENTE ALTA"
         },
         {
           "id": 132,
