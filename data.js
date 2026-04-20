@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-16T08:47:03.532Z",
+  "generatedAt": "2026-04-20T23:47:02.580Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -1677,6 +1677,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1.17,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: OK | temperatura | 389 V - 397A disjuntor geral | troca de filtro ok | primario 220v sec 24v ok | sem falhas"
+        },
+        {
+          "id": 139,
+          "orderNumber": "10665366",
+          "orderType": "Corretiva",
+          "sector": "ETE",
+          "equipment": "COMPRESSOR SOPRADOR 4",
+          "tag": "COM01608",
+          "technicianId": "UTLME008",
+          "date": "2026-04-19",
+          "startTime": "19:30",
+          "endTime": "05:00",
+          "executedHours": 9.5,
+          "activity": "TROCA DE ELEMENTO SOPRADOR 4",
+          "observation": "Foi realizada a troca do elemento soprador  4 devido à sua deterioração, que afetava a eficiência do sistema. O novo elemento foi instalado com sucesso, garantindo a continuidade das operações. Testes de funcionamento foram realizados, confirmando que o soprador opera dentro dos parâmetros estabelecidos."
         }
       ]
     }
