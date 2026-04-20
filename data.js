@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-20T23:47:02.580Z",
+  "generatedAt": "2026-04-20T23:57:02.613Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -1677,6 +1677,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1.17,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: OK | temperatura | 389 V - 397A disjuntor geral | troca de filtro ok | primario 220v sec 24v ok | sem falhas"
+        },
+        {
+          "id": 140,
+          "orderNumber": "10665365",
+          "orderType": "Corretiva",
+          "sector": "ETE",
+          "equipment": "MOTOBOMBA SUBMERSA 1 TANQUE PULMAO",
+          "tag": "MOB01691",
+          "technicianId": "UTLME008",
+          "date": "2026-04-19",
+          "startTime": "18:10",
+          "endTime": "19:10",
+          "executedHours": 1,
+          "activity": "RETIRADO BOMBA DO CLARIFICADO",
+          "observation": "A bomba do clarificado foi retirada para manutenção externa devido a um curto-circuito identificado."
         },
         {
           "id": 139,
