@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-21T07:57:01.984Z",
+  "generatedAt": "2026-04-21T17:17:02.049Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -1712,8 +1712,8 @@ window.VIEWER_DEMO_DATA = {
           "id": 142,
           "orderNumber": "10665365",
           "orderType": "Corretiva",
-          "sector": "PENDENTE SAP",
-          "equipment": "PENDENTE SAP",
+          "sector": "ETE",
+          "equipment": "MOTOBOMBA SUBMERSA 1 TANQUE PULMAO",
           "tag": "MOB01691",
           "technicianId": "UTLME005",
           "date": "2026-04-19",
