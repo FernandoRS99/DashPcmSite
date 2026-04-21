@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-20T23:57:02.613Z",
+  "generatedAt": "2026-04-21T07:57:01.984Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -1679,6 +1679,21 @@ window.VIEWER_DEMO_DATA = {
           "observation": "Confirmação SAP: OK | temperatura | 389 V - 397A disjuntor geral | troca de filtro ok | primario 220v sec 24v ok | sem falhas"
         },
         {
+          "id": 141,
+          "orderNumber": "10665364",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "PHM01640",
+          "technicianId": "UTLME005",
+          "date": "2026-04-19",
+          "startTime": "18:00",
+          "endTime": "18:10",
+          "executedHours": 0.17,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: ok"
+        },
+        {
           "id": 140,
           "orderNumber": "10665365",
           "orderType": "Corretiva",
@@ -1694,6 +1709,36 @@ window.VIEWER_DEMO_DATA = {
           "observation": "A bomba do clarificado foi retirada para manutenção externa devido a um curto-circuito identificado."
         },
         {
+          "id": 142,
+          "orderNumber": "10665365",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "MOB01691",
+          "technicianId": "UTLME005",
+          "date": "2026-04-19",
+          "startTime": "18:10",
+          "endTime": "19:10",
+          "executedHours": 1,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: RETIRADO BOMBA"
+        },
+        {
+          "id": 143,
+          "orderNumber": "10661450",
+          "orderType": "Preventiva",
+          "sector": "ETE",
+          "equipment": "COMPRESSOR SOPRADOR 2",
+          "tag": "COM01606",
+          "technicianId": "UTLME005",
+          "date": "2026-04-19",
+          "startTime": "19:10",
+          "endTime": "19:40",
+          "executedHours": 0.5,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK"
+        },
+        {
           "id": 139,
           "orderNumber": "10665366",
           "orderType": "Corretiva",
@@ -1707,6 +1752,66 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 9.5,
           "activity": "TROCA DE ELEMENTO SOPRADOR 4",
           "observation": "Foi realizada a troca do elemento soprador  4 devido à sua deterioração, que afetava a eficiência do sistema. O novo elemento foi instalado com sucesso, garantindo a continuidade das operações. Testes de funcionamento foram realizados, confirmando que o soprador opera dentro dos parâmetros estabelecidos."
+        },
+        {
+          "id": 144,
+          "orderNumber": "10660871",
+          "orderType": "Preventiva",
+          "sector": "ETE",
+          "equipment": "COMPRESSOR SOPRADOR 2",
+          "tag": "COM01606",
+          "technicianId": "UTLME005",
+          "date": "2026-04-19",
+          "startTime": "19:40",
+          "endTime": "21:40",
+          "executedHours": 2,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK | REALIZADO TROCA DE OLEO DO ELEMENTO | EQUIPAMENTO SEM VALVULA DE RETENÇÃO"
+        },
+        {
+          "id": 145,
+          "orderNumber": "10661448",
+          "orderType": "Preventiva",
+          "sector": "ETE",
+          "equipment": "COMPRESSOR SOPRADOR 1",
+          "tag": "COM01605",
+          "technicianId": "UTLME005",
+          "date": "2026-04-19",
+          "startTime": "21:40",
+          "endTime": "22:10",
+          "executedHours": 0.5,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK"
+        },
+        {
+          "id": 146,
+          "orderNumber": "10660870",
+          "orderType": "Preventiva",
+          "sector": "ETE",
+          "equipment": "COMPRESSOR SOPRADOR 1",
+          "tag": "COM01605",
+          "technicianId": "UTLME005",
+          "date": "2026-04-19",
+          "startTime": "22:10",
+          "endTime": "23:10",
+          "executedHours": 1,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: OK | EQUIPAMENTO SEM VALVULA DE RETENÇÃO"
+        },
+        {
+          "id": 147,
+          "orderNumber": "10665366",
+          "orderType": "Corretiva",
+          "sector": "ETE",
+          "equipment": "COMPRESSOR SOPRADOR 4",
+          "tag": "COM01608",
+          "technicianId": "UTLME005",
+          "date": "2026-04-20",
+          "startTime": "00:00",
+          "endTime": "05:00",
+          "executedHours": 5,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO TROCA DO ELEMENTO 45 PELO 35,"
         }
       ]
     }
