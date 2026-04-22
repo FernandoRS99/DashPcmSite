@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-22T08:17:02.662Z",
+  "generatedAt": "2026-04-22T08:27:02.691Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -2331,6 +2331,21 @@ window.VIEWER_DEMO_DATA = {
           "equipment": "ELEVADOR DO HIDRO",
           "tag": "ELE01012",
           "technicianId": "UTLRE007",
+          "date": "2026-04-22",
+          "startTime": "04:00",
+          "endTime": "04:55",
+          "executedHours": 0.92,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: alinhado sensor, ok"
+        },
+        {
+          "id": 183,
+          "orderNumber": "10665682",
+          "orderType": "Corretiva",
+          "sector": "HIDRO",
+          "equipment": "ELEVADOR DO HIDRO",
+          "tag": "ELE01012",
+          "technicianId": "UTLME005",
           "date": "2026-04-22",
           "startTime": "04:00",
           "endTime": "04:55",
