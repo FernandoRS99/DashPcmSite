@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-22T03:17:02.457Z",
+  "generatedAt": "2026-04-22T07:57:02.757Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -1812,6 +1812,81 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 5,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: REALIZADO TROCA DO ELEMENTO 45 PELO 35,"
+        },
+        {
+          "id": 148,
+          "orderNumber": "10665523",
+          "orderType": "Corretiva",
+          "sector": "ETE",
+          "equipment": "COMPRESSOR SOPRADOR 4",
+          "tag": "COM01608",
+          "technicianId": "UTLME005",
+          "date": "2026-04-20",
+          "startTime": "18:00",
+          "endTime": "23:00",
+          "executedHours": 5,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO AJUSTES"
+        },
+        {
+          "id": 149,
+          "orderNumber": "10665374",
+          "orderType": "Corretiva",
+          "sector": "CREMES",
+          "equipment": "ELEVADOR CCME",
+          "tag": "ELE01009",
+          "technicianId": "UTLME005",
+          "date": "2026-04-21",
+          "startTime": "01:00",
+          "endTime": "04:00",
+          "executedHours": 3,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: AJUSTADO SENSOR OK"
+        },
+        {
+          "id": 150,
+          "orderNumber": "10665522",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "CXA01613",
+          "technicianId": "UTLME005",
+          "date": "2026-04-21",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "executedHours": 3,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO A TROCA DA BOIA QUE ESTAVA DAN"
+        },
+        {
+          "id": 151,
+          "orderNumber": "10665524",
+          "orderType": "Corretiva",
+          "sector": "CREMES",
+          "equipment": "ELEVADOR 2P 02",
+          "tag": "ELE01614",
+          "technicianId": "UTLME005",
+          "date": "2026-04-21",
+          "startTime": "21:00",
+          "endTime": "23:00",
+          "executedHours": 2,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: CONFECCIONADO"
+        },
+        {
+          "id": 152,
+          "orderNumber": "10665525",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "FAN01608",
+          "technicianId": "UTLME005",
+          "date": "2026-04-21",
+          "startTime": "23:00",
+          "endTime": "02:00",
+          "executedHours": 3,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO"
         }
       ]
     }
