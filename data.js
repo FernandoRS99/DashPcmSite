@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-21T17:17:02.049Z",
+  "generatedAt": "2026-04-22T00:37:02.328Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -1682,8 +1682,8 @@ window.VIEWER_DEMO_DATA = {
           "id": 141,
           "orderNumber": "10665364",
           "orderType": "Corretiva",
-          "sector": "PENDENTE SAP",
-          "equipment": "PENDENTE SAP",
+          "sector": "ETE",
+          "equipment": "PHMETRO ENTRADA PRIMARIO",
           "tag": "PHM01640",
           "technicianId": "UTLME005",
           "date": "2026-04-19",
