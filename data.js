@@ -1,5 +1,5 @@
 window.VIEWER_DEMO_DATA = {
-  "generatedAt": "2026-04-28T08:27:01.856Z",
+  "generatedAt": "2026-04-28T08:37:01.848Z",
   "referenceName": "Renato",
   "dayHours": 9.5,
   "technicians": [
@@ -2384,6 +2384,21 @@ window.VIEWER_DEMO_DATA = {
           "observation": "Confirmação SAP: OK"
         },
         {
+          "id": 219,
+          "orderNumber": "10666651",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "MOB01750",
+          "technicianId": "UTLME005",
+          "date": "2026-04-25",
+          "startTime": "18:00",
+          "endTime": "20:00",
+          "executedHours": 2,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO 5S E REALOCAÇÃO DE MATERIAIS"
+        },
+        {
           "id": 202,
           "orderNumber": "10665853",
           "orderType": "Preventiva",
@@ -2397,6 +2412,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1.17,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: OK"
+        },
+        {
+          "id": 220,
+          "orderNumber": "10666652",
+          "orderType": "Corretiva",
+          "sector": "UTILIDADES 1",
+          "equipment": "MOTOBOMBA VERDE CIS. 1 E 2",
+          "tag": "MOB01805",
+          "technicianId": "UTLME005",
+          "date": "2026-04-25",
+          "startTime": "20:00",
+          "endTime": "00:00",
+          "executedHours": 4,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO AJUSTE DE PRESSAO"
         },
         {
           "id": 203,
@@ -2487,6 +2517,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 0.83,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: OK | 213V - 45A | temperatura | NA"
+        },
+        {
+          "id": 221,
+          "orderNumber": "10666677",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "TAN01625",
+          "technicianId": "UTLME005",
+          "date": "2026-04-26",
+          "startTime": "00:00",
+          "endTime": "03:00",
+          "executedHours": 3,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO"
         },
         {
           "id": 206,
@@ -2607,6 +2652,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 2.32,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: OK"
+        },
+        {
+          "id": 222,
+          "orderNumber": "10666677",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "TAN01625",
+          "technicianId": "UTLME005",
+          "date": "2026-04-26",
+          "startTime": "18:00",
+          "endTime": "01:00",
+          "executedHours": 7,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO ORGANIZAÇÃO"
         },
         {
           "id": 193,
@@ -2759,6 +2819,21 @@ window.VIEWER_DEMO_DATA = {
           "observation": "Confirmação SAP: REESTABELECIDO EQUIPAMENTOS"
         },
         {
+          "id": 223,
+          "orderNumber": "10667670",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "CBC01601",
+          "technicianId": "UTLME005",
+          "date": "2026-04-27",
+          "startTime": "02:30",
+          "endTime": "05:30",
+          "executedHours": 3,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REESTABELECIDO EQUIPAMENTOS"
+        },
+        {
           "id": 197,
           "orderNumber": "10647583",
           "orderType": "Preventiva",
@@ -2787,6 +2862,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1.23,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: OK"
+        },
+        {
+          "id": 224,
+          "orderNumber": "10667552",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "HID01634",
+          "technicianId": "UTLME005",
+          "date": "2026-04-27",
+          "startTime": "18:00",
+          "endTime": "00:00",
+          "executedHours": 6,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: REALIZADO REPARO"
         },
         {
           "id": 198,
@@ -2862,6 +2952,21 @@ window.VIEWER_DEMO_DATA = {
           "executedHours": 1.23,
           "activity": "IMPORTACAO SAP - PREENCHER",
           "observation": "Confirmação SAP: OK"
+        },
+        {
+          "id": 225,
+          "orderNumber": "10666677",
+          "orderType": "Corretiva",
+          "sector": "PENDENTE SAP",
+          "equipment": "PENDENTE SAP",
+          "tag": "TAN01625",
+          "technicianId": "UTLME005",
+          "date": "2026-04-28",
+          "startTime": "01:00",
+          "endTime": "04:00",
+          "executedHours": 3,
+          "activity": "IMPORTACAO SAP - PREENCHER",
+          "observation": "Confirmação SAP: CONTINUAÇÃO DE 5S"
         },
         {
           "id": 200,
