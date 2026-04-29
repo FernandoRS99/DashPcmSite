@@ -95,6 +95,65 @@
     return list.reduce((acc, item) => acc + Number(item[field] || 0), 0)
   }
 
+  function timeToMinutes(value) {
+    if (!String(value || '').includes(':')) {
+      return null
+    }
+
+    const [hours, minutes] = String(value).split(':').map(Number)
+    return hours * 60 + minutes
+  }
+
+  function buildDailyOrderSegments(order) {
+    const date = order.date
+    const start = timeToMinutes(order.startTime)
+    let end = timeToMinutes(order.endTime)
+
+    if (!date || start === null || end === null) {
+      const durationMinutes = Math.max(Number(order.executedHours || 0) * 60, 0)
+      return durationMinutes > 0 ? [{ date, startMinute: 0, endMinute: durationMinutes }] : []
+    }
+
+    if (end <= start) {
+      end += 24 * 60
+    }
+
+    return [{ date, startMinute: start, endMinute: end }]
+  }
+
+  function sumMergedIntervals(intervals) {
+    const sortedIntervals = intervals
+      .filter((interval) => interval.date && interval.endMinute > interval.startMinute)
+      .sort((left, right) => left.startMinute - right.startMinute || left.endMinute - right.endMinute)
+
+    let totalMinutes = 0
+    let currentStart = null
+    let currentEnd = null
+
+    sortedIntervals.forEach((interval) => {
+      if (currentStart === null) {
+        currentStart = interval.startMinute
+        currentEnd = interval.endMinute
+        return
+      }
+
+      if (interval.startMinute <= currentEnd) {
+        currentEnd = Math.max(currentEnd, interval.endMinute)
+        return
+      }
+
+      totalMinutes += currentEnd - currentStart
+      currentStart = interval.startMinute
+      currentEnd = interval.endMinute
+    })
+
+    if (currentStart !== null) {
+      totalMinutes += currentEnd - currentStart
+    }
+
+    return totalMinutes / 60
+  }
+
   function getMonthData(monthKey) {
     return data.months?.[monthKey] || { monthlyTarget: 0, orders: [] }
   }
@@ -126,21 +185,41 @@
 
   function buildSeries(orders) {
     const grouped = orders.reduce((acc, order) => {
-      if (!order.date) {
-        return acc
-      }
+      const technicianKey = order.technicianId || 'sem-tecnico'
 
-      acc[order.date] = (acc[order.date] || 0) + Number(order.executedHours || 0)
+      buildDailyOrderSegments(order).forEach((segment) => {
+        if (!segment.date) {
+          return
+        }
+
+        if (!acc[segment.date]) {
+          acc[segment.date] = {}
+        }
+
+        if (!acc[segment.date][technicianKey]) {
+          acc[segment.date][technicianKey] = []
+        }
+
+        acc[segment.date][technicianKey].push(segment)
+      })
+
       return acc
     }, {})
 
     return Object.entries(grouped)
       .sort(([left], [right]) => left.localeCompare(right))
-      .map(([date, value]) => ({
-        date,
-        value,
-        shortDate: shortDateFormatter.format(new Date(`${date}T00:00:00`)),
-      }))
+      .map(([date, technicians]) => {
+        const value = Object.values(technicians).reduce(
+          (acc, intervals) => acc + sumMergedIntervals(intervals),
+          0,
+        )
+
+        return {
+          date,
+          value: Number(value.toFixed(2)),
+          shortDate: shortDateFormatter.format(new Date(`${date}T00:00:00`)),
+        }
+      })
   }
 
   function buildRanking(orders, targetHours) {
