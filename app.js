@@ -1,5 +1,5 @@
 (function () {
-  const data = window.VIEWER_DEMO_DATA || { technicians: [], months: {} }
+  const data = window.VIEWER_DEMO_DATA || { technicians: [], assets: [], months: {} }
   const ADHERENCE_EXCELLENT_MIN = 90
   const ADHERENCE_ATTENTION_MIN = 75
   const PREVENTIVE_TARGET = 70
@@ -105,6 +105,15 @@
 
   function getTechnicianName(id) {
     return getTechnicianById(id)?.name || id || 'Tecnico nao informado'
+  }
+
+  function getAssetByTag(tag) {
+    const normalizedTag = String(tag || '').trim().toLocaleLowerCase('pt-BR')
+    if (!normalizedTag) {
+      return null
+    }
+
+    return (data.assets || []).find((asset) => String(asset.tag || '').trim().toLocaleLowerCase('pt-BR') === normalizedTag) || null
   }
 
   function buildVisibleOrders(monthData) {
@@ -218,8 +227,9 @@
     return Object.values(
       correctiveOrders.reduce((acc, order) => {
         const tag = order.tag || 'SEM-TAG'
-        const equipment = order.equipment || 'Equipamento nao informado'
-        const sector = order.sector || 'SEM SETOR'
+        const registeredAsset = getAssetByTag(tag)
+        const equipment = registeredAsset?.equipment || order.equipment || 'Equipamento nao informado'
+        const sector = registeredAsset?.sector || order.sector || 'SEM SETOR'
         const key = `${tag}|${equipment}`
         if (!acc[key]) {
           acc[key] = {

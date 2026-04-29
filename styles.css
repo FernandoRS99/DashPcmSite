@@ -252,6 +252,7 @@ select {
 .segment {
   padding: 0 12px;
   font-weight: 850;
+  text-align: center;
   transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
 
@@ -298,6 +299,7 @@ select {
   border-width: 1px;
   border-radius: 14px;
   font-weight: 900;
+  text-align: center;
 }
 
 .print-button:hover {
@@ -1387,22 +1389,40 @@ select {
 }
 
 @media (max-width: 760px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .app-shell {
-    padding: 12px;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
   }
 
   .hero-panel {
+    max-width: 100%;
     padding: 10px;
     border-radius: 20px;
   }
 
   .hero-copy {
+    justify-items: center;
     gap: 12px;
     padding: 6px 0;
+    text-align: center;
   }
 
   .hero-copy h1 {
-    font-size: clamp(1.9rem, 11vw, 2.8rem);
+    max-width: 100%;
+    font-size: clamp(1.85rem, 9vw, 2.45rem);
+    line-height: 1;
+  }
+
+  .hero-copy p {
+    max-width: 34ch;
+    font-size: 0.84rem;
+    line-height: 1.35;
   }
 
   .hero-summary,
@@ -1412,6 +1432,83 @@ select {
   .mix-grid,
   .technician-mix-summary {
     grid-template-columns: 1fr;
+  }
+
+  .hero-summary-card,
+  .metric-card,
+  .metric-card.metric-card-critical,
+  .mix-card,
+  .technician-mix-summary-card {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+  }
+
+  .hero-summary-card {
+    min-height: 88px;
+  }
+
+  .metric-card {
+    min-height: 150px;
+  }
+
+  .metric-card::after {
+    display: none;
+  }
+
+  .metric-card-top {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .metric-card-top small {
+    max-width: min(260px, 100%);
+    justify-content: center;
+    text-align: center;
+  }
+
+  .metric-mix-content {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .metric-mix-badges {
+    margin-inline: auto;
+  }
+
+  .metric-mix-alert {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .segmented,
+  .field,
+  .viewer-note {
+    text-align: center;
+  }
+
+  .segmented {
+    gap: 7px;
+  }
+
+  select,
+  .segment,
+  .print-button {
+    text-align: center;
+  }
+
+  .segment {
+    min-width: 0;
+    padding: 0 8px;
+    font-size: 0.88rem;
+  }
+
+  .viewer-note {
+    justify-content: center;
   }
 
   .panel-heading,
