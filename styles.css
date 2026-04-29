@@ -184,9 +184,13 @@ button {
 }
 
 .hero-summary-card {
+  display: grid;
+  justify-items: center;
+  align-content: center;
   min-width: 0;
   padding: 10px 12px;
   border-radius: 14px;
+  text-align: center;
 }
 
 .hero-summary-card span,
