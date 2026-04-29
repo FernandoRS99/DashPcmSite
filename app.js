@@ -104,21 +104,40 @@
     return hours * 60 + minutes
   }
 
+  function addDaysToIsoDate(value, days) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) {
+      return ''
+    }
+
+    const [year, month, day] = value.split('-').map(Number)
+    const date = new Date(year, month - 1, day + days)
+    const nextYear = String(date.getFullYear())
+    const nextMonth = String(date.getMonth() + 1).padStart(2, '0')
+    const nextDay = String(date.getDate()).padStart(2, '0')
+
+    return `${nextYear}-${nextMonth}-${nextDay}`
+  }
+
   function buildDailyOrderSegments(order) {
     const date = order.date
     const start = timeToMinutes(order.startTime)
-    let end = timeToMinutes(order.endTime)
+    const end = timeToMinutes(order.endTime)
 
     if (!date || start === null || end === null) {
       const durationMinutes = Math.max(Number(order.executedHours || 0) * 60, 0)
       return durationMinutes > 0 ? [{ date, startMinute: 0, endMinute: durationMinutes }] : []
     }
 
-    if (end <= start) {
-      end += 24 * 60
+    if (end > start) {
+      return [{ date, startMinute: start, endMinute: end }]
     }
 
-    return [{ date, startMinute: start, endMinute: end }]
+    const nextDate = addDaysToIsoDate(date, 1)
+
+    return [
+      { date, startMinute: start, endMinute: 24 * 60 },
+      { date: nextDate, startMinute: 0, endMinute: end },
+    ].filter((segment) => segment.date && segment.endMinute > segment.startMinute)
   }
 
   function sumMergedIntervals(intervals) {
