@@ -824,13 +824,12 @@
     const correctiveOrderShare = mixOrderTotal > 0 ? (correctiveOrders.length / mixOrderTotal) * 100 : 0
     const ranking = buildRanking(mode === 'general' ? activeMonthOrders : visibleOrders, monthData, activeTechnicians)
     const visibleRanking = buildRanking(visibleOrders, monthData, mode === 'general' ? activeTechnicians : activeTechnicians.filter((technician) => technician.id === selectedTechnicianId))
-    const isCurrentCompetence = selectedMonth === getLocalDateKey().slice(0, 7)
     const expectedTargetHours = mode === 'general'
       ? sum(ranking, 'expectedTargetHours')
       : Number(visibleRanking[0]?.expectedTargetHours) || 0
-    const backlogReferenceHours = isCurrentCompetence ? expectedTargetHours : targetHours
-    const backlog = Math.max(backlogReferenceHours - executedHours, 0)
     const monthlyBacklog = Math.max(targetHours - executedHours, 0)
+    const backlogReferenceHours = targetHours
+    const backlog = monthlyBacklog
     const hasOperationalData = visibleOrders.length > 0 && executedHours > 0
     const activeTechniciansCount = activeTechnicians.length
     const visibleActiveTechnicians = visibleRanking.filter((technician) => technician.executedHours > 0).length
@@ -860,7 +859,6 @@
       targetHours,
       expectedTargetHours,
       backlogReferenceHours,
-      isCurrentCompetence,
       hasOperationalData,
       monthlyBacklog,
       executedHours,
@@ -1000,7 +998,7 @@
     text('metric-backlog', formatHours(context.backlog))
     text(
       'metric-backlog-meta',
-      `${context.isCurrentCompetence ? 'Meta esperada ate ontem' : 'Meta mensal'}: ${formatHours(context.backlogReferenceHours)}`,
+      `Meta mensal: ${formatHours(context.backlogReferenceHours)}`,
     )
     text('metric-orders', String(context.visibleOrders.length))
     text('metric-orders-meta', `${formatHours(context.averageOrderHours)} ticket medio`)
