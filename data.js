@@ -1,7 +1,7 @@
 window.VIEWER_DEMO_DATA = {
   "schemaVersion": 2,
   "privacyMode": "aggregated",
-  "generatedAt": "2026-08-05T03:05:07.764Z",
+  "generatedAt": "2026-08-05T05:12:54.853Z",
   "technicians": [
     {
       "id": "T01",
@@ -5738,7 +5738,15 @@ window.VIEWER_DEMO_DATA = {
           "isActive": 1
         }
       ],
-      "orders": [],
+      "orders": [
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-01",
+          "orderType": "Corretiva",
+          "executedHours": 1
+        }
+      ],
       "workRhythm": {
         "referenceDate": "2026-08-05",
         "general": {
@@ -5770,9 +5778,9 @@ window.VIEWER_DEMO_DATA = {
               "id": "month",
               "label": "Mês até ontem",
               "caption": "01/08 a 04/08",
-              "executedHours": 0,
+              "executedHours": 1,
               "expectedHours": 44.61904761904762,
-              "adherence": 0,
+              "adherence": 2.2411953041622197,
               "status": "Crítico",
               "tone": "critical"
             }
@@ -5845,9 +5853,9 @@ window.VIEWER_DEMO_DATA = {
                 "id": "month",
                 "label": "Mês até ontem",
                 "caption": "01/08 a 04/08",
-                "executedHours": 0,
+                "executedHours": 1,
                 "expectedHours": 14.619047619047619,
-                "adherence": 0,
+                "adherence": 6.840390879478828,
                 "status": "Crítico",
                 "tone": "critical"
               }
