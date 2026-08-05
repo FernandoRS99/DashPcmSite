@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>PCM Viewer - Painel Executivo</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-theme="industrial">
+  <div class="app-shell themed-app" data-theme="industrial">
+    <section class="print-report-header" aria-hidden="true">
+      <p class="panel-kicker">Relatorio executivo</p>
+      <h1 id="print-report-title">INDICADORES MANUTENCAO MES ATUAL</h1>
+      <p id="print-report-subtitle">Leitura consolidada de indicadores e graficos do periodo selecionado.</p>
+    </section>
+
+    <header class="hero-panel viewer-hero">
+      <div class="hero-copy">
+        <p class="panel-kicker">Cockpit PCM</p>
+        <h1>Dashboard PCM</h1>
+        <p id="hero-description">Monitore aderencia, carga mensal, mix de OS e desempenho da equipe com leitura industrial orientada a PCM.</p>
+
+        <div class="hero-summary">
+          <article class="hero-summary-card">
+            <span>Competencia</span>
+            <strong id="hero-summary-month">-</strong>
+            <small id="hero-summary-mode">Visao consolidada da equipe</small>
+          </article>
+          <article class="hero-summary-card">
+            <span>Ordens</span>
+            <strong id="hero-summary-orders">0</strong>
+            <small id="hero-summary-hours">0,0 h executadas</small>
+          </article>
+          <article class="hero-summary-card">
+            <span>Tecnicos</span>
+            <strong id="hero-summary-techs">0</strong>
+            <small id="hero-summary-active">0 ativos</small>
+          </article>
+        </div>
+      </div>
+
+      <aside class="panel viewer-controls">
+        <div class="panel-heading compact-heading">
+          <div>
+            <p class="panel-kicker">Painel publico</p>
+            <h2 id="selected-month-label">-</h2>
+          </div>
+        </div>
+
+        <label class="field">
+          <span>Competencia</span>
+          <select id="month-select"></select>
+        </label>
+
+        <label class="field">
+          <span>Modo de analise</span>
+          <div class="segmented" role="tablist" aria-label="Modo de analise">
+            <button type="button" class="segment is-active" data-mode="general">Visao Geral</button>
+            <button type="button" class="segment" data-mode="technician">Por Tecnico</button>
+          </div>
+        </label>
+
+        <label class="field" id="technician-filter-field" hidden>
+          <span>Tecnico em foco</span>
+          <select id="technician-select"></select>
+        </label>
+
+        <div class="viewer-note">
+          <strong>Somente leitura</strong>
+          <p>Indicadores agregados e protegidos. O PUBLICO nao recebe numeros de OS, horarios, atividades, observacoes ou inventario de ativos.</p>
+        </div>
+
+        <button type="button" class="print-button" id="print-pdf-button">Imprimir PDF</button>
+      </aside>
+    </header>
+
+    <main>
+      <section class="planning-alert" id="planning-alert" hidden>
+        <div>
+          <strong>Competencia sem carga confirmada.</strong>
+          <p id="planning-alert-copy">A carga mensal esta usando a leitura publicada no snapshot.</p>
+        </div>
+      </section>
+
+      <section class="metrics-grid" aria-label="Indicadores principais">
+        <article class="panel metric-card accent metric-card-good" id="metric-executed-card">
+          <div class="metric-card-top">
+            <span>Horas executadas</span>
+            <small id="metric-executed-meta">0 OS no periodo</small>
+          </div>
+          <strong id="metric-executed">0,0 h</strong>
+          <p>Carga realizada no recorte atual.</p>
+        </article>
+
+        <article class="panel metric-card" id="metric-adherence-card">
+          <div class="metric-card-top">
+            <span>Aderencia</span>
+            <small id="metric-adherence-meta">Critico</small>
+          </div>
+          <strong id="metric-adherence">0,0%</strong>
+          <p>Meta x horas executadas.</p>
+        </article>
+
+        <article class="panel metric-card" id="metric-backlog-card">
+          <div class="metric-card-top">
+            <span>Backlog</span>
+            <small id="metric-backlog-meta">Meta: 0,0 h</small>
+          </div>
+          <strong id="metric-backlog">0,0 h</strong>
+          <p>Saldo para fechar a carga.</p>
+        </article>
+
+        <article class="panel metric-card" id="metric-orders-card">
+          <div class="metric-card-top">
+            <span>Total de OS</span>
+            <small id="metric-orders-meta">0,0 h ticket medio</small>
+          </div>
+          <strong id="metric-orders">0</strong>
+          <p>Volume apontado na competencia.</p>
+        </article>
+
+        <article class="panel metric-card" id="metric-mix-card">
+          <div class="metric-card-top">
+            <span class="metric-mix-title">Preventiva x Corretiva</span>
+          </div>
+          <div class="metric-mix-content">
+            <strong class="metric-mix-value">
+              <span class="preventive" id="metric-preventive-share">0%</span>
+              <span class="separator">/</span>
+              <span class="corrective" id="metric-corrective-share">0%</span>
+            </strong>
+            <div class="metric-mix-badges" aria-label="Quantidade de OS preventiva e corretiva">
+              <span class="metric-mix-badge preventive" id="metric-preventive-count">0 prev.</span>
+              <span class="metric-mix-badge corrective" id="metric-corrective-count">0 corr.</span>
+            </div>
+            <p class="metric-mix-alert" id="metric-mix-alert">Sem carga no periodo</p>
+          </div>
+        </article>
+
+        <article class="panel metric-card" id="metric-active-techs-card">
+          <div class="metric-card-top">
+            <span>Tecnicos ativos</span>
+            <small id="metric-active-techs-meta">Equipe com apontamento</small>
+          </div>
+          <strong id="metric-active-techs">0/0</strong>
+          <p>Cobertura operacional do mes.</p>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel chart-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker" id="progress-kicker">Cockpit PCM</p>
+              <h2 id="progress-title">Meta consolidada, realizado e saldo</h2>
+            </div>
+          </div>
+
+          <div class="pcm-target-progress pcm-target-progress-critical" id="target-progress-card">
+            <div class="pcm-target-progress-head">
+              <div>
+                <span>Atingimento da meta mensal</span>
+                <strong id="target-progress-percent">0,0%</strong>
+                <small class="pcm-target-progress-realized" id="target-progress-realized">0,0 h realizadas de 0,0 h</small>
+              </div>
+              <p id="target-progress-copy">Faltam 0,0 h para o mínimo de 90% (0,0 h).</p>
+            </div>
+
+            <div class="pcm-target-motion" id="target-progress-motion" aria-label="Animação de ritmo">
+              <span class="pcm-target-motion-runner" aria-hidden="true">
+                <img id="target-progress-gif" src="./work-rhythm/in-progress-critical.gif" alt="" draggable="false">
+              </span>
+            </div>
+
+            <div class="pcm-bullet-row" aria-label="Progresso de meta executada">
+              <span class="pcm-bullet-endpoint">0%</span>
+              <div class="pcm-bullet-chart">
+                <div class="pcm-bullet-fill pcm-bullet-fill-critical" id="target-progress-fill"></div>
+                <span class="pcm-bullet-current pcm-bullet-current-critical pcm-bullet-current-start" id="target-progress-current">0,0%</span>
+                <span class="pcm-bullet-threshold" aria-hidden="true"></span>
+                <span class="pcm-bullet-threshold-label">90%</span>
+              </div>
+              <span class="pcm-bullet-endpoint">100%</span>
+            </div>
+          </div>
+
+          <div class="mini-stats">
+            <div class="mini-stat-card">
+              <span class="mini-stat-title">Ordens</span>
+              <strong class="mini-stat-value" id="mini-orders">0</strong>
+              <small class="mini-stat-caption" id="mini-order-average">Média de 0,0 h por OS</small>
+            </div>
+            <div class="mini-stat-card">
+              <span class="mini-stat-title">Meta mensal (100%)</span>
+              <strong class="mini-stat-value" id="mini-target">0,0 h</strong>
+              <small class="mini-stat-caption">Carga planejada no mês</small>
+            </div>
+            <div class="mini-stat-card">
+              <span class="mini-stat-title">Saldo até 100%</span>
+              <strong class="mini-stat-value" id="mini-backlog">0,0 h</strong>
+              <small class="mini-stat-caption">Horas restantes para a meta</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel trend-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Cadencia operacional</p>
+              <h2>Horas executadas por dia</h2>
+            </div>
+          </div>
+          <div class="daily-chart" id="daily-chart"></div>
+        </article>
+      </section>
+
+      <section class="panel work-rhythm-panel" id="work-rhythm-panel">
+        <div class="panel-heading work-rhythm-heading">
+          <div>
+            <p class="panel-kicker">Ritmo de trabalho</p>
+            <h2>Fechamento diário, semanal e mensal</h2>
+          </div>
+          <div class="work-rhythm-heading-actions">
+            <div class="work-rhythm-rule">
+              <span id="work-rhythm-scope">Meta diária da equipe</span>
+              <strong id="work-rhythm-daily-hours">0,0 h produtivas/dia</strong>
+            </div>
+            <button type="button" class="work-rhythm-help-button" id="work-rhythm-help-button" aria-expanded="false" aria-controls="work-rhythm-help">
+              <span aria-hidden="true">i</span>
+              Como calculamos
+            </button>
+          </div>
+        </div>
+
+        <div class="work-rhythm-help" id="work-rhythm-help" role="note" hidden>
+          <strong>Regras do cálculo</strong>
+          <ul>
+            <li>Períodos sobrepostos do mesmo técnico não são contados duas vezes.</li>
+            <li>Refeição e tolerância operacional já estão descontadas da meta cadastrada.</li>
+            <li>A meta mensal oficial permanece inalterada.</li>
+          </ul>
+          <div class="work-rhythm-help-divider"></div>
+          <strong>Guia das tags e animações</strong>
+          <div class="work-rhythm-help-guide">
+            <article class="work-rhythm-help-guide-item">
+              <img src="./work-rhythm/in-progress-critical.gif" alt="Burro animado" draggable="false">
+              <div>
+                <div class="work-rhythm-help-guide-tags">
+                  <span class="work-rhythm-tag work-rhythm-tag-neutral">Em andamento</span>
+                  <span class="work-rhythm-tag work-rhythm-tag-critical">Crítico</span>
+                </div>
+                <p>Dia ainda aberto ou período encerrado com aderência abaixo de 50%.</p>
+              </div>
+            </article>
+            <article class="work-rhythm-help-guide-item">
+              <img src="./work-rhythm/evolution.gif" alt="Macaco animado" draggable="false">
+              <div>
+                <div class="work-rhythm-help-guide-tags"><span class="work-rhythm-tag work-rhythm-tag-progress">Em evolução</span></div>
+                <p>Aderência entre 50% e 74,9%; o ritmo está avançando.</p>
+              </div>
+            </article>
+            <article class="work-rhythm-help-guide-item">
+              <img src="./work-rhythm/near-target.gif" alt="Gorila animado" draggable="false">
+              <div>
+                <div class="work-rhythm-help-guide-tags"><span class="work-rhythm-tag work-rhythm-tag-attention">Próximo da meta</span></div>
+                <p>Aderência entre 75% e 89,9%; falta pouco para atingir a meta.</p>
+              </div>
+            </article>
+            <article class="work-rhythm-help-guide-item">
+              <img src="./work-rhythm/target-achieved.gif" alt="Capitão América animado" draggable="false">
+              <div>
+                <div class="work-rhythm-help-guide-tags"><span class="work-rhythm-tag work-rhythm-tag-good">Meta atingida</span></div>
+                <p>Aderência entre 90% e 99,9%; a meta operacional foi atingida.</p>
+              </div>
+            </article>
+            <article class="work-rhythm-help-guide-item">
+              <img src="./work-rhythm/excellent.gif" alt="Zoro animado" draggable="false">
+              <div>
+                <div class="work-rhythm-help-guide-tags"><span class="work-rhythm-tag work-rhythm-tag-excellent">Excelente</span></div>
+                <p>Aderência de 100% ou mais; desempenho acima da meta.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="work-rhythm-grid" id="work-rhythm-grid"></div>
+        <div class="work-rhythm-empty" id="work-rhythm-empty" hidden>
+          <strong>Ritmo indisponível para este recorte.</strong>
+          <p>O snapshot ainda não possui escala e meta diária para este período.</p>
+        </div>
+      </section>
+
+      <section class="admin-summary-grid" id="admin-summary-grid">
+        <article class="panel summary-panel admin-grid-cockpit">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Cockpit PCM</p>
+              <h2>Leitura executiva do mes</h2>
+            </div>
+          </div>
+
+          <p class="panel-helper">Consolidacao operacional da competencia com ritmo diario, cobertura da equipe e leitura rapida do dia de maior carga.</p>
+
+          <div class="mini-stats mini-stats-quad">
+            <div>
+              <span>Tecnicos com apontamento</span>
+              <strong id="summary-active-techs">0</strong>
+            </div>
+            <div>
+              <span>Media por tecnico</span>
+              <strong id="summary-tech-average">0,0 h</strong>
+            </div>
+            <div>
+              <span>Meta por tecnico</span>
+              <strong id="summary-target-per-tech">0,0 h</strong>
+            </div>
+            <div>
+              <span>Pico diario</span>
+              <strong id="summary-peak-hours">0,0 h</strong>
+              <small id="summary-peak-day">Sem carga relevante</small>
+            </div>
+          </div>
+
+          <div class="mix-grid mix-grid-quad">
+            <article class="mix-card mix-card-green">
+              <span>Preventiva em horas</span>
+              <strong id="summary-preventive-hours">0,0 h</strong>
+              <p id="summary-preventive-orders">0 ordens no mes</p>
+            </article>
+            <article class="mix-card mix-card-gold">
+              <span>Corretiva em horas</span>
+              <strong id="summary-corrective-hours">0,0 h</strong>
+              <p id="summary-corrective-orders">0 ordens no mes</p>
+            </article>
+          </div>
+        </article>
+
+        <article class="panel summary-panel operational-alerts-panel admin-grid-alerts">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Radar PCM</p>
+              <h2>Alertas operacionais</h2>
+            </div>
+          </div>
+
+          <p class="panel-helper">Pontos automaticos de atencao para priorizar acao do gestor no recorte atual.</p>
+          <div class="operational-alerts-grid" id="operational-alerts-grid"></div>
+        </article>
+
+        <article class="panel summary-panel admin-grid-ranking">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Ranking do mes</p>
+              <h2>Destaque operacional</h2>
+            </div>
+          </div>
+
+          <p class="panel-helper">Nota automatica por ritmo ate ontem, horas cronologicas, volume de OS e evolucao preventiva.</p>
+          <div class="technician-ranking-highlights" id="technician-ranking-highlights" aria-label="Destaques do ranking mensal"></div>
+          <div class="technician-ranking-list" id="technician-ranking-list"></div>
+        </article>
+
+        <article class="panel summary-panel admin-grid-mix">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Mix PCM</p>
+              <h2>Preventiva x corretiva</h2>
+            </div>
+          </div>
+
+          <p class="panel-helper">Distribuicao por tecnico para identificar concentracao corretiva e aderencia ao plano preventivo.</p>
+
+          <div class="technician-mix-summary" aria-label="Resumo do mix PCM do periodo">
+            <article class="technician-mix-summary-card preventive" id="mix-summary-preventive">
+              <span>Preventiva</span>
+              <strong id="mix-summary-preventive-hours">0,0 h</strong>
+              <small id="mix-summary-preventive-meta">0,0% da carga - 0 OS</small>
+            </article>
+            <article class="technician-mix-summary-card corrective" id="mix-summary-corrective">
+              <span>Corretiva</span>
+              <strong id="mix-summary-corrective-hours">0,0 h</strong>
+              <small id="mix-summary-corrective-meta">0,0% da carga - 0 OS</small>
+            </article>
+          </div>
+
+          <div class="pcm-mix-overview">
+            <div class="pcm-mix-overview-track" aria-label="Comparativo geral preventiva e corretiva">
+              <div class="pcm-mix-overview-fill preventive" id="mix-overview-preventive"></div>
+              <div class="pcm-mix-overview-fill corrective" id="mix-overview-corrective"></div>
+            </div>
+            <div class="pcm-mix-overview-legend">
+              <span class="preventive" id="mix-overview-preventive-label">Preventiva 0,0%</span>
+              <span class="corrective" id="mix-overview-corrective-label">Corretiva 0,0%</span>
+            </div>
+          </div>
+
+          <div class="technician-mix-list" id="technician-mix-list"></div>
+        </article>
+
+        <article class="panel summary-panel admin-grid-critical" id="critical-assets-panel" hidden>
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Ativos criticos</p>
+              <h2>Pareto corretivo por TAG</h2>
+            </div>
+          </div>
+
+          <p class="panel-helper">Ranking dos ativos que mais consumiram horas corretivas no periodo, combinando carga, quantidade de OS e concentracao no mes.</p>
+          <div class="critical-assets-pareto" id="critical-assets-pareto"></div>
+        </article>
+      </section>
+
+      <section class="panel history-panel" id="history-panel" hidden>
+        <div class="panel-heading history-heading">
+          <div>
+            <p class="panel-kicker">Historico</p>
+            <h2 id="history-title">Leitura historica da competencia</h2>
+          </div>
+          <p class="history-helper" id="history-helper">Consulte relatorios e movimentacoes em modo somente leitura.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>OS</th>
+                <th>Tipo</th>
+                <th>Setor</th>
+                <th>Equipamento</th>
+                <th>TAG</th>
+                <th>Tecnico</th>
+                <th>Atividade</th>
+                <th>Inicio</th>
+                <th>Fim</th>
+                <th>Executado</th>
+                <th>Relatorio</th>
+              </tr>
+            </thead>
+            <tbody id="history-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div class="report-modal-backdrop" id="report-modal" hidden>
+      <div class="report-modal" role="dialog" aria-modal="true" aria-labelledby="report-modal-title">
+        <div class="report-modal-header">
+          <div>
+            <p class="panel-kicker">Relatorio da OS</p>
+            <h2 id="report-modal-title">Leitura complementar</h2>
+          </div>
+          <button type="button" class="report-modal-close" id="report-modal-close" aria-label="Fechar">Fechar</button>
+        </div>
+        <div class="report-modal-body">
+          <div class="report-meta" id="report-modal-meta"></div>
+          <p id="report-modal-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="technician-ranking-modal-backdrop" id="ranking-info-modal" hidden>
+      <section class="technician-ranking-info-panel technician-ranking-modal-card" role="dialog" aria-modal="true" aria-labelledby="ranking-info-title">
+        <div class="technician-ranking-info-head technician-ranking-modal-head">
+          <div>
+            <span id="ranking-info-kicker">Composicao da lideranca</span>
+            <strong id="ranking-info-title">Tecnico</strong>
+            <small id="ranking-info-subtitle"></small>
+          </div>
+          <div class="technician-ranking-modal-score">
+            <span>Nota geral</span>
+            <b id="ranking-info-score">0,0 pontos</b>
+          </div>
+          <button type="button" class="technician-ranking-modal-close" id="ranking-info-close" aria-label="Fechar composicao da nota">×</button>
+        </div>
+
+        <div class="technician-ranking-modal-body">
+          <table>
+            <colgroup>
+              <col class="technician-ranking-info-indicator-column">
+              <col class="technician-ranking-info-comparison-column">
+              <col class="technician-ranking-info-note-column">
+              <col class="technician-ranking-info-weight-column">
+              <col class="technician-ranking-info-points-column">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Indicador</th>
+                <th>Resultado / referencia</th>
+                <th>Nota</th>
+                <th>Peso</th>
+                <th>Pontos</th>
+              </tr>
+            </thead>
+            <tbody id="ranking-info-table-body"></tbody>
+          </table>
+
+          <div class="technician-ranking-info-formula">
+            <span>Nota final ponderada</span>
+            <strong id="ranking-info-formula"></strong>
+            <b id="ranking-info-formula-result"></b>
+          </div>
+
+          <div class="technician-ranking-info-context" id="ranking-info-context"></div>
+          <p>A media por OS e informativa e nao soma pontos, pois atividades complexas podem exigir mais tempo.</p>
+        </div>
+
+        <nav class="technician-ranking-modal-navigation" aria-label="Navegar entre tecnicos">
+          <button type="button" id="ranking-info-previous"><span aria-hidden="true">←</span> Tecnico anterior</button>
+          <span id="ranking-info-position">1 de 1</span>
+          <button type="button" id="ranking-info-next">Proximo tecnico <span aria-hidden="true">→</span></button>
+        </nav>
+      </section>
+    </div>
+  </div>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
