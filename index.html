@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>PCM Viewer - Painel Executivo</title>
-  <link rel="stylesheet" href="./styles.css?v=c365a938794e">
+  <link rel="stylesheet" href="./styles.css?v=6b395901ab80">
 </head>
 <body data-theme="industrial">
   <div class="app-shell themed-app" data-theme="industrial">
@@ -69,6 +69,7 @@
         <div class="viewer-note">
           <strong>Somente leitura</strong>
           <p>Indicadores agregados e protegidos. O PUBLICO nao recebe numeros de OS, horarios, atividades, observacoes ou inventario de ativos.</p>
+          <small id="viewer-freshness">Snapshot em verificacao.</small>
         </div>
 
         <button type="button" class="print-button" id="print-pdf-button">Imprimir PDF</button>
@@ -140,7 +141,7 @@
 
         <article class="panel metric-card" id="metric-active-techs-card">
           <div class="metric-card-top">
-            <span>Tecnicos ativos</span>
+            <span>Tecnicos com apontamento</span>
             <small id="metric-active-techs-meta">Equipe com apontamento</small>
           </div>
           <strong id="metric-active-techs">0/0</strong>
@@ -514,7 +515,7 @@
     </div>
   </div>
 
-  <script src="./data.js?v=c365a938794e"></script>
-  <script src="./app.js?v=c365a938794e"></script>
+  <script src="./data.js?v=6b395901ab80"></script>
+  <script src="./app.js?v=6b395901ab80"></script>
 </body>
 </html>

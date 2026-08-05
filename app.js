@@ -75,6 +75,10 @@
   const modeButtons = Array.from(document.querySelectorAll('.segment'))
   const monthFormatter = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' })
   const shortDateFormatter = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit' })
+  const snapshotDateTimeFormatter = new Intl.DateTimeFormat('pt-BR', {
+    dateStyle: 'short',
+    timeStyle: 'short',
+  })
   const numberFormatter = new Intl.NumberFormat('pt-BR', {
     minimumFractionDigits: 1,
     maximumFractionDigits: 1,
@@ -807,7 +811,6 @@
     const targetHours = mode === 'general' ? effectiveMonthlyTarget : selectedTargetHours
     const executedHours = calculateChronologicalHours(visibleOrders)
     const adherence = targetHours > 0 ? (executedHours / targetHours) * 100 : 0
-    const backlog = Math.max(targetHours - executedHours, 0)
     const averageOrderHours = visibleOrders.length ? executedHours / visibleOrders.length : 0
     const preventiveOrders = visibleOrders.filter((order) => order.orderType === 'Preventiva')
     const correctiveOrders = visibleOrders.filter((order) => order.orderType !== 'Preventiva')
@@ -821,6 +824,14 @@
     const correctiveOrderShare = mixOrderTotal > 0 ? (correctiveOrders.length / mixOrderTotal) * 100 : 0
     const ranking = buildRanking(mode === 'general' ? activeMonthOrders : visibleOrders, monthData, activeTechnicians)
     const visibleRanking = buildRanking(visibleOrders, monthData, mode === 'general' ? activeTechnicians : activeTechnicians.filter((technician) => technician.id === selectedTechnicianId))
+    const isCurrentCompetence = selectedMonth === getLocalDateKey().slice(0, 7)
+    const expectedTargetHours = mode === 'general'
+      ? sum(ranking, 'expectedTargetHours')
+      : Number(visibleRanking[0]?.expectedTargetHours) || 0
+    const backlogReferenceHours = isCurrentCompetence ? expectedTargetHours : targetHours
+    const backlog = Math.max(backlogReferenceHours - executedHours, 0)
+    const monthlyBacklog = Math.max(targetHours - executedHours, 0)
+    const hasOperationalData = visibleOrders.length > 0 && executedHours > 0
     const activeTechniciansCount = activeTechnicians.length
     const visibleActiveTechnicians = visibleRanking.filter((technician) => technician.executedHours > 0).length
     const series = buildSeries(visibleOrders)
@@ -830,11 +841,11 @@
     const criticalAssets = buildCriticalAssets(visibleOrders)
     const technicianMixRows = buildTechnicianMixRows(mode === 'general' ? activeMonthOrders : visibleOrders, activeTechnicians)
     const adherenceTone = getAdherenceClassification(adherence).tone
-    const backlogTone = backlog <= 0 ? 'good' : targetHours > 0 && backlog / targetHours <= 0.15 ? 'attention' : 'critical'
-    const totalOrdersTone = visibleOrders.length > 0 ? 'good' : 'critical'
-    const mixTone = preventiveHoursShare >= PREVENTIVE_TARGET ? 'good' : preventiveHoursShare >= 50 ? 'attention' : 'critical'
+    const backlogTone = !hasOperationalData ? 'neutral' : backlog <= 0 ? 'good' : backlogReferenceHours > 0 && backlog / backlogReferenceHours <= 0.15 ? 'attention' : 'critical'
+    const totalOrdersTone = visibleOrders.length > 0 ? 'good' : 'neutral'
+    const mixTone = !hasOperationalData ? 'neutral' : preventiveHoursShare >= PREVENTIVE_TARGET ? 'good' : preventiveHoursShare >= 50 ? 'attention' : 'critical'
     const activeTechniciansTone = visibleActiveTechnicians === 0
-      ? 'critical'
+      ? 'neutral'
       : visibleActiveTechnicians >= (mode === 'general' ? activeTechnicians.length : 1)
         ? 'good'
         : 'attention'
@@ -847,6 +858,11 @@
       activeTechnicianList: activeTechnicians,
       effectiveMonthlyTarget,
       targetHours,
+      expectedTargetHours,
+      backlogReferenceHours,
+      isCurrentCompetence,
+      hasOperationalData,
+      monthlyBacklog,
       executedHours,
       adherence,
       backlog,
@@ -945,8 +961,15 @@
     text(
       'hero-summary-active',
       mode === 'general'
-        ? `${context.activeTechnicians} tecnicos ativos`
+        ? `${context.visibleActiveTechnicians} com apontamento de ${context.activeTechnicians} habilitados`
         : `${selectedTechnician?.id || 'sem tecnico'}`,
+    )
+    const generatedAt = new Date(data.generatedAt || '')
+    text(
+      'viewer-freshness',
+      Number.isFinite(generatedAt.getTime())
+        ? `Snapshot gerado em ${snapshotDateTimeFormatter.format(generatedAt)}.`
+        : 'Horario do snapshot indisponivel.',
     )
     text(
       'hero-description',
@@ -963,7 +986,7 @@
         ? 'Atencao ao equilibrio'
         : 'OK - Preventiva dentro do esperado'
 
-    setTone('metric-executed-card', 'metric-card', context.executedHours > 0 ? 'good' : 'critical', 'panel accent')
+    setTone('metric-executed-card', 'metric-card', context.executedHours > 0 ? 'good' : 'neutral', 'panel accent')
     setTone('metric-adherence-card', 'metric-card', context.adherenceTone, 'panel')
     setTone('metric-backlog-card', 'metric-card', context.backlogTone, 'panel')
     setTone('metric-orders-card', 'metric-card', context.totalOrdersTone, 'panel')
@@ -975,7 +998,10 @@
     text('metric-adherence', formatPercent(context.adherence))
     text('metric-adherence-meta', adherenceLevel(context.adherence))
     text('metric-backlog', formatHours(context.backlog))
-    text('metric-backlog-meta', `Meta: ${formatHours(context.targetHours)}`)
+    text(
+      'metric-backlog-meta',
+      `${context.isCurrentCompetence ? 'Meta esperada ate ontem' : 'Meta mensal'}: ${formatHours(context.backlogReferenceHours)}`,
+    )
     text('metric-orders', String(context.visibleOrders.length))
     text('metric-orders-meta', `${formatHours(context.averageOrderHours)} ticket medio`)
     text('metric-preventive-share', formatWholePercent(context.preventiveHoursShare))
@@ -986,7 +1012,7 @@
     text(
       'metric-active-techs',
       mode === 'general'
-        ? `${context.activeTechnicians}/${context.activeTechnicianList.length || 0}`
+        ? `${context.visibleActiveTechnicians}/${context.activeTechnicianList.length || 0}`
         : `${context.visibleActiveTechnicians ? 1 : 0}/1`,
     )
     text('metric-active-techs-meta', mode === 'general' ? 'Equipe com apontamento' : 'Recorte individual')
@@ -1050,7 +1076,7 @@
     text('mini-orders', String(context.visibleOrders.length))
     text('mini-order-average', `Média de ${formatHours(context.averageOrderHours)} por OS`)
     text('mini-target', formatHours(context.targetHours))
-    text('mini-backlog', formatHours(context.backlog))
+    text('mini-backlog', formatHours(context.monthlyBacklog))
   }
 
   function renderDailyChart(context) {
@@ -1146,11 +1172,11 @@
 
   function buildOperationalAlerts(context) {
     const topAsset = context.topAssets[0] || null
-    const overloadedTechnician = context.ranking[0] || null
+    const overloadedTechnician = context.ranking.find((technician) => technician.executedHours > 0) || null
     const correctiveSector = context.topSectors.find((sector) =>
       context.correctiveOrders.some((order) => (order.sector || 'SEM SETOR') === sector.sector),
     ) || context.topSectors[0] || null
-    const backlogRatio = context.targetHours > 0 ? (context.backlog / context.targetHours) * 100 : 0
+    const backlogRatio = context.backlogReferenceHours > 0 ? (context.backlog / context.backlogReferenceHours) * 100 : 0
     const assetConcentration = topAsset && context.executedHours > 0 ? (topAsset.executedHours / context.executedHours) * 100 : 0
     const sectorConcentration = correctiveSector && context.correctiveHours > 0
       ? (correctiveSector.executedHours / context.correctiveHours) * 100
@@ -1161,12 +1187,12 @@
       {
         id: 'backlog',
         title: 'Maior backlog',
-        value: context.targetHours > 0 ? formatHours(context.backlog) : 'Dados insuficientes',
-        description: context.targetHours > 0
+        value: context.hasOperationalData && context.backlogReferenceHours > 0 ? formatHours(context.backlog) : 'Dados insuficientes',
+        description: context.hasOperationalData && context.backlogReferenceHours > 0
           ? backlogRatio > 15
             ? 'Saldo alto contra a meta mensal.'
             : 'Backlog controlado no recorte.'
-          : 'Meta mensal nao definida para leitura.',
+          : 'Sem apontamentos suficientes para calcular o saldo.',
         tone: context.backlogTone,
       },
       {
@@ -1185,7 +1211,7 @@
         description: overloadedTechnician
           ? `${formatHours(overloadedTechnician.executedHours)} - ${formatPercent(technicianAdherence)} da meta`
           : 'Sem horas por tecnico no periodo.',
-        tone: technicianAdherence >= 120 ? 'critical' : technicianAdherence >= 95 ? 'attention' : 'good',
+        tone: !overloadedTechnician ? 'neutral' : technicianAdherence >= 120 ? 'critical' : technicianAdherence >= 95 ? 'attention' : 'good',
       },
       {
         id: 'sector',
@@ -1199,11 +1225,13 @@
       {
         id: 'mix',
         title: 'Concentracao corretiva',
-        value: `${formatWholePercent(context.correctiveHoursShare)} corretiva`,
-        description: context.correctiveHoursShare > context.preventiveHoursShare
+        value: context.hasOperationalData ? `${formatWholePercent(context.correctiveHoursShare)} corretiva` : 'Dados insuficientes',
+        description: !context.hasOperationalData
+          ? 'Sem carga para comparar preventiva e corretiva.'
+          : context.correctiveHoursShare > context.preventiveHoursShare
           ? 'Corretiva supera preventiva. Rebalancear plano.'
           : 'Preventiva lidera o mix operacional.',
-        tone: context.correctiveHoursShare > context.preventiveHoursShare ? 'critical' : context.correctiveHoursShare >= 40 ? 'attention' : 'good',
+        tone: !context.hasOperationalData ? 'neutral' : context.correctiveHoursShare > context.preventiveHoursShare ? 'critical' : context.correctiveHoursShare >= 40 ? 'attention' : 'good',
       },
     ]
 
@@ -1333,11 +1361,12 @@
     currentRanking = context.ranking
     const isCurrentCompetence = selectedMonth === getLocalDateKey().slice(0, 7)
 
-    if (!currentRanking.length) {
+    if (!currentRanking.length || !context.hasOperationalData) {
+      currentRanking = []
       html('technician-ranking-highlights', '')
       html(
         'technician-ranking-list',
-        '<div class="empty-table-state compact-empty-state"><strong>Sem técnicos com meta programada para ranquear.</strong></div>',
+        `<div class="empty-table-state compact-empty-state"><strong>${context.activeTechnicianList.length ? 'Ainda nao ha apontamentos neste periodo.' : 'Sem tecnicos com meta programada para ranquear.'}</strong></div>`,
       )
       return
     }
@@ -1446,7 +1475,7 @@
     }
 
     const hoursLeadIsPreventive = context.preventiveHoursShare >= context.correctiveHoursShare
-    text('summary-active-techs', String(context.activeTechnicians))
+    text('summary-active-techs', String(context.visibleActiveTechnicians))
     text('summary-tech-average', formatHours(context.activeTechnicianList.length ? context.executedHours / context.activeTechnicianList.length : 0))
     text('summary-target-per-tech', formatHours(context.activeTechnicianList.length ? context.targetHours / context.activeTechnicianList.length : 0))
     text('summary-peak-hours', context.peakDay ? formatHours(context.peakDay.value) : formatHours(0))
@@ -1489,7 +1518,7 @@
 
     html(
       'technician-mix-list',
-      context.technicianMixRows.length
+      context.hasOperationalData && context.technicianMixRows.length
         ? context.technicianMixRows
           .map((item) => `
             <article class="technician-mix-row technician-mix-${escapeHtml(item.tone)}">
