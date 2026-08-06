@@ -1,7 +1,7 @@
 window.VIEWER_DEMO_DATA = {
   "schemaVersion": 2,
   "privacyMode": "aggregated",
-  "generatedAt": "2026-08-06T03:06:29.403Z",
+  "generatedAt": "2026-08-06T12:06:28.834Z",
   "technicians": [
     {
       "id": "T01",
@@ -5738,7 +5738,71 @@ window.VIEWER_DEMO_DATA = {
           "isActive": 1
         }
       ],
-      "orders": [],
+      "orders": [
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-03",
+          "orderType": "Corretiva",
+          "executedHours": 1.15
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-03",
+          "orderType": "Corretiva",
+          "executedHours": 1.15
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-03",
+          "orderType": "Corretiva",
+          "executedHours": 1.15
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-03",
+          "orderType": "Corretiva",
+          "executedHours": 1.15
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-03",
+          "orderType": "Corretiva",
+          "executedHours": 1.15
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-04",
+          "orderType": "Corretiva",
+          "executedHours": 1.416666667
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-05",
+          "orderType": "Preventiva",
+          "executedHours": 2.520833334
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-05",
+          "orderType": "Preventiva",
+          "executedHours": 2.520833333
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-05",
+          "orderType": "Corretiva",
+          "executedHours": 1.041666667
+        }
+      ],
       "workRhythm": {
         "referenceDate": "2026-08-06",
         "general": {
@@ -5760,9 +5824,9 @@ window.VIEWER_DEMO_DATA = {
               "id": "week",
               "label": "Semana",
               "caption": "02/08 a 06/08 · semana em andamento",
-              "executedHours": 0,
+              "executedHours": 13.250000001,
               "expectedHours": 79.23809523809524,
-              "adherence": 0,
+              "adherence": 16.721754808954326,
               "status": "Em andamento",
               "tone": "neutral"
             },
@@ -5770,9 +5834,9 @@ window.VIEWER_DEMO_DATA = {
               "id": "month",
               "label": "Mês até ontem",
               "caption": "01/08 a 05/08",
-              "executedHours": 0,
+              "executedHours": 13.250000001,
               "expectedHours": 61.92857142857143,
-              "adherence": 0,
+              "adherence": 21.395617071972318,
               "status": "Crítico",
               "tone": "critical"
             }
@@ -5835,9 +5899,9 @@ window.VIEWER_DEMO_DATA = {
                 "id": "week",
                 "label": "Semana",
                 "caption": "02/08 a 06/08 · semana em andamento",
-                "executedHours": 0,
+                "executedHours": 13.250000001,
                 "expectedHours": 29.238095238095237,
-                "adherence": 0,
+                "adherence": 45.317589579967425,
                 "status": "Em andamento",
                 "tone": "neutral"
               },
@@ -5845,11 +5909,11 @@ window.VIEWER_DEMO_DATA = {
                 "id": "month",
                 "label": "Mês até ontem",
                 "caption": "01/08 a 05/08",
-                "executedHours": 0,
+                "executedHours": 13.250000001,
                 "expectedHours": 21.928571428571427,
-                "adherence": 0,
-                "status": "Crítico",
-                "tone": "critical"
+                "adherence": 60.42345277328991,
+                "status": "Em evolução",
+                "tone": "progress"
               }
             ]
           },
