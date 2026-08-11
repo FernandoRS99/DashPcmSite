@@ -1,7 +1,7 @@
 window.VIEWER_DEMO_DATA = {
   "schemaVersion": 2,
   "privacyMode": "aggregated",
-  "generatedAt": "2026-08-11T03:06:30.668Z",
+  "generatedAt": "2026-08-11T16:46:29.057Z",
   "technicians": [
     {
       "id": "T01",
@@ -5801,6 +5801,48 @@ window.VIEWER_DEMO_DATA = {
           "date": "2026-08-05",
           "orderType": "Corretiva",
           "executedHours": 1.041666667
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-10",
+          "orderType": "Corretiva",
+          "executedHours": 1.277777778
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-10",
+          "orderType": "Corretiva",
+          "executedHours": 1.277777778
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-10",
+          "orderType": "Corretiva",
+          "executedHours": 1.277777778
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-10",
+          "orderType": "Corretiva",
+          "executedHours": 1.277777778
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-10",
+          "orderType": "Corretiva",
+          "executedHours": 1.277777778
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-10",
+          "orderType": "Corretiva",
+          "executedHours": 1.277777777
         }
       ],
       "workRhythm": {
@@ -5824,9 +5866,9 @@ window.VIEWER_DEMO_DATA = {
               "id": "week",
               "label": "Semana",
               "caption": "09/08 a 11/08 · semana em andamento",
-              "executedHours": 0,
+              "executedHours": 7.666666666999999,
               "expectedHours": 44.61904761904762,
-              "adherence": 0,
+              "adherence": 17.182497332657416,
               "status": "Em andamento",
               "tone": "neutral"
             },
@@ -5834,9 +5876,9 @@ window.VIEWER_DEMO_DATA = {
               "id": "month",
               "label": "Mês até ontem",
               "caption": "01/08 a 10/08",
-              "executedHours": 13.250000001,
+              "executedHours": 20.916666668000005,
               "expectedHours": 123.85714285714286,
-              "adherence": 10.697808535986159,
+              "adherence": 16.887735487427914,
               "status": "Crítico",
               "tone": "critical"
             }
@@ -5899,9 +5941,9 @@ window.VIEWER_DEMO_DATA = {
                 "id": "week",
                 "label": "Semana",
                 "caption": "09/08 a 11/08 · semana em andamento",
-                "executedHours": 0,
+                "executedHours": 7.666666666999999,
                 "expectedHours": 14.619047619047619,
-                "adherence": 0,
+                "adherence": 52.442996744951145,
                 "status": "Em andamento",
                 "tone": "neutral"
               },
@@ -5909,9 +5951,9 @@ window.VIEWER_DEMO_DATA = {
                 "id": "month",
                 "label": "Mês até ontem",
                 "caption": "01/08 a 10/08",
-                "executedHours": 13.250000001,
+                "executedHours": 20.916666668000005,
                 "expectedHours": 43.857142857142854,
-                "adherence": 30.211726386644955,
+                "adherence": 47.69272530162868,
                 "status": "Crítico",
                 "tone": "critical"
               }
