@@ -1,7 +1,7 @@
 window.VIEWER_DEMO_DATA = {
   "schemaVersion": 2,
   "privacyMode": "aggregated",
-  "generatedAt": "2026-08-12T03:06:30.075Z",
+  "generatedAt": "2026-08-12T11:46:30.542Z",
   "technicians": [
     {
       "id": "T01",
@@ -5843,6 +5843,27 @@ window.VIEWER_DEMO_DATA = {
           "date": "2026-08-10",
           "orderType": "Corretiva",
           "executedHours": 1.277777777
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-11",
+          "orderType": "Corretiva",
+          "executedHours": 2.694444445
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-11",
+          "orderType": "Corretiva",
+          "executedHours": 2.694444444
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T04",
+          "date": "2026-08-11",
+          "orderType": "Corretiva",
+          "executedHours": 2.694444444
         }
       ],
       "workRhythm": {
@@ -5866,9 +5887,9 @@ window.VIEWER_DEMO_DATA = {
               "id": "week",
               "label": "Semana",
               "caption": "09/08 a 12/08 · semana em andamento",
-              "executedHours": 7.666666666999999,
+              "executedHours": 15.75,
               "expectedHours": 61.92857142857143,
-              "adherence": 12.379853902883504,
+              "adherence": 25.432525951557096,
               "status": "Em andamento",
               "tone": "neutral"
             },
@@ -5876,9 +5897,9 @@ window.VIEWER_DEMO_DATA = {
               "id": "month",
               "label": "Mês até ontem",
               "caption": "01/08 a 11/08",
-              "executedHours": 20.916666668000005,
+              "executedHours": 29.000000001000004,
               "expectedHours": 141.16666666666666,
-              "adherence": 14.817001181582059,
+              "adherence": 20.543093271074383,
               "status": "Crítico",
               "tone": "critical"
             }
@@ -5941,9 +5962,9 @@ window.VIEWER_DEMO_DATA = {
                 "id": "week",
                 "label": "Semana",
                 "caption": "09/08 a 12/08 · semana em andamento",
-                "executedHours": 7.666666666999999,
+                "executedHours": 15.75,
                 "expectedHours": 21.928571428571427,
-                "adherence": 34.96199782996743,
+                "adherence": 71.8241042345277,
                 "status": "Em andamento",
                 "tone": "neutral"
               },
@@ -5951,11 +5972,11 @@ window.VIEWER_DEMO_DATA = {
                 "id": "month",
                 "label": "Mês até ontem",
                 "caption": "01/08 a 11/08",
-                "executedHours": 20.916666668000005,
+                "executedHours": 29.000000001000004,
                 "expectedHours": 51.166666666666664,
-                "adherence": 40.87947882996744,
-                "status": "Crítico",
-                "tone": "critical"
+                "adherence": 56.67752443192183,
+                "status": "Em evolução",
+                "tone": "progress"
               }
             ]
           },
