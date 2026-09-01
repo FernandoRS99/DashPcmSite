@@ -1,7 +1,7 @@
 window.VIEWER_DEMO_DATA = {
   "schemaVersion": 2,
   "privacyMode": "aggregated",
-  "generatedAt": "2026-08-31T03:06:29.181Z",
+  "generatedAt": "2026-09-01T03:06:29.276Z",
   "technicians": [
     {
       "id": "T01",
@@ -182,7 +182,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-08-31",
+        "referenceDate": "2026-09-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -1602,7 +1602,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-08-31",
+        "referenceDate": "2026-09-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": false,
@@ -2539,7 +2539,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-08-31",
+        "referenceDate": "2026-09-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -3280,7 +3280,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-08-31",
+        "referenceDate": "2026-09-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -5513,7 +5513,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-08-31",
+        "referenceDate": "2026-09-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -6287,7 +6287,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-08-31",
+        "referenceDate": "2026-09-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -6295,31 +6295,31 @@ window.VIEWER_DEMO_DATA = {
           "periods": [
             {
               "id": "today",
-              "label": "Hoje",
-              "caption": "31/08 · parcial",
+              "label": "Último dia",
+              "caption": "31/08",
               "executedHours": 0,
               "expectedHours": 10,
               "adherence": 0,
-              "status": "Em andamento",
-              "tone": "neutral"
+              "status": "Crítico",
+              "tone": "critical"
             },
             {
               "id": "week",
               "label": "Semana",
-              "caption": "30/08 a 31/08 · semana em andamento",
+              "caption": "30/08 a 31/08 · período encerrado",
               "executedHours": 0,
               "expectedHours": 20,
               "adherence": 0,
-              "status": "Em andamento",
-              "tone": "neutral"
+              "status": "Crítico",
+              "tone": "critical"
             },
             {
               "id": "month",
-              "label": "Mês até ontem",
-              "caption": "01/08 a 30/08",
+              "label": "Mês fechado",
+              "caption": "01/08 a 31/08",
               "executedHours": 92.83333333199998,
-              "expectedHours": 250,
-              "adherence": 37.13333333279999,
+              "expectedHours": 260,
+              "adherence": 35.70512820461538,
               "status": "Crítico",
               "tone": "critical"
             }
@@ -6333,31 +6333,31 @@ window.VIEWER_DEMO_DATA = {
             "periods": [
               {
                 "id": "today",
-                "label": "Hoje",
-                "caption": "31/08 · parcial",
+                "label": "Último dia",
+                "caption": "31/08",
                 "executedHours": 0,
                 "expectedHours": 5,
                 "adherence": 0,
-                "status": "Em andamento",
-                "tone": "neutral"
+                "status": "Crítico",
+                "tone": "critical"
               },
               {
                 "id": "week",
                 "label": "Semana",
-                "caption": "30/08 a 31/08 · semana em andamento",
+                "caption": "30/08 a 31/08 · período encerrado",
                 "executedHours": 0,
                 "expectedHours": 10,
                 "adherence": 0,
-                "status": "Em andamento",
-                "tone": "neutral"
+                "status": "Crítico",
+                "tone": "critical"
               },
               {
                 "id": "month",
-                "label": "Mês até ontem",
-                "caption": "01/08 a 30/08",
+                "label": "Mês fechado",
+                "caption": "01/08 a 31/08",
                 "executedHours": 92.83333333199998,
-                "expectedHours": 125,
-                "adherence": 74.26666666559998,
+                "expectedHours": 130,
+                "adherence": 71.41025640923075,
                 "status": "Em evolução",
                 "tone": "progress"
               }
@@ -6370,30 +6370,30 @@ window.VIEWER_DEMO_DATA = {
             "periods": [
               {
                 "id": "today",
-                "label": "Hoje",
-                "caption": "31/08 · parcial",
+                "label": "Último dia",
+                "caption": "31/08",
                 "executedHours": 0,
                 "expectedHours": 5,
                 "adherence": 0,
-                "status": "Em andamento",
-                "tone": "neutral"
+                "status": "Crítico",
+                "tone": "critical"
               },
               {
                 "id": "week",
                 "label": "Semana",
-                "caption": "30/08 a 31/08 · semana em andamento",
+                "caption": "30/08 a 31/08 · período encerrado",
                 "executedHours": 0,
                 "expectedHours": 10,
                 "adherence": 0,
-                "status": "Em andamento",
-                "tone": "neutral"
+                "status": "Crítico",
+                "tone": "critical"
               },
               {
                 "id": "month",
-                "label": "Mês até ontem",
-                "caption": "01/08 a 30/08",
+                "label": "Mês fechado",
+                "caption": "01/08 a 31/08",
                 "executedHours": 0,
-                "expectedHours": 125,
+                "expectedHours": 130,
                 "adherence": 0,
                 "status": "Crítico",
                 "tone": "critical"
