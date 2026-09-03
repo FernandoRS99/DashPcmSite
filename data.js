@@ -1,7 +1,7 @@
 window.VIEWER_DEMO_DATA = {
   "schemaVersion": 2,
   "privacyMode": "aggregated",
-  "generatedAt": "2026-09-02T03:06:29.407Z",
+  "generatedAt": "2026-09-03T02:56:28.593Z",
   "technicians": [
     {
       "id": "T01",
@@ -6284,6 +6284,104 @@ window.VIEWER_DEMO_DATA = {
           "date": "2026-08-24",
           "orderType": "Corretiva",
           "executedHours": 1
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-25",
+          "orderType": "Preventiva",
+          "executedHours": 1.611111111
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-25",
+          "orderType": "Preventiva",
+          "executedHours": 1.611111111
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-25",
+          "orderType": "Preventiva",
+          "executedHours": 1.611111111
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-26",
+          "orderType": "Preventiva",
+          "executedHours": 1.75
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-26",
+          "orderType": "Preventiva",
+          "executedHours": 1.75
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-26",
+          "orderType": "Corretiva",
+          "executedHours": 0.916666667
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-26",
+          "orderType": "Corretiva",
+          "executedHours": 0.916666666
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-27",
+          "orderType": "Preventiva",
+          "executedHours": 1.208333334
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-27",
+          "orderType": "Preventiva",
+          "executedHours": 1.208333333
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-27",
+          "orderType": "Corretiva",
+          "executedHours": 0.972222223
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-27",
+          "orderType": "Corretiva",
+          "executedHours": 0.972222222
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-27",
+          "orderType": "Corretiva",
+          "executedHours": 0.972222222
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-28",
+          "orderType": "Corretiva",
+          "executedHours": 4
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-08-29",
+          "orderType": "Corretiva",
+          "executedHours": 10
         }
       ],
       "workRhythm": {
@@ -6317,9 +6415,9 @@ window.VIEWER_DEMO_DATA = {
               "id": "month",
               "label": "Mês fechado",
               "caption": "01/08 a 31/08",
-              "executedHours": 92.83333333199998,
+              "executedHours": 122.33333333199998,
               "expectedHours": 260,
-              "adherence": 35.70512820461538,
+              "adherence": 47.051282050769224,
               "status": "Crítico",
               "tone": "critical"
             }
@@ -6355,11 +6453,11 @@ window.VIEWER_DEMO_DATA = {
                 "id": "month",
                 "label": "Mês fechado",
                 "caption": "01/08 a 31/08",
-                "executedHours": 92.83333333199998,
+                "executedHours": 122.33333333199998,
                 "expectedHours": 130,
-                "adherence": 71.41025640923075,
-                "status": "Em evolução",
-                "tone": "progress"
+                "adherence": 94.10256410153845,
+                "status": "Meta atingida",
+                "tone": "good"
               }
             ]
           },
