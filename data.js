@@ -1,7 +1,7 @@
 window.VIEWER_DEMO_DATA = {
   "schemaVersion": 2,
   "privacyMode": "aggregated",
-  "generatedAt": "2026-10-01T03:06:30.544Z",
+  "generatedAt": "2026-10-02T02:56:30.251Z",
   "technicians": [
     {
       "id": "T01",
@@ -7099,6 +7099,196 @@ window.VIEWER_DEMO_DATA = {
                 "adherence": 0,
                 "status": "Crítico",
                 "tone": "critical"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "2026-10": {
+      "privacyMode": "aggregated",
+      "monthlyTarget": 410,
+      "monthlyTargets": [
+        {
+          "technicianId": "T05",
+          "scaleType": "6x1-night",
+          "targetHours": 125,
+          "isActive": 1
+        },
+        {
+          "technicianId": "T01",
+          "scaleType": "3x3",
+          "targetHours": 0,
+          "isActive": 0
+        },
+        {
+          "technicianId": "T03",
+          "scaleType": "3x3",
+          "targetHours": 142.5,
+          "isActive": 1
+        },
+        {
+          "technicianId": "T02",
+          "scaleType": "3x3",
+          "targetHours": 142.5,
+          "isActive": 1
+        },
+        {
+          "technicianId": "T04",
+          "scaleType": "3x3",
+          "targetHours": 0,
+          "isActive": 0
+        }
+      ],
+      "orders": [],
+      "workRhythm": {
+        "referenceDate": "2026-10-01",
+        "general": {
+          "scopeLabel": "Meta diária da equipe",
+          "available": true,
+          "formalDailyHours": 24,
+          "periods": [
+            {
+              "id": "today",
+              "label": "Hoje",
+              "caption": "01/10 · parcial",
+              "executedHours": 0,
+              "expectedHours": 5,
+              "adherence": 0,
+              "status": "Em andamento",
+              "tone": "neutral"
+            },
+            {
+              "id": "week",
+              "label": "Semana",
+              "caption": "01/10 a 01/10 · semana em andamento",
+              "executedHours": 0,
+              "expectedHours": 5,
+              "adherence": 0,
+              "status": "Em andamento",
+              "tone": "neutral"
+            },
+            {
+              "id": "month",
+              "label": "Mês até ontem",
+              "caption": "Nenhum dia encerrado",
+              "executedHours": 0,
+              "expectedHours": 0,
+              "adherence": 0,
+              "status": "Sem carga prevista",
+              "tone": "neutral"
+            }
+          ]
+        },
+        "technicians": {
+          "T02": {
+            "scopeLabel": "Fernando R.",
+            "available": true,
+            "formalDailyHours": 9.5,
+            "periods": [
+              {
+                "id": "today",
+                "label": "Hoje",
+                "caption": "01/10 · parcial",
+                "executedHours": 0,
+                "expectedHours": 0,
+                "adherence": 0,
+                "status": "Em andamento",
+                "tone": "neutral"
+              },
+              {
+                "id": "week",
+                "label": "Semana",
+                "caption": "01/10 a 01/10 · semana em andamento",
+                "executedHours": 0,
+                "expectedHours": 0,
+                "adherence": 0,
+                "status": "Em andamento",
+                "tone": "neutral"
+              },
+              {
+                "id": "month",
+                "label": "Mês até ontem",
+                "caption": "Nenhum dia encerrado",
+                "executedHours": 0,
+                "expectedHours": 0,
+                "adherence": 0,
+                "status": "Sem carga prevista",
+                "tone": "neutral"
+              }
+            ]
+          },
+          "T03": {
+            "scopeLabel": "Irving G.",
+            "available": true,
+            "formalDailyHours": 9.5,
+            "periods": [
+              {
+                "id": "today",
+                "label": "Hoje",
+                "caption": "01/10 · parcial",
+                "executedHours": 0,
+                "expectedHours": 0,
+                "adherence": 0,
+                "status": "Em andamento",
+                "tone": "neutral"
+              },
+              {
+                "id": "week",
+                "label": "Semana",
+                "caption": "01/10 a 01/10 · semana em andamento",
+                "executedHours": 0,
+                "expectedHours": 0,
+                "adherence": 0,
+                "status": "Em andamento",
+                "tone": "neutral"
+              },
+              {
+                "id": "month",
+                "label": "Mês até ontem",
+                "caption": "Nenhum dia encerrado",
+                "executedHours": 0,
+                "expectedHours": 0,
+                "adherence": 0,
+                "status": "Sem carga prevista",
+                "tone": "neutral"
+              }
+            ]
+          },
+          "T05": {
+            "scopeLabel": "Pedro M.",
+            "available": true,
+            "formalDailyHours": 5,
+            "periods": [
+              {
+                "id": "today",
+                "label": "Hoje",
+                "caption": "01/10 · parcial",
+                "executedHours": 0,
+                "expectedHours": 5,
+                "adherence": 0,
+                "status": "Em andamento",
+                "tone": "neutral"
+              },
+              {
+                "id": "week",
+                "label": "Semana",
+                "caption": "01/10 a 01/10 · semana em andamento",
+                "executedHours": 0,
+                "expectedHours": 5,
+                "adherence": 0,
+                "status": "Em andamento",
+                "tone": "neutral"
+              },
+              {
+                "id": "month",
+                "label": "Mês até ontem",
+                "caption": "Nenhum dia encerrado",
+                "executedHours": 0,
+                "expectedHours": 0,
+                "adherence": 0,
+                "status": "Sem carga prevista",
+                "tone": "neutral"
               }
             ]
           }
