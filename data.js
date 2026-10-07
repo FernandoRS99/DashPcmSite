@@ -1,7 +1,7 @@
 window.VIEWER_DEMO_DATA = {
   "schemaVersion": 2,
   "privacyMode": "aggregated",
-  "generatedAt": "2026-10-07T08:06:28.706Z",
+  "generatedAt": "2026-10-07T08:16:28.710Z",
   "technicians": [
     {
       "id": "T01",
@@ -7363,21 +7363,28 @@ window.VIEWER_DEMO_DATA = {
           "technicianId": "T02",
           "date": "2026-10-05",
           "orderType": "Corretiva",
-          "executedHours": 2.166666667
+          "executedHours": 1.916666667
         },
         {
           "aggregate": true,
           "technicianId": "T02",
           "date": "2026-10-05",
           "orderType": "Corretiva",
-          "executedHours": 2.166666667
+          "executedHours": 1.916666667
         },
         {
           "aggregate": true,
           "technicianId": "T02",
           "date": "2026-10-05",
           "orderType": "Corretiva",
-          "executedHours": 2.166666666
+          "executedHours": 1.916666667
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T02",
+          "date": "2026-10-05",
+          "orderType": "Corretiva",
+          "executedHours": 1.916666666
         },
         {
           "aggregate": true,
@@ -7405,7 +7412,14 @@ window.VIEWER_DEMO_DATA = {
           "technicianId": "T02",
           "date": "2026-10-07",
           "orderType": "Corretiva",
-          "executedHours": 1.5
+          "executedHours": 1.425
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T02",
+          "date": "2026-10-07",
+          "orderType": "Corretiva",
+          "executedHours": 1.425
         }
       ],
       "workRhythm": {
@@ -7419,9 +7433,9 @@ window.VIEWER_DEMO_DATA = {
               "id": "today",
               "label": "Hoje",
               "caption": "07/10 · parcial",
-              "executedHours": 1.5,
+              "executedHours": 2.85,
               "expectedHours": 5,
-              "adherence": 30,
+              "adherence": 57.00000000000001,
               "status": "Em andamento",
               "tone": "neutral"
             },
@@ -7429,9 +7443,9 @@ window.VIEWER_DEMO_DATA = {
               "id": "week",
               "label": "Semana",
               "caption": "04/10 a 07/10 · semana em andamento",
-              "executedHours": 26.783333332999995,
+              "executedHours": 29.299999999999997,
               "expectedHours": 77,
-              "adherence": 34.783549783116875,
+              "adherence": 38.051948051948045,
               "status": "Em andamento",
               "tone": "neutral"
             },
@@ -7439,9 +7453,9 @@ window.VIEWER_DEMO_DATA = {
               "id": "month",
               "label": "Mês até ontem",
               "caption": "01/10 a 06/10",
-              "executedHours": 29.099999999999994,
+              "executedHours": 30.266666666999996,
               "expectedHours": 82,
-              "adherence": 35.48780487804877,
+              "adherence": 36.910569106097554,
               "status": "Crítico",
               "tone": "critical"
             }
@@ -7457,7 +7471,7 @@ window.VIEWER_DEMO_DATA = {
                 "id": "today",
                 "label": "Hoje",
                 "caption": "07/10 · parcial",
-                "executedHours": 1.5,
+                "executedHours": 2.85,
                 "expectedHours": 0,
                 "adherence": 0,
                 "status": "Em andamento",
@@ -7467,9 +7481,9 @@ window.VIEWER_DEMO_DATA = {
                 "id": "week",
                 "label": "Semana",
                 "caption": "04/10 a 07/10 · semana em andamento",
-                "executedHours": 26.783333332999995,
+                "executedHours": 29.299999999999997,
                 "expectedHours": 28.5,
-                "adherence": 93.97660818596489,
+                "adherence": 102.80701754385963,
                 "status": "Em andamento",
                 "tone": "neutral"
               },
@@ -7477,9 +7491,9 @@ window.VIEWER_DEMO_DATA = {
                 "id": "month",
                 "label": "Mês até ontem",
                 "caption": "01/10 a 06/10",
-                "executedHours": 29.099999999999994,
+                "executedHours": 30.266666666999996,
                 "expectedHours": 28.5,
-                "adherence": 102.10526315789473,
+                "adherence": 106.19883041052628,
                 "status": "Excelente",
                 "tone": "excellent"
               }
