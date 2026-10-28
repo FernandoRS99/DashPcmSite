@@ -1,7 +1,7 @@
 window.VIEWER_DEMO_DATA = {
   "schemaVersion": 2,
   "privacyMode": "aggregated",
-  "generatedAt": "2026-10-28T18:55:30.544Z",
+  "generatedAt": "2026-10-28T21:36:28.693Z",
   "technicians": [
     {
       "id": "T01",
@@ -7710,7 +7710,56 @@ window.VIEWER_DEMO_DATA = {
         },
         {
           "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-12",
+          "orderType": "Preventiva",
+          "executedHours": 2
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-12",
+          "orderType": "Preventiva",
+          "executedHours": 2
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-12",
+          "orderType": "Corretiva",
+          "executedHours": 2.5
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-12",
+          "orderType": "Corretiva",
+          "executedHours": 2.5
+        },
+        {
+          "aggregate": true,
           "technicianId": "T02",
+          "date": "2026-10-13",
+          "orderType": "Corretiva",
+          "executedHours": 1
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-13",
+          "orderType": "Preventiva",
+          "executedHours": 1.75
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-13",
+          "orderType": "Preventiva",
+          "executedHours": 1.75
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
           "date": "2026-10-13",
           "orderType": "Corretiva",
           "executedHours": 1
@@ -7735,6 +7784,20 @@ window.VIEWER_DEMO_DATA = {
           "date": "2026-10-16",
           "orderType": "Corretiva",
           "executedHours": 4
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-16",
+          "orderType": "Corretiva",
+          "executedHours": 3
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-16",
+          "orderType": "Corretiva",
+          "executedHours": 3
         },
         {
           "aggregate": true,
@@ -7770,6 +7833,34 @@ window.VIEWER_DEMO_DATA = {
           "date": "2026-10-17",
           "orderType": "Corretiva",
           "executedHours": 3
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-17",
+          "orderType": "Preventiva",
+          "executedHours": 3
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-17",
+          "orderType": "Preventiva",
+          "executedHours": 3
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-17",
+          "orderType": "Corretiva",
+          "executedHours": 1.25
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-17",
+          "orderType": "Corretiva",
+          "executedHours": 1.25
         },
         {
           "aggregate": true,
@@ -7815,6 +7906,41 @@ window.VIEWER_DEMO_DATA = {
         },
         {
           "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-18",
+          "orderType": "Preventiva",
+          "executedHours": 1.966666667
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-18",
+          "orderType": "Preventiva",
+          "executedHours": 1.966666667
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-18",
+          "orderType": "Preventiva",
+          "executedHours": 1.966666667
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-18",
+          "orderType": "Preventiva",
+          "executedHours": 1.966666666
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-18",
+          "orderType": "Preventiva",
+          "executedHours": 1.966666666
+        },
+        {
+          "aggregate": true,
           "technicianId": "T02",
           "date": "2026-10-19",
           "orderType": "Preventiva",
@@ -7833,6 +7959,20 @@ window.VIEWER_DEMO_DATA = {
           "date": "2026-10-19",
           "orderType": "Corretiva",
           "executedHours": 1.25
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-19",
+          "orderType": "Corretiva",
+          "executedHours": 1
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-19",
+          "orderType": "Corretiva",
+          "executedHours": 1
         },
         {
           "aggregate": true,
@@ -7868,6 +8008,27 @@ window.VIEWER_DEMO_DATA = {
           "date": "2026-10-22",
           "orderType": "Corretiva",
           "executedHours": 1.166666667
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-22",
+          "orderType": "Preventiva",
+          "executedHours": 2.333333334
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-22",
+          "orderType": "Preventiva",
+          "executedHours": 2.333333333
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-22",
+          "orderType": "Preventiva",
+          "executedHours": 2.333333333
         },
         {
           "aggregate": true,
@@ -7924,6 +8085,69 @@ window.VIEWER_DEMO_DATA = {
           "date": "2026-10-23",
           "orderType": "Corretiva",
           "executedHours": 1.616666666
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-23",
+          "orderType": "Corretiva",
+          "executedHours": 2.777777778
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-23",
+          "orderType": "Corretiva",
+          "executedHours": 2.777777778
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-23",
+          "orderType": "Corretiva",
+          "executedHours": 2.777777777
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-24",
+          "orderType": "Preventiva",
+          "executedHours": 1.25
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-24",
+          "orderType": "Preventiva",
+          "executedHours": 1.25
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-24",
+          "orderType": "Preventiva",
+          "executedHours": 1.25
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-24",
+          "orderType": "Preventiva",
+          "executedHours": 1.25
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-24",
+          "orderType": "Corretiva",
+          "executedHours": 4.583333334
+        },
+        {
+          "aggregate": true,
+          "technicianId": "T03",
+          "date": "2026-10-24",
+          "orderType": "Corretiva",
+          "executedHours": 4.583333333
         }
       ],
       "workRhythm": {
@@ -7957,11 +8181,11 @@ window.VIEWER_DEMO_DATA = {
               "id": "month",
               "label": "Mês até ontem",
               "caption": "01/10 a 27/10",
-              "executedHours": 153.36666666699995,
+              "executedHours": 222.70000000000002,
               "expectedHours": 338,
-              "adherence": 45.374753451775135,
-              "status": "Crítico",
-              "tone": "critical"
+              "adherence": 65.88757396449705,
+              "status": "Em evolução",
+              "tone": "progress"
             }
           ]
         },
@@ -8032,11 +8256,11 @@ window.VIEWER_DEMO_DATA = {
                 "id": "month",
                 "label": "Mês até ontem",
                 "caption": "01/10 a 27/10",
-                "executedHours": 45.666666667,
+                "executedHours": 114.99999999999999,
                 "expectedHours": 114,
-                "adherence": 40.05847953245614,
-                "status": "Crítico",
-                "tone": "critical"
+                "adherence": 100.87719298245612,
+                "status": "Excelente",
+                "tone": "excellent"
               }
             ]
           },
