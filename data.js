@@ -1,7 +1,7 @@
 window.VIEWER_DEMO_DATA = {
   "schemaVersion": 2,
   "privacyMode": "aggregated",
-  "generatedAt": "2026-10-31T03:06:28.872Z",
+  "generatedAt": "2026-11-01T15:31:26.865Z",
   "technicians": [
     {
       "id": "T01",
@@ -182,7 +182,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-10-31",
+        "referenceDate": "2026-11-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -1602,7 +1602,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-10-31",
+        "referenceDate": "2026-11-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": false,
@@ -2539,7 +2539,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-10-31",
+        "referenceDate": "2026-11-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -3280,7 +3280,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-10-31",
+        "referenceDate": "2026-11-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -5513,7 +5513,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-10-31",
+        "referenceDate": "2026-11-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -6385,7 +6385,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-10-31",
+        "referenceDate": "2026-11-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -7106,7 +7106,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-10-31",
+        "referenceDate": "2026-11-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -8151,7 +8151,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-10-31",
+        "referenceDate": "2026-11-01",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -8159,28 +8159,28 @@ window.VIEWER_DEMO_DATA = {
           "periods": [
             {
               "id": "today",
-              "label": "Hoje",
-              "caption": "31/10 · parcial",
+              "label": "Último dia",
+              "caption": "31/10",
               "executedHours": 0,
               "expectedHours": 0,
               "adherence": 0,
-              "status": "Em andamento",
+              "status": "Sem carga prevista",
               "tone": "neutral"
             },
             {
               "id": "week",
               "label": "Semana",
-              "caption": "25/10 a 31/10 · semana em andamento",
+              "caption": "25/10 a 31/10 · período encerrado",
               "executedHours": 0,
               "expectedHours": 87,
               "adherence": 0,
-              "status": "Em andamento",
-              "tone": "neutral"
+              "status": "Crítico",
+              "tone": "critical"
             },
             {
               "id": "month",
-              "label": "Mês até ontem",
-              "caption": "01/10 a 30/10",
+              "label": "Mês fechado",
+              "caption": "01/10 a 31/10",
               "executedHours": 222.70000000000002,
               "expectedHours": 410,
               "adherence": 54.31707317073171,
@@ -8197,28 +8197,28 @@ window.VIEWER_DEMO_DATA = {
             "periods": [
               {
                 "id": "today",
-                "label": "Hoje",
-                "caption": "31/10 · parcial",
+                "label": "Último dia",
+                "caption": "31/10",
                 "executedHours": 0,
                 "expectedHours": 0,
                 "adherence": 0,
-                "status": "Em andamento",
+                "status": "Sem carga prevista",
                 "tone": "neutral"
               },
               {
                 "id": "week",
                 "label": "Semana",
-                "caption": "25/10 a 31/10 · semana em andamento",
+                "caption": "25/10 a 31/10 · período encerrado",
                 "executedHours": 0,
                 "expectedHours": 28.5,
                 "adherence": 0,
-                "status": "Em andamento",
-                "tone": "neutral"
+                "status": "Crítico",
+                "tone": "critical"
               },
               {
                 "id": "month",
-                "label": "Mês até ontem",
-                "caption": "01/10 a 30/10",
+                "label": "Mês fechado",
+                "caption": "01/10 a 31/10",
                 "executedHours": 107.7,
                 "expectedHours": 142.5,
                 "adherence": 75.57894736842105,
@@ -8234,28 +8234,28 @@ window.VIEWER_DEMO_DATA = {
             "periods": [
               {
                 "id": "today",
-                "label": "Hoje",
-                "caption": "31/10 · parcial",
+                "label": "Último dia",
+                "caption": "31/10",
                 "executedHours": 0,
                 "expectedHours": 0,
                 "adherence": 0,
-                "status": "Em andamento",
+                "status": "Sem carga prevista",
                 "tone": "neutral"
               },
               {
                 "id": "week",
                 "label": "Semana",
-                "caption": "25/10 a 31/10 · semana em andamento",
+                "caption": "25/10 a 31/10 · período encerrado",
                 "executedHours": 0,
                 "expectedHours": 28.5,
                 "adherence": 0,
-                "status": "Em andamento",
-                "tone": "neutral"
+                "status": "Crítico",
+                "tone": "critical"
               },
               {
                 "id": "month",
-                "label": "Mês até ontem",
-                "caption": "01/10 a 30/10",
+                "label": "Mês fechado",
+                "caption": "01/10 a 31/10",
                 "executedHours": 114.99999999999999,
                 "expectedHours": 142.5,
                 "adherence": 80.7017543859649,
@@ -8271,28 +8271,28 @@ window.VIEWER_DEMO_DATA = {
             "periods": [
               {
                 "id": "today",
-                "label": "Hoje",
-                "caption": "31/10 · parcial",
+                "label": "Último dia",
+                "caption": "31/10",
                 "executedHours": 0,
                 "expectedHours": 0,
                 "adherence": 0,
-                "status": "Em andamento",
+                "status": "Sem carga prevista",
                 "tone": "neutral"
               },
               {
                 "id": "week",
                 "label": "Semana",
-                "caption": "25/10 a 31/10 · semana em andamento",
+                "caption": "25/10 a 31/10 · período encerrado",
                 "executedHours": 0,
                 "expectedHours": 30,
                 "adherence": 0,
-                "status": "Em andamento",
-                "tone": "neutral"
+                "status": "Crítico",
+                "tone": "critical"
               },
               {
                 "id": "month",
-                "label": "Mês até ontem",
-                "caption": "01/10 a 30/10",
+                "label": "Mês fechado",
+                "caption": "01/10 a 31/10",
                 "executedHours": 0,
                 "expectedHours": 125,
                 "adherence": 0,
