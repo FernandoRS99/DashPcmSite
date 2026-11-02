@@ -1,7 +1,7 @@
 window.VIEWER_DEMO_DATA = {
   "schemaVersion": 2,
   "privacyMode": "aggregated",
-  "generatedAt": "2026-11-02T18:46:28.741Z",
+  "generatedAt": "2026-11-02T19:26:28.763Z",
   "technicians": [
     {
       "id": "T01",
@@ -8325,6 +8325,18 @@ window.VIEWER_DEMO_DATA = {
           "scaleType": "3x3",
           "targetHours": 142.5,
           "isActive": 1
+        },
+        {
+          "technicianId": "T01",
+          "scaleType": "manual",
+          "targetHours": 0,
+          "isActive": 0
+        },
+        {
+          "technicianId": "T04",
+          "scaleType": "manual",
+          "targetHours": 0,
+          "isActive": 0
         }
       ],
       "orders": [],
