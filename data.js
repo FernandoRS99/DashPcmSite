@@ -1,7 +1,7 @@
 window.VIEWER_DEMO_DATA = {
   "schemaVersion": 2,
   "privacyMode": "aggregated",
-  "generatedAt": "2026-11-20T03:06:28.692Z",
+  "generatedAt": "2026-11-21T16:16:31.104Z",
   "technicians": [
     {
       "id": "T01",
@@ -182,7 +182,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-11-20",
+        "referenceDate": "2026-11-21",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -1602,7 +1602,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-11-20",
+        "referenceDate": "2026-11-21",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": false,
@@ -2539,7 +2539,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-11-20",
+        "referenceDate": "2026-11-21",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -3280,7 +3280,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-11-20",
+        "referenceDate": "2026-11-21",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -5513,7 +5513,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-11-20",
+        "referenceDate": "2026-11-21",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -6385,7 +6385,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-11-20",
+        "referenceDate": "2026-11-21",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -7106,7 +7106,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-11-20",
+        "referenceDate": "2026-11-21",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -8277,7 +8277,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-11-20",
+        "referenceDate": "2026-11-21",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -9014,7 +9014,7 @@ window.VIEWER_DEMO_DATA = {
         }
       ],
       "workRhythm": {
-        "referenceDate": "2026-11-20",
+        "referenceDate": "2026-11-21",
         "general": {
           "scopeLabel": "Meta diária da equipe",
           "available": true,
@@ -9023,9 +9023,9 @@ window.VIEWER_DEMO_DATA = {
             {
               "id": "today",
               "label": "Hoje",
-              "caption": "20/11 · parcial",
+              "caption": "21/11 · parcial",
               "executedHours": 0,
-              "expectedHours": 0,
+              "expectedHours": 19,
               "adherence": 0,
               "status": "Em andamento",
               "tone": "neutral"
@@ -9033,17 +9033,17 @@ window.VIEWER_DEMO_DATA = {
             {
               "id": "week",
               "label": "Semana",
-              "caption": "15/11 a 20/11 · semana em andamento",
+              "caption": "15/11 a 21/11 · semana em andamento",
               "executedHours": 53.949999999000006,
-              "expectedHours": 77,
-              "adherence": 70.06493506363637,
+              "expectedHours": 96,
+              "adherence": 56.197916665625,
               "status": "Em andamento",
               "tone": "neutral"
             },
             {
               "id": "month",
               "label": "Mês até ontem",
-              "caption": "01/11 a 19/11",
+              "caption": "01/11 a 20/11",
               "executedHours": 171.416666664,
               "expectedHours": 246,
               "adherence": 69.68157181463414,
@@ -9061,9 +9061,9 @@ window.VIEWER_DEMO_DATA = {
               {
                 "id": "today",
                 "label": "Hoje",
-                "caption": "20/11 · parcial",
+                "caption": "21/11 · parcial",
                 "executedHours": 0,
-                "expectedHours": 0,
+                "expectedHours": 9.5,
                 "adherence": 0,
                 "status": "Em andamento",
                 "tone": "neutral"
@@ -9071,17 +9071,17 @@ window.VIEWER_DEMO_DATA = {
               {
                 "id": "week",
                 "label": "Semana",
-                "caption": "15/11 a 20/11 · semana em andamento",
+                "caption": "15/11 a 21/11 · semana em andamento",
                 "executedHours": 31.116666665999997,
-                "expectedHours": 28.5,
-                "adherence": 109.1812865473684,
+                "expectedHours": 38,
+                "adherence": 81.88596491052631,
                 "status": "Em andamento",
                 "tone": "neutral"
               },
               {
                 "id": "month",
                 "label": "Mês até ontem",
-                "caption": "01/11 a 19/11",
+                "caption": "01/11 a 20/11",
                 "executedHours": 92.24999999799999,
                 "expectedHours": 85.5,
                 "adherence": 107.89473683976607,
@@ -9098,9 +9098,9 @@ window.VIEWER_DEMO_DATA = {
               {
                 "id": "today",
                 "label": "Hoje",
-                "caption": "20/11 · parcial",
+                "caption": "21/11 · parcial",
                 "executedHours": 0,
-                "expectedHours": 0,
+                "expectedHours": 9.5,
                 "adherence": 0,
                 "status": "Em andamento",
                 "tone": "neutral"
@@ -9108,17 +9108,17 @@ window.VIEWER_DEMO_DATA = {
               {
                 "id": "week",
                 "label": "Semana",
-                "caption": "15/11 a 20/11 · semana em andamento",
+                "caption": "15/11 a 21/11 · semana em andamento",
                 "executedHours": 22.833333333,
-                "expectedHours": 28.5,
-                "adherence": 80.11695906315789,
+                "expectedHours": 38,
+                "adherence": 60.087719297368416,
                 "status": "Em andamento",
                 "tone": "neutral"
               },
               {
                 "id": "month",
                 "label": "Mês até ontem",
-                "caption": "01/11 a 19/11",
+                "caption": "01/11 a 20/11",
                 "executedHours": 79.16666666599995,
                 "expectedHours": 85.5,
                 "adherence": 92.59259259181282,
@@ -9135,7 +9135,7 @@ window.VIEWER_DEMO_DATA = {
               {
                 "id": "today",
                 "label": "Hoje",
-                "caption": "20/11 · parcial",
+                "caption": "21/11 · parcial",
                 "executedHours": 0,
                 "expectedHours": 0,
                 "adherence": 0,
@@ -9145,7 +9145,7 @@ window.VIEWER_DEMO_DATA = {
               {
                 "id": "week",
                 "label": "Semana",
-                "caption": "15/11 a 20/11 · semana em andamento",
+                "caption": "15/11 a 21/11 · semana em andamento",
                 "executedHours": 0,
                 "expectedHours": 20,
                 "adherence": 0,
@@ -9155,7 +9155,7 @@ window.VIEWER_DEMO_DATA = {
               {
                 "id": "month",
                 "label": "Mês até ontem",
-                "caption": "01/11 a 19/11",
+                "caption": "01/11 a 20/11",
                 "executedHours": 0,
                 "expectedHours": 75,
                 "adherence": 0,
